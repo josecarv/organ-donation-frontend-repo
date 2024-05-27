@@ -1,0 +1,62 @@
+<mat-toolbar color="primary" >
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <div class="togglespace"><mat-icon>menu</mat-icon></div>
+      </button>
+      <div class="logo">
+        <img src="assets/header.jpg">
+        <h6><span>ORGAN DONATION </span></h6></div>
+      <span class="menu-spacer"></span>
+      <div class="sample" fxShow="true" fxHide.lt-md>
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <button routerLink="/home" mat-button>Dashboard</button>
+        <button routerLink="" mat-button>Become a Donor</button>
+        <button routerLink="" mat-button>User Manual</button>
+        <button routerLink="" mat-button>Know Organ Donation</button>
+        <a style=" margin-left: 20px;background-color:#E0E0E0 " mat-raised-button  routerLink="">Login</a>
+       
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div></div>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav-content>     
+      <!-- <router-outlet></router-outlet> -->
+    </mat-sidenav-content>
+    <mat-sidenav  #sidenav >
+        <mat-nav-list>
+          <a (click)="sidenav.toggle()" href=""></a>
+          <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+            <span class="nav-caption">Dashboard</span>
+          </a>
+          <a mat-list-item routerLink="" (click)="onSidenavClose()">
+            <span class="nav-caption">Become a Donor</span>
+          </a>
+          <a mat-list-item routerLink="s" (click)="onSidenavClose()">
+            <span class="nav-caption">User Manual</span>
+          </a>
+          <a mat-list-item routerLink="" (click)="onSidenavClose()">
+            <span class="nav-caption">Know Organ Donation</span>
+          </a><br>
+          <button style=" margin-left: 10px"
+            mat-raised-button
+           color="primary"
+            routerLink=""
+            (click)="onSidenavClose()"
+          >
+            Register
+          </button>
+          <button style=" margin: 0px 10px 0px  10px" 
+            mat-raised-button
+           
+            routerLink=""
+            (click)="onSidenavClose()"
+          >
+            Login
+          </button>
+         
+        
+        </mat-nav-list>
+      </mat-sidenav>
+    </mat-sidenav-container>
