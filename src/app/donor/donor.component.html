@@ -1,0 +1,214 @@
+<div class="container">
+    <div class="form">        
+        <mat-stepper labelPosition="bottom" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Personal Information</ng-template>
+                <div class="box">
+                  <mat-form-field>                    
+                    <mat-label>Id Card Number</mat-label>
+                    <input matInput placeholder="Card Number" formControlName="cardNumberCtrl" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Title</mat-label>
+                    <mat-select [(value)]="titleOption">
+                      <mat-option>None</mat-option>
+                      <mat-option value="option1">MR</mat-option>
+                      <mat-option value="option2">MRS</mat-option>
+                      <mat-option value="option3">MS</mat-option>
+                    </mat-select>
+                  </mat-form-field> 
+                </div> 
+                <div class="box">
+                  <mat-form-field>                    
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="nameCtrl" required>
+                  </mat-form-field>
+
+                  <mat-form-field>                    
+                    <mat-label>Surname</mat-label>
+                    <input matInput placeholder="Surname" formControlName="surnameCtrl" required>
+                  </mat-form-field>
+                </div>
+<!--                 
+                <div class="box">
+                  <mat-form-field>                    
+                    <mat-label>Locality</mat-label>
+                    <input matInput placeholder="Locality" formControlName="localityCtrl" required>
+                  </mat-form-field>
+
+                  <mat-form-field>                    
+                    <mat-label>Postcode</mat-label>
+                    <input matInput placeholder="Postcode" formControlName="postCodeCtrl" required>
+                  </mat-form-field>
+                </div> -->
+
+                <!-- <div class="box">
+                  <mat-form-field>                    
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Address" formControlName="addressCtrl" required>
+                  </mat-form-field> 
+                  <mat-form-field>                    
+                    <mat-label>Profession</mat-label>
+                    <input matInput placeholder="Profession" formControlName="professionCtrl" required>
+                  </mat-form-field>                      
+                </div> -->
+
+                <div class="box">
+                    <mat-form-field>                    
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput  [matDatepicker]="pickerDateOfBirth" >
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerDateOfBirth"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerDateOfBirth></mat-datepicker>                                  
+                      </mat-form-field> 
+                      <mat-form-field>
+                    <mat-label>Gender</mat-label>
+                    <mat-select [(value)]="genderOption">
+                      <mat-option>None</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>                      
+                </div>
+
+                <div class="box">                  
+                  <mat-form-field>
+                    <mat-label>Blood Group</mat-label>
+                    <mat-select [(value)]="bloodGroupOption">
+                      <mat-option>None</mat-option>
+                      <mat-option value="option1">O+</mat-option>
+                      <mat-option value="option2">O-</mat-option>
+                      <mat-option value="option3">A+</mat-option>
+                      <mat-option value="option4">A-</mat-option>
+                      <mat-option value="option5">B+</mat-option>
+                      <mat-option value="option6">B-</mat-option>
+                      <mat-option value="option7">AB+</mat-option>
+                      <mat-option value="option8">AB-</mat-option>
+                    </mat-select>
+                  </mat-form-field>                     
+                </div>
+                  <button mat-button matStepperNext>Next</button>
+                
+              </form>
+
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" optional>
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill out Burial Details</ng-template>
+            
+                <div class="box">
+                  <mat-form-field>                    
+                    <mat-label>Place Of Death</mat-label>
+                    <input matInput placeholder="Place Of Death"  formControlName="placeOfDeathCtrl" required>
+                  </mat-form-field>
+
+                  <mat-form-field>                    
+                    <mat-label>Cause Of Death</mat-label>
+                    <input matInput placeholder="Cause Of Death" formControlName="causeOfDeathCtrl" required>
+                  </mat-form-field>
+
+                </div>
+                <div class="box">
+                  <mat-form-field>                    
+                    <mat-label>Mass Time</mat-label>
+                    <input matInput placeholder="Mass Time"  formControlName="massTimeCtrl" required>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label>Mass Locality</mat-label>
+                    <mat-select >
+                      <mat-option>None</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                </div>
+                <mat-divider></mat-divider>
+                <div class="box">
+                  <mat-form-field>                    
+                    <mat-label>Burial Permit No</mat-label>
+                    <input matInput placeholder="Burial Permit No"  formControlName="burialPermitNoCtrl" required>
+                  </mat-form-field>
+
+                  <mat-form-field>                    
+                    <mat-label>Reference Number</mat-label>
+                    <input matInput placeholder="Reference Number"  formControlName="referenceNumberCtrl" required>
+                  </mat-form-field>
+                </div>
+
+                <div class="box">
+                  <mat-form-field>
+                    <mat-label>Undertaker</mat-label>
+                    <mat-select >
+                      <mat-option>None</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>              
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup" optional>
+                <form [formGroup]="thirdFormGroup">
+                  <ng-template matStepLabel>Fill out Grave Details</ng-template>
+                  <div class="box">
+                    <mat-form-field>
+                      <mat-label>Division</mat-label>
+                      <mat-select >]
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                      </mat-select>
+                    </mat-form-field>                      
+  
+                    <mat-form-field>
+                      <mat-label>Section</mat-label>
+                      <mat-select >
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                 
+                  
+                  <div class="box">
+                    <!-- <mat-form-field>
+                      <mat-label>Filter</mat-label>
+                      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                    </mat-form-field> -->
+
+                  </div>
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+                </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+    </div>    
+</div>
+
+  
+
+

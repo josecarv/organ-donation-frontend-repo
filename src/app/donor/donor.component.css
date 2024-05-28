@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+
+  }
+  form{
+ background-image: url("https://www.gvhealthnews.com/wp-content/uploads/2023/03/FEAT-Organ-donation-GettyImages-1394005377-3.jpg");
+  }
+  .form {
+    display: flex;
+    padding: 30px 20px 20px 20px;
+    flex-direction: row;
+    margin-top: 25px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    
+  }
+  .mat-mdc-form-field {    
+    margin-top: 16px; 
+    max-width: 200px;
+    margin: 20px;      
+    
+  }
+  
+  .box{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .box > .mat-mdc-form-field{
+    display: flex;
+    justify-content:flex-end;
+    max-width: 100%;
+    width: 100%;
+  }  
+  
+  .section {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    height: 20px;
+    padding: 1px;
+  }
+  
+  .margin {    
+    margin: 0 10px;
+  }
+  .box > mat-card{
+    display: flex;
+    flex-direction: row;
+    height: 50px;   
+  }
+  mat-card > mat-card-content > section > mat-radio-group{
+    width: 350px;
+  }
+  mat-card{
+    margin: 16px;
+    margin-top: 22px;    
+  }
+  mat-card-content{
+    display: flex;
+    flex-direction: row;
+    min-width: 250px;    
+  }
+  .mat-mdc-button span {
+    color: black;
+    font-size: 15px;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  mat-divider{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  } 
+
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+
+
+  
+  

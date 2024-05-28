@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DonorComponent } from './donor/donor.component';
 
 
 const routes : Routes = [
-  {path: '', redirectTo: '/home', pathMatch:'full' }
+  {path: 'donor', component: DonorComponent, title: "Donor" }, 
+  {path: '', redirectTo: '', pathMatch:'full' }
 
 ];
 
