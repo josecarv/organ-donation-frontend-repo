@@ -1,25 +1,36 @@
 .container {
     display: flex;
-    justify-content: space-around;
-
+    justify-content:space-around;
+    margin-left:150px;
+   
   }
   form{
- background-image: url("https://www.gvhealthnews.com/wp-content/uploads/2023/03/FEAT-Organ-donation-GettyImages-1394005377-3.jpg");
+    background: transparent;
   }
+
+  .main-container{
+    height:100%;
+    background-image: url("https://www.gvhealthnews.com/wp-content/uploads/2023/03/FEAT-Organ-donation-GettyImages-1394005377-3-715x400.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
   .form {
-    display: flex;
+    display: block;
     padding: 30px 20px 20px 20px;
-    flex-direction: row;
-    margin-top: 25px;
-    border: 1px solid #ddd;
+    /* flex-direction: row; */
+    margin-top: 50px;
+    border: 1px solid white;
     border-radius: 15px;
-    
+    width:60%;
+    height: 60%;
+ 
   }
   .mat-mdc-form-field {    
     margin-top: 16px; 
-    max-width: 200px;
-    margin: 20px;      
-    
+    /* max-width: 100px; */
+    margin: 20px 60px 20px 60px;       
   }
   
   .box{
@@ -29,9 +40,9 @@
   }
   .box > .mat-mdc-form-field{
     display: flex;
-    justify-content:flex-end;
-    max-width: 100%;
-    width: 100%;
+    justify-content:center;
+    /* max-width: 100%; */
+    /* width: 100%; */
   }  
   
   .section {
@@ -40,7 +51,7 @@
     align-content: center;
     align-items: center;
     height: 20px;
-    padding: 1px;
+    padding-bottom: 10px;
   }
   
   .margin {    
@@ -54,6 +65,9 @@
   mat-card > mat-card-content > section > mat-radio-group{
     width: 350px;
   }
+  mat-radio-group{
+    color:blue;
+  }
   mat-card{
     margin: 16px;
     margin-top: 22px;    
@@ -63,10 +77,7 @@
     flex-direction: row;
     min-width: 250px;    
   }
-  .mat-mdc-button span {
-    color: black;
-    font-size: 15px;
-  }
+ 
   table {
     width: 100%;
   }
@@ -116,7 +127,16 @@
     width: 120px;
   }
   
-
-
+  ::ng-deep .mat-step-header .mat-step-icon .mat-icon {
+    /* background-color: #ba2805; */
+    background-color:dimgray;
+    color: #fff ;
+  }
   
+  ::ng-deep .mat-step-header .mat-step-icon-selected,
+  ::ng-deep .mat-step-header .mat-step-icon-state-done,
+  ::ng-deep .mat-step-header .mat-step-icon-state-edit {
+    background-color:#4caf50 !important;
+    color: #fff;
+  }
   
