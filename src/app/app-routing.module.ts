@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DonorComponent } from './donor/donor.component';
+
 
 
 const routes : Routes = [
-  {path: 'donor', component: DonorComponent, title: "Donor" }, 
+  {path: 'donor', loadChildren: () => import('./donor/donor.module').then(m => m.DonorModule)},  
   {path: '', redirectTo: '', pathMatch:'full' }
 
 ];

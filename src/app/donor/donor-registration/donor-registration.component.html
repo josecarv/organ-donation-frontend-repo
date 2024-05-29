@@ -1,0 +1,210 @@
+<div class="main-container">
+    <div class="container">
+      <div class="form">
+        <mat-stepper [linear]="isLinear" #stepper>
+          <ng-template matStepperIcon let-index="index">
+            {{ index + 1 }}
+          </ng-template>
+          <!-- changed step icons -->
+          <ng-template matStepperIcon="step1">
+            <mat-icon>person</mat-icon>
+          </ng-template>
+          <ng-template matStepperIcon="step2">
+            <mat-icon>call</mat-icon>
+          </ng-template>
+          <ng-template matStepperIcon="step3">
+            <mat-icon>home</mat-icon>
+          </ng-template>
+          <ng-template matStepperIcon="step4">
+            <mat-icon>done_all</mat-icon>
+          </ng-template>
+  
+          <mat-step [stepControl]="firstFormGroup" label="Personal Information" state="step1">
+            <form [formGroup]="firstFormGroup">
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>Id Card Number</mat-label>
+                  <input matInput placeholder="Card Number" formControlName="cardNumberCtrl" required />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Title</mat-label>
+                  <mat-select [(value)]="titleOption">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">MR</mat-option>
+                    <mat-option value="option2">MRS</mat-option>
+                    <mat-option value="option3">MS</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Name"  formControlName="nameCtrl" required />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Surname</mat-label>
+                  <input matInput placeholder="Surname" formControlName="surnameCtrl" required />
+                </mat-form-field>
+              </div>
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>Date of Birth</mat-label>
+                  <input matInput [matDatepicker]="pickerDateOfBirth" />
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="pickerDateOfBirth" ></mat-datepicker-toggle>
+                  <mat-datepicker #pickerDateOfBirth></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Gender</mat-label>
+                  <mat-select [(value)]="genderOption">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">Other</mat-option>
+                    <mat-option value="option2">Male</mat-option>
+                    <mat-option value="option3">Female</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+  
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>Blood Group</mat-label>
+                  <mat-select [(value)]="bloodGroupOption">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">O+</mat-option>
+                    <mat-option value="option2">O-</mat-option>
+                    <mat-option value="option3">A+</mat-option>
+                    <mat-option value="option4">A-</mat-option>
+                    <mat-option value="option5">B+</mat-option>
+                    <mat-option value="option6">B-</mat-option>
+                    <mat-option value="option7">AB+</mat-option>
+                    <mat-option value="option8">AB-</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Nationality</mat-label>
+                  <input matInput  placeholder="Nationality"  formControlName="nationalityCtrl" required/>
+                </mat-form-field>
+              </div>
+              <button id="matstepforward" mat-button matStepperNext>Next</button>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Contact Information"  state="step2">
+            <form [formGroup]="secondFormGroup">
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>Mobile</mat-label>
+                  <input matInput placeholder="Mobile" formControlName="mobileCtrl" required/>
+                </mat-form-field>
+  
+                <mat-form-field>
+                  <mat-label>Telephone</mat-label>
+                  <input matInput placeholder="Telephone" formControlName="telephoneCtrl" required />
+                </mat-form-field>
+              </div>
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>E-Mail</mat-label>
+                  <input matInput placeholder="email" formControlName="emailCtrl"  required/>
+                </mat-form-field>
+              </div>
+              <div class="box">
+                <mat-card>
+                  <mat-card-content>
+                    <section class="section">
+                      <label class="margin">Preferred Contact Mode</label>
+                      <mat-radio-group formControlName="contactModeCtrl">
+                        <mat-radio-button class="margin" value="sms">SMS</mat-radio-button>
+                        <mat-radio-button class="margin" value="email">Email</mat-radio-button>
+                      </mat-radio-group>
+                    </section>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+              <button id="matstepback" mat-button matStepperPrevious>Back</button>
+              <button id="matstepforward" mat-button matStepperNext>Next</button>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="thirdFormGroup" label="Residence Information" state="step3">
+            <form [formGroup]="thirdFormGroup">
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>Address</mat-label>
+                  <input matInput placeholder="address" formControlName="addressCtrl" required/>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Street</mat-label>
+                  <input matInput placeholder="Street" formControlName="streetCtrl" required/>
+                </mat-form-field>
+              </div>
+              <div class="box">
+                <mat-form-field>
+                  <mat-label>PostCode</mat-label>
+                  <input matInput placeholder="postcode" formControlName="postcodeCtrl" required/>
+                </mat-form-field>
+  
+                <mat-form-field>
+                  <mat-label>Locality</mat-label>
+                  <mat-select>
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">Option 1</mat-option>
+                    <mat-option value="option2">Option 2</mat-option>
+                    <mat-option value="option3">Option 3</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <mat-divider></mat-divider>
+  
+              <div class="box">
+                <mat-checkbox formControlName="disableDateField" (click)="showOrHide()">
+                  Use another address for Mailing
+                </mat-checkbox>
+              </div>
+  
+              <div class="box" [class.hide]="isVisible">
+                <mat-form-field>
+                  <mat-label>Address</mat-label>
+                  <input matInput  placeholder="address" formControlName="mailaddressCtrl" required/>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Street</mat-label>
+                  <input matInput placeholder="Street " formControlName="mailstreetCtrl" required/>
+                </mat-form-field>
+              </div>
+              <div class="box" [class.hide]="isVisible">
+                <mat-form-field>
+                  <mat-label>PostCode</mat-label>
+                  <input matInput  placeholder="postcode" formControlName="mailpostcodeCtrl" required/>
+                </mat-form-field>
+  
+                <mat-form-field>
+                  <mat-label>Locality</mat-label>
+                  <mat-select>
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">Option 1</mat-option>
+                    <mat-option value="option2">Option 2</mat-option>
+                    <mat-option value="option3">Option 3</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+  
+              <button id="matstepback" mat-button matStepperPrevious>Back</button>
+              <button id="matstepforward" mat-button matStepperNext>Next</button>
+            </form>
+          </mat-step>
+          <mat-step label="Done" state="step4">
+            <mat-checkbox [(ngModel)]="checked">I, hereby confirmed that the provided details are correct and want to proceed with the further steps !!</mat-checkbox>
+            <div class="box" *ngIf="checked">
+              <button mat-fab extended routerLink=".">
+                <mat-icon>volunteer_activism</mat-icon>
+                Become an Organ Donor
+              </button>
+            </div>
+            <div>
+              <button id="matstepback" mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-stepper>
+      </div>
+    </div>
+  </div>
+  

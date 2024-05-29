@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-donor',
-  templateUrl: './donor.component.html',
-  styleUrls: ['./donor.component.css'],
+  selector: 'app-donor-registration',
+  templateUrl: './donor-registration.component.html',
+  styleUrls: ['./donor-registration.component.css'],
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     },
   ],
 })
-export class DonorComponent implements OnInit{
+export class DonorRegistrationComponent implements OnInit{
   isLinear =false; //if this make true, act like validation
   titleOption = 'option1';
   genderOption= 'option1';
@@ -67,4 +67,5 @@ showOrHide(){
 }
 }
  
+
 
