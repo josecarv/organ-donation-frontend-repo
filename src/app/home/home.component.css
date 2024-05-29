@@ -1,31 +1,28 @@
-.slider-container {
+.image-container {
+    margin-left: 1700px;
+    width: 2000px;
+    float:left;
+}
+
+
+  .download-button {
+    margin-left: 1700px;
+    padding: 10px 42px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .slider-container {
     width: 100%;
     overflow: hidden;
 }
 
 .slider-image {
-    width: 100%;
-    display: none;
-}
-
-.active {
-    display: block;
-}
-.slider-container {
-    width: 1900px; 
-     max-width: 1900px; 
-    height: 1000px; 
-    overflow: hidden;
-    position: relative; 
-}
-
-.slider-image {
-    width: 60%;
-    height: 60%;
-    object-fit: cover; 
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 65%;
     display: none;
 }
 
