@@ -62,9 +62,6 @@
   mat-card > mat-card-content > section > mat-radio-group{
     width: 350px;
   }
-  mat-radio-group{
-    color:blue;
-  }
   mat-card{
     margin: 16px;
     margin-top: 22px;    
@@ -112,7 +109,18 @@
   .example-button-row .mat-mdc-button-base {
     margin: 8px 8px 8px 0;
   }
-  
+
+  #matstepforward {  
+    margin-top: 10px;
+    background-color:#4caf50 !important;
+    color: #ddd;
+  }
+  #matstepback {
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: dimgray;
+    color: #ddd;
+  }
   .example-flex-container {
     display: flex;
     justify-content: space-between;
@@ -125,14 +133,22 @@
     width: 120px;
   }
   
-  ::ng-deep .mat-step-header .mat-step-icon .mat-icon .mat-checkbox-icon-selected {
+  ::ng-deep .mat-step-header .mat-step-icon .mat-icon .mat-checkbox-icon-selected
+  {
     color: #fff ;
   }
-  
+  ::ng-deep .mdc-checkbox {
+    --mdc-checkbox-selected-checkmark-color: #fff;
+}
+  ::ng-deep .mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent{
+    background-color:#4caf50 !important;
+    color: #fff;
+    margin-top:30px;
+    margin-bottom: 30px;
+  }
   ::ng-deep .mat-step-header .mat-step-icon-selected,
   ::ng-deep .mat-step-header .mat-step-icon-state-done,
-  ::ng-deep .mat-step-header .mat-step-icon-state-edit,
-  ::ng-deep .mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent
+  ::ng-deep .mat-step-header .mat-step-icon-state-edit
   {
     background-color:#4caf50 !important;
     color: #fff;

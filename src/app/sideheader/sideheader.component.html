@@ -9,10 +9,10 @@
       <span class="menu-spacer"></span>
       <div class="sample" fxShow="true" fxHide.lt-md>
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-        <button routerLink="" mat-button>Dashboard</button>
-        <button routerLink="/donor" mat-button>Become a Donor</button>
-        <button routerLink="" mat-button>User Manual</button>
-        <button routerLink="" mat-button>Know Organ Donation</button>
+        <button routerLink="" mat-button><h5>Dashboard</h5></button>
+        <button routerLink="/donor" mat-button><h5>Donor Registration</h5></button>
+        <button routerLink="" mat-button><h5>User Manual</h5></button>
+        <button routerLink="" mat-button><h5>Know Organ Donation</h5></button>
         <a style=" margin-left: 20px;background-color:#E0E0E0 " mat-raised-button  routerLink="">Login</a>
        
       </div>
@@ -31,7 +31,7 @@
             <span class="nav-caption">Dashboard</span>
           </a>
           <a mat-list-item routerLink="/donor" (click)="onSidenavClose()">
-            <span class="nav-caption">Become a Donor</span>
+            <span class="nav-caption">Donor Registration</span>
           </a>
           <a mat-list-item routerLink="" (click)="onSidenavClose()">
             <span class="nav-caption">User Manual</span>

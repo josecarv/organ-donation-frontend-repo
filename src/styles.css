@@ -3,7 +3,9 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.mat-mdc-button span{
-    color:whitesmoke;
-    font-size: 15px;
-}
+
+h5{
+    color:whitesmoke !important;
+    font-size:15px !important;
+    font-weight: 500 !important;
+  }
