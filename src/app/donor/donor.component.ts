@@ -21,6 +21,11 @@ export class DonorComponent implements OnInit{
   firstFormGroup !: FormGroup;
   secondFormGroup !:FormGroup;
   thirdFormGroup! :FormGroup;
+  StatusForm!: FormGroup;
+  MailingForm!: FormGroup;
+  disableDateField: boolean = false;
+  isVisible = true;
+  checked=false;
   
   constructor (
     private _formBuilder:FormBuilder){}
@@ -46,8 +51,20 @@ export class DonorComponent implements OnInit{
   });
   this.thirdFormGroup = this._formBuilder.group({
     addressCtrl: ['', Validators.required],
+    streetCtrl: ['', Validators.required],
+    postcodeCtrl: ['', Validators.required],
+    disableDateField : [false],
+    mailaddressCtrl : [''],
+    mailstreetCtrl : [''],
+    mailpostcodeCtrl : [''],
     
   });
-}
  
 }
+
+showOrHide(){
+   this.isVisible = !this.isVisible;
+}
+}
+ 
+

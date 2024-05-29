@@ -6,6 +6,7 @@
   }
   form{
     background: transparent;
+
   }
 
   .main-container{
@@ -19,7 +20,6 @@
   .form {
     display: block;
     padding: 30px 20px 20px 20px;
-    /* flex-direction: row; */
     margin-top: 50px;
     border: 1px solid white;
     border-radius: 15px;
@@ -29,7 +29,6 @@
   }
   .mat-mdc-form-field {    
     margin-top: 16px; 
-    /* max-width: 100px; */
     margin: 20px 60px 20px 60px;       
   }
   
@@ -40,9 +39,7 @@
   }
   .box > .mat-mdc-form-field{
     display: flex;
-    justify-content:center;
-    /* max-width: 100%; */
-    /* width: 100%; */
+    justify-content:left;
   }  
   
   .section {
@@ -91,14 +88,15 @@
     width: 25%;
   }
   mat-divider{
-    margin-top: 50px;
-    margin-bottom: 50px;
+   margin :30px  30px 30px 30px;
   } 
 
   section {
     display: table;
   }
-  
+  .hide{
+    display: none;
+ }
   .example-label {
     display: table-cell;
     font-size: 14px;
@@ -127,15 +125,15 @@
     width: 120px;
   }
   
-  ::ng-deep .mat-step-header .mat-step-icon .mat-icon {
-    /* background-color: #ba2805; */
-    background-color:dimgray;
+  ::ng-deep .mat-step-header .mat-step-icon .mat-icon .mat-checkbox-icon-selected {
     color: #fff ;
   }
   
   ::ng-deep .mat-step-header .mat-step-icon-selected,
   ::ng-deep .mat-step-header .mat-step-icon-state-done,
-  ::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  ::ng-deep .mat-step-header .mat-step-icon-state-edit,
+  ::ng-deep .mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent
+  {
     background-color:#4caf50 !important;
     color: #fff;
   }
