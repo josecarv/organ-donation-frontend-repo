@@ -1,13 +1,28 @@
+
+
 .image-container {
-    margin-left: 1700px;
-    width: 2000px;
-    float:left;
+    width: 100%;
+    height: 61vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    background-color: #f0f0f0;
+    position: relative;
 }
 
+.image-container img {
+    width: 25%;
+    height: auto;
+    margin-right: 0;
+
+    
+    
+
+}
 
   .download-button {
     margin-left: 1700px;
-    padding: 10px 42px;
+    padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -16,14 +31,14 @@
     cursor: pointer;
   }
   
-  .slider-container {
-    width: 100%;
-    overflow: hidden;
-}
-
 .slider-image {
-    width: 65%;
+    width: 50%; 
+    height: auto; 
     display: none;
+    position: absolute; 
+    top: 30%;
+    left: 30%; 
+    transform: translate(-50%, -50%); 
 }
 
 .active {
