@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding-top: 60px; 
+}
+  
+  .top-expansion-panel {
+    position: fixed;
+    top: 10;
+    left: 10;
+    width: 100%;
+    z-index: 1000; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .top-expansion-panel mat-expansion-panel {
+    width: 80%;
+  }
+  
+  .top-expansion-panel mat-expansion-panel-header {
+    background-color: #6200ea; 
+    color: white;
+  }
+  
+  .top-expansion-panel mat-expansion-panel-body {
+    background-color: #f1f1f1; 
+  }
+  
+
+

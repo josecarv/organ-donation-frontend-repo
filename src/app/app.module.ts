@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { SideheaderComponent } from './sideheader/sideheader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { KnowOrgandonationComponent } from './know-organdonation/know-organdonation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideheaderComponent
+    SideheaderComponent,
+    KnowOrgandonationComponent
   ],
   imports: [
     BrowserModule,
