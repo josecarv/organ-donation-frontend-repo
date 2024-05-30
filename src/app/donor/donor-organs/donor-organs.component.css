@@ -11,7 +11,6 @@
     display : flex;
     justify-content: center;
     margin-bottom: 50px;
-
   }
   .headerclass .mat-icon{
     margin-top:15px;
@@ -19,9 +18,7 @@
     font-size:25px;
     color:#4caf50; 
   }
-
   p{
-    display:inline;
     font-weight: 400;
   }
   .main-container{
@@ -41,7 +38,8 @@
     height: 60%;
   }
   .donor-header{
-    margin:10px 20px 10px 20px;
+    margin:0px 20px 10px 30px;
+    width:300px;    
   }
   .donor-section {
     display: flex;
@@ -50,30 +48,54 @@
   }
    .donor-title {
     margin: 0 10px;
-    font-size:15px;
+    font-size:12px;
+    font-family: Comic Sans MS (cursive);
     font-weight: 600;
   }
-   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+  .organ-avatar{
+    max-width: 50px;
+    height: 50px;
+    margin-bottom: 10px; 
   }
-  .organ-card {    
-    margin-top: 16px; 
-    margin: 20px 50px 20px 50px;   
-    width:250px;    
+  .organ-margin{
+    margin-top: 10px;
+    margin-left: 20px;
   }
-  
+  .organ-card {  
+    margin: 10px 30px 20px 30px;   
+    width:320px;    
+  }
+  .organ-title{
+
+    text-align: center;
+    margin-top:10px;
+    font-family: Verdana, sans-serif;
+    font-weight: 900;
+  }
+ 
+  .middletitle{
+    display : flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;   
+  }
   .box{
     display: flex;
     justify-content: left;
-    
   }
-  .box > .example-card{
-    display: flex;
-    justify-content:left;
-  }  
-  
+
+  #matstepforward {  
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color:#4caf50 !important;
+    color: #ddd;
+  }
+  #matstepback {
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: dimgray;
+    color: #ddd;
+  }
   .section {
     display: flex;
     flex-direction: row;
@@ -82,42 +104,8 @@
     height: 20px;
     padding-bottom: 10px;
   }
-  
-  .margin {    
-    margin: 0 10px;
-  }
-  /* .box > mat-card{
-    display: flex;
-    flex-direction: row;
-    height: 50px;    */
-  
-  /* mat-card > mat-card-content > section > mat-radio-group{
-    width: 350px;
-  } */
-  /* mat-card{
-    margin: 16px;
-    margin-top: 22px;    
-  } */
-  mat-card-content{
-    display: flex;
-    flex-direction: row;
-    min-width: 250px;    
-  }
- 
-  table {
-    width: 100%;
-  }
-  
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    width: 25%;
-  }
   mat-divider{
-   margin :30px  30px 30px 30px;
+   margin :30px  30px 00px 30px;
   } 
 
   section {
@@ -132,15 +120,6 @@
     margin-left: 8px;
     min-width: 120px;
   }
-  
-  .example-button-row {
-    display: table-cell;
-    max-width: 600px;
-  }
-  
-  .example-button-row .mat-mdc-button-base {
-    margin: 8px 8px 8px 0;
-  }
 
   #matstepforward {  
     margin-top: 10px;
@@ -153,36 +132,13 @@
     background-color: dimgray;
     color: #ddd;
   }
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
   
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-  }
-  
-  ::ng-deep .mat-step-header .mat-step-icon .mat-icon .mat-checkbox-icon-selected
+  ::ng-deep  .mat-icon .mat-checkbox-icon-selected
   {
     color: #fff ;
   }
   ::ng-deep .mdc-checkbox {
     --mdc-checkbox-selected-checkmark-color: #fff;
 }
-  ::ng-deep .mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent{
-    background-color:#4caf50 !important;
-    color: #fff;
-    margin-top:30px;
-    margin-bottom: 30px;
-  }
-  ::ng-deep .mat-step-header .mat-step-icon-selected,
-  ::ng-deep .mat-step-header .mat-step-icon-state-done,
-  ::ng-deep .mat-step-header .mat-step-icon-state-edit
-  {
-    background-color:#4caf50 !important;
-    color: #fff;
-  }
-  
+ 
+ 
