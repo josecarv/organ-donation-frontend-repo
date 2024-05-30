@@ -44,3 +44,25 @@
 .active {
     display: block;
 }
+
+
+
+ 
+.logo1 {
+  display: flex;
+  justify-content:right; 
+  align-items: right; 
+  margin-top: -100px; 
+}
+
+
+.logo1 img {
+  width: 300px; 
+  height: auto; 
+  cursor: pointer; 
+  transition: transform 0.3s ease-in-out; 
+
+
+.logo1 img:hover {
+  transform: scale(1.1); 
+}
