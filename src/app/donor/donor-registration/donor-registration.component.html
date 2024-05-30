@@ -194,10 +194,10 @@
           <mat-step label="Done" state="step4">
             <mat-checkbox [(ngModel)]="checked">I, hereby confirmed that the provided details are correct and want to proceed with the further steps !!</mat-checkbox>
             <div class="box" *ngIf="checked">
-              <button mat-fab extended routerLink=".">
+              <a mat-fab extended routerLink="/donor/organs">
                 <mat-icon>volunteer_activism</mat-icon>
                 Become an Organ Donor
-              </button>
+              </a>
             </div>
             <div>
               <button id="matstepback" mat-button (click)="stepper.reset()">Reset</button>
