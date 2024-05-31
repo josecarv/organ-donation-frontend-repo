@@ -1,32 +1,33 @@
 
+  
 
-<div class="image-container">
-  <img src="assets/SmallBannerImage2.jpg">
-  </div>
-
-<div>
-  <a href="assets/organdonor form.pdf" download>
-    <button class="download-button">Download a registration form</button>
-  </a>
-</div>
-
-<div class="slider-container">
-  <img [src]="slides[currentSlideIndex]" class="slider-image" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlideIndex">
-</div>
-
-
-    <div class="logo">
-        <a href="https://www.servizz.gov.mt/en/Pages/default.aspx" target="_blank">
-            <img src="assets/Servizz.jpg" class="logo">
-        </a>
+    <div class="container">
+        <div class="slider">
+            <img src="assets/Slider_1.jpg" alt="Slider Image">
+        </div>
+        <div class="image">
+            <img src="assets/SmallBannerImage2.jpg" alt="Banner Image">
+            <a href="assets/organdonor form.pdf" target="_blank" class="linkText aText" data-toggle="tooltip" title="Download a registration form" aria-label="Download a registration form">
+                <u>Download a registration form</u>
+            </a>
+        </div>
     </div>
 
-    
-    <div class="logo1">
-      <a href="https://publicservice.gov.mt/mt/homepage" target="_blank">
-          <img src="assets/PublicServiceBlue.png" class="logo1">
-      </a>
-  </div>
+  
+
+
+    <div class="logos">
+        <div class="logo">
+            <a href="https://www.servizz.gov.mt/en/Pages/default.aspx" target="_blank">
+                <img src="assets/servizz.gov.png" alt="Servizz.gov Logo">
+            </a>
+        </div>
+        <div class="logo1">
+            <a href="https://publicservice.gov.mt/mt/homepage" target="_blank">
+                <img src="assets/servizz pubbliku.png" alt="Servizz Pubbliku Logo">
+            </a>
+        </div>
+    </div>
 
 
 
