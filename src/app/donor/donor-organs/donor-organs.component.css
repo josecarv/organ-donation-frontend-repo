@@ -22,7 +22,6 @@
     font-weight: 400;
   }
   .main-container{
-    /* height:100%; */
     background-image: url("/assets/background.png");
     background-position: left;
     background-repeat: no-repeat;
@@ -34,17 +33,16 @@
     margin-top: 50px;
     border: 1px solid white;
     border-radius: 15px;
-    /* width:60%;
-    height: 60%; */
   }
   .donor-header{
-    margin:0px 20px 10px 30px;
-    width:300px;    
+    display: flex;
+    margin:0px 20px 10px 50px;
+    
   }
   .donor-section {
     display: flex;
-    align-content: left;
-    align-items: left;
+    align-content: center;
+    align-items: center;
   }
    .donor-title {
     margin: 0 10px;
