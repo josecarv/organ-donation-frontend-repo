@@ -7,10 +7,10 @@ import { MaterialModule } from './shared/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import {  MatDatepickerModule } from '@angular/material/datepicker';
-import { DonorRegistrationComponent } from './donor/donor-registration/donor-registration.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { CommonModule } from '@angular/common'; 
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     MatDatepickerModule,
     FormsModule,
+    LayoutModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],

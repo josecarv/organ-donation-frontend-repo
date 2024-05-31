@@ -2,13 +2,10 @@
     display: flex;
     justify-content:space-around;
     margin-left:150px;
-   
   }
   form{
     background: transparent;
-
   }
-
   .main-container{
     height:100%;
     background-image: url("https://www.gvhealthnews.com/wp-content/uploads/2023/03/FEAT-Organ-donation-GettyImages-1394005377-3-715x400.jpg");
@@ -23,8 +20,6 @@
     margin-top: 50px;
     border: 1px solid white;
     border-radius: 15px;
-    width:60%;
-    height: 60%;
  
   }
   .mat-mdc-form-field {    
@@ -152,5 +147,87 @@
   {
     background-color:#4caf50 !important;
     color: #fff;
+  }
+  @media screen and (max-width: 800px) {
+   
+    .form {
+      margin-left: -40px !important;
+      display: flex;
+      flex-direction: row;
+      margin-top: -30px;
+    }
+    .container {
+      /* margin-top: -20px; */
+      overflow: hidden;
+      margin-left: 0px;
+     
+      
+    }
+    .container h1 {
+      font-size: medium;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 30%;
+     
+    }
+    .mat-mdc-form-field{
+      margin-left:10px;
+      width:20%; 
+        min-width: 100%;
+    }
+    
+    mat-divider {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    mat-card-content {
+      min-width: 900px;
+      margin-bottom: 70px;
+      margin-left: -30px;
+    }
+    
+    .margin {
+      display: flex;
+      margin-bottom: -10px;
+  
+    }
+   
+    .section {
+      padding-left: 10px;
+      font-size: small;
+    }
+    .mat-icon {
+      font-size: 20px;
+      color: dimgrey;
+    }
+  
+    .paginator {
+      padding-bottom: 30px;
+    }
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      height: 50px !important;
+      margin-bottom: -20px !important;
+    }
+  
+    .mat-mdc-table .mat-mdc-header-cell {
+      padding-bottom: -30px !important;
+      margin-right: 80px;
+    }
+  
+    ::ng-deep
+      .mat-mdc-text-field-wrapper
+      .mat-mdc-form-field-flex
+      .mat-mdc-floating-label
+      .matStepLabel {
+      top: 20px !important;
+    }
+    ::ng-deep .mat-mdc-input-element {
+      top: -5px !important;
+      position: relative !important;
+    }
+  
   }
   

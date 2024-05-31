@@ -4,6 +4,7 @@ import { MaterialModule } from '../shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DonorRegistrationComponent } from './donor-registration/donor-registration.component';
 import { DonorRoutingModule } from './donor-routing.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 
@@ -16,7 +17,8 @@ import { DonorRoutingModule } from './donor-routing.module';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    LayoutModule
     
   ],
   providers: [
