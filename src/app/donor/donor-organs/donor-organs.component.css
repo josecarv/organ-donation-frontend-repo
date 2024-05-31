@@ -34,8 +34,8 @@
     margin-top: 50px;
     border: 1px solid white;
     border-radius: 15px;
-    width:60%;
-    height: 60%;
+    /* width:60%;
+    height: 60%; */
   }
   .donor-header{
     margin:0px 20px 10px 30px;
@@ -141,4 +141,57 @@
     --mdc-checkbox-selected-checkmark-color: #fff;
 }
  
+@media screen and (max-width: 800px) {
+   
+  .form {
+    display: flex;
+    flex-direction: row;
+    margin-top: -30px;
+  }
+  form{
+    margin-left:30px;
+  }
+  .container {
+    overflow: hidden;
+    margin-left: -20px;
+    width:100%;
+
+  }
+  .headerclass{
+    background-color:white;
+    margin-left: -20px;
+  }
+  .donor-header{
+    margin:0px;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+   
+  }
+
+  mat-divider {
+    margin-top: 20px;
+    margin-left:-20px;
+  }
+  mat-card{
+    margin:10px;
+    display: flex;
+  }
+  .middletitle{
+display:block;
+  }
  
+  .section {
+    padding-left: 10px;
+    font-size: small;
+  }
+  .organ-card{
+    margin-left:0px;
+  }
+ 
+
+}
