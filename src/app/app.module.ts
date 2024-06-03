@@ -11,6 +11,7 @@ import {  MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRegistrationComponent } from './donor/donor-registration/donor-registration.component';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { CommonModule } from '@angular/common'; 
+import { FooterRoutingModule } from './footer/footer-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule, 
     DonorRoutingModule,
+    FooterRoutingModule,
     MaterialModule,
     CommonModule,
     MatDatepickerModule,
