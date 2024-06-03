@@ -6,6 +6,7 @@ import { FooterRoutingModule } from './footer-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { PrivatePolicyComponent } from './private-policy/private-policy.component';
+import { AccessibilityComponent } from './accessibility/accessibility.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { PrivatePolicyComponent } from './private-policy/private-policy.componen
     DisclaimerComponent,
     CopyrightComponent,
     PrivatePolicyComponent,
+    AccessibilityComponent,
     
   ],
   imports: [
