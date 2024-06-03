@@ -20,4 +20,6 @@ h5{
       background-image: url("./assets/mobile-background.png") !important;
     }
   }
-  
+  ::ng-deep .mdc-checkbox {
+    --mdc-checkbox-selected-checkmark-color: #fff;
+}

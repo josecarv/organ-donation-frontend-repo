@@ -18,7 +18,7 @@ import { DonorOrgansComponent } from './donor-organs/donor-organs.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
     
   ],
   providers: [
