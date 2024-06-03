@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.slider {
+  width: 50%;
+}
+
+
+.image {
+  width: 30%;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+}
+
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+.image a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 400px;
+}
+
+.logo img, .logo1 img {
+  width: 200px;
+  height: auto;
+}

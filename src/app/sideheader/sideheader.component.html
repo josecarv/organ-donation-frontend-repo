@@ -9,7 +9,7 @@
       <span class="menu-spacer"></span>
       <div class="sample" fxShow="true" fxHide.lt-md>
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-        <button routerLink="" mat-button><h5>Dashboard</h5></button>
+        <button routerLink="/home" mat-button><h5>Dashboard</h5></button>
         <button routerLink="" mat-button><h5>Become a Donor</h5></button>
         <button routerLink="" mat-button><h5>User Manual</h5></button>
         <button routerLink="" mat-button><h5>Know Organ Donation</h5></button>
@@ -22,7 +22,7 @@
 
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav-content>     
-      <!-- <router-outlet></router-outlet> -->
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
     <mat-sidenav  #sidenav >
         <mat-nav-list>

@@ -5,16 +5,24 @@ import { AppComponent } from './app.component';
 import { SideheaderComponent } from './sideheader/sideheader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideheaderComponent
+    SideheaderComponent,
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
     MaterialModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
