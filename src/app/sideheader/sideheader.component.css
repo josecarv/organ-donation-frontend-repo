@@ -26,6 +26,14 @@
     display: inline-block;
     padding-left: 6px;
   }
+  .footerlogo {
+    padding:20px;
+    
+  }
+  .footerlogo img{
+    width: 80px;
+    height: 60px;
+  }
   .mat-button{
     display: flex;
     flex-direction: column;
@@ -57,60 +65,22 @@
   .togglespace{
     margin-left: -40px;
   }
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+.footerbuttons{
+  margin:40px !important;
+}
+  .footer-spacer{
+    margin-left:20%;
+  
   }
-  .example-sidenav {
-     user-select: none;
+  h6{
+
+    color:#fff;
   }
   .mat-mdc-list{
    display: flex;
    overflow:hidden;
   }
-  .menu-button {
-    transition:0ms ease-in-out;
-    transform: rotate(0deg);
-    font-size: 25px;
-    padding-left: 20px;
-    margin-top: 20px;
-  }
-  .menu-button.rotated {
-    transform: rotate(180deg);
-    font-size: 25px;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-  .submenu {
-    overflow-y: hidden;
-    transition: transform 300ms ease;
-    transform: scaleY(0);
-    transform-origin: top;
-    padding-top: 20px;
-    padding-left: 50px;
-    display: none;
-  }
-  .submenu.expanded {
-    transform: scaleY(1);
-    display: block;
-  }
-  .spacealign{
-    padding-right: 30px;
-  }
-  .iconspacer{
-    color:#3f51b5;
-    padding-right: 20px;
-    margin-top: 0px;
-  }
-  .sideheader-row {
-    display: block;
-  }
-  .sideheader-row .mat-icon .menu-button .menu-button.rotated{
-    padding: -10px;
-    height:20px;
-  }
+  
   @media screen and (max-width: 800px) {
   
   .logo{
