@@ -14,18 +14,14 @@
         <button routerLink="" mat-button><h5>User Manual</h5></button>
         <button routerLink="" mat-button><h5>Know Organ Donation</h5></button>
         <a style=" margin-left: 20px;background-color:#E0E0E0 " mat-raised-button  routerLink="">Login</a>
-       
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
-  
   <div></div>
-
   <mat-sidenav-container >
     <mat-sidenav-content >     
       <router-outlet></router-outlet>
     </mat-sidenav-content>
-   
     <mat-sidenav  #sidenav >
         <mat-nav-list>
           <a (click)="sidenav.toggle()" href=""></a>
@@ -41,32 +37,13 @@
           <a mat-list-item routerLink="" (click)="onSidenavClose()">
             <span class="nav-caption">Know Organ Donation</span>
           </a><br>
-          <button style=" margin-left: 10px"
-            mat-raised-button
-           color="primary"
-            routerLink=""
-            (click)="onSidenavClose()"
-          >
-            Register
-          </button>
-          <button style=" margin: 0px 10px 0px  10px" 
-            mat-raised-button
-           
-            routerLink=""
-            (click)="onSidenavClose()"
-          >
-            Login
-          </button>
-         
-        
+          <button style=" margin-left: 10px" mat-raised-button color="primary" routerLink=""  (click)="onSidenavClose()" > Register </button>
+          <button style=" margin: 0px 10px 0px  10px"  mat-raised-button routerLink="" (click)="onSidenavClose()"> Login</button>
         </mat-nav-list>
       </mat-sidenav>
     </mat-sidenav-container>
     <mat-toolbar color="primary" class="footer">
       <mat-toolbar-row >
-        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
-          <div class="togglespace"><mat-icon>menu</mat-icon></div>
-        </button>
         <div class="footerlogo">
           <a href="https://www.gov.mt">
             <img src="assets/footer-logo.png" alt="Click" >
@@ -79,8 +56,6 @@
           <button class ="footerbuttons" routerLink="" mat-button><h6>Private Policy</h6></button>
           <button class ="footerbuttons" routerLink="" mat-button><h6>Accessibility</h6></button>
           <button class ="footerbuttons" routerLink="" mat-button><h6>Terms of Use</h6></button>
-          
-         
         </div>
       </mat-toolbar-row> 
     </mat-toolbar>
