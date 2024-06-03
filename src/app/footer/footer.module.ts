@@ -5,13 +5,16 @@ import { MaterialModule } from '../shared/material.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { FooterRoutingModule } from './footer-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CopyrightComponent } from './copyright/copyright.component';
 
 
 
 
 @NgModule({
   declarations: [
-    DisclaimerComponent
+    DisclaimerComponent,
+    CopyrightComponent,
+    
   ],
   imports: [
     FooterRoutingModule,
@@ -19,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    
   ]
 })
 export class FooterModule { }
