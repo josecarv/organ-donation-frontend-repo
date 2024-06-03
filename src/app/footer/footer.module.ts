@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { PrivatePolicyComponent } from './private-policy/private-policy.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AccessibilityComponent } from './accessibility/accessibility.component'
     CopyrightComponent,
     PrivatePolicyComponent,
     AccessibilityComponent,
+    TermsOfUseComponent,
     
   ],
   imports: [
