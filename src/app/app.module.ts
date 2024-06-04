@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import {  MatDatepickerModule } from '@angular/material/datepicker';
-import { DonorRegistrationComponent } from './donor/donor-registration/donor-registration.component';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { CommonModule } from '@angular/common'; 
 import { FooterRoutingModule } from './footer/footer-routing.module';
