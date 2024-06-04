@@ -5,7 +5,10 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes : Routes = [
+
+  {path: 'home', component: HomeComponent, title: "Home" }, 
   {path: 'donor', loadChildren: () => import('./donor/donor.module').then(m => m.DonorModule)},  
+
   {path: '', redirectTo: '', pathMatch:'full' }
 
 ];

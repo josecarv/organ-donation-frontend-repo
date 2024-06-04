@@ -11,11 +11,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { CommonModule } from '@angular/common'; 
 import { LayoutModule } from '@angular/cdk/layout';
+import { UsermanualComponent } from './usermanual/usermanual.component';
+import { ImpNoticeComponent } from './usermanual/imp-notice/imp-notice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideheaderComponent,
+    UsermanualComponent,
+    ImpNoticeComponent,
   ],
   imports: [
     BrowserModule,
