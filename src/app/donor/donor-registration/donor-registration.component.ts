@@ -1,6 +1,10 @@
-import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { STEPPER_GLOBAL_OPTIONS, StepperOrientation } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-donor-registration',
@@ -9,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {displayDefaultIndicatorType: false},
+     useValue: {displayDefaultIndicatorType: false},
     },
   ],
 })
@@ -23,12 +27,19 @@ export class DonorRegistrationComponent implements OnInit{
   thirdFormGroup! :FormGroup;
   StatusForm!: FormGroup;
   MailingForm!: FormGroup;
-  disableDateField: boolean = false;
+  disableDateField: boolean = true;
   isVisible = true;
   checked=false;
-  
+  stepperOrientation: Observable<StepperOrientation>;
   constructor (
-    private _formBuilder:FormBuilder){}
+    private _formBuilder:FormBuilder,
+    private breakpointObserver: BreakpointObserver)
+    {
+      this.stepperOrientation = breakpointObserver
+      .observe('(min-width: 800px)')
+      .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));   
+    
+    }
 
     ngOnInit(){
     this.firstFormGroup = this._formBuilder.group({
