@@ -1,0 +1,233 @@
+.container {
+    display: flex;
+    justify-content:space-around;
+    margin-left:150px;
+  }
+  form{
+    background: transparent;
+  }
+  .main-container{
+    height:100%;
+    background-image: url("https://www.gvhealthnews.com/wp-content/uploads/2023/03/FEAT-Organ-donation-GettyImages-1394005377-3-715x400.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .form {
+    display: block;
+    padding: 30px 20px 20px 20px;
+    margin-top: 50px;
+    border: 1px solid white;
+    border-radius: 15px;
+ 
+  }
+  .mat-mdc-form-field {    
+    margin-top: 16px; 
+    margin: 20px 60px 20px 60px;       
+  }
+  
+  .box{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .box > .mat-mdc-form-field{
+    display: flex;
+    justify-content:left;
+  }  
+  
+  .section {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    height: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .margin {    
+    margin: 0 10px;
+  }
+  .box > mat-card{
+    display: flex;
+    flex-direction: row;
+    height: 50px;   
+  }
+  mat-card > mat-card-content > section > mat-radio-group{
+    width: 350px;
+  }
+  mat-card{
+    margin: 16px;
+    margin-top: 22px;    
+  }
+  mat-card-content{
+    display: flex;
+    flex-direction: row;
+    min-width: 250px;    
+  }
+ 
+  table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  mat-divider{
+   margin :30px  30px 30px 30px;
+  } 
+
+  section {
+    display: table;
+  }
+  .hide{
+    display: none;
+ }
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  #matstepforward {  
+    margin-top: 10px;
+    background-color:#4caf50 !important;
+    color: #ddd;
+  }
+  #matstepback {
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: dimgray;
+    color: #ddd;
+  }
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+  ::ng-deep .mat-step-header .mat-step-icon .mat-icon .mat-checkbox-icon-selected
+  {
+    color: #fff ;
+  }
+  ::ng-deep .mdc-checkbox {
+    --mdc-checkbox-selected-checkmark-color: #fff;
+}
+  ::ng-deep .mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent{
+    background-color:#4caf50 !important;
+    color: #fff;
+    margin-top:30px;
+    margin-bottom: 30px;
+  }
+  ::ng-deep .mat-step-header .mat-step-icon-selected,
+  ::ng-deep .mat-step-header .mat-step-icon-state-done,
+  ::ng-deep .mat-step-header .mat-step-icon-state-edit
+  {
+    background-color:#4caf50 !important;
+    color: #fff;
+  }
+  @media screen and (max-width: 800px) {
+   
+    .form {
+      margin-left: -40px !important;
+      display: flex;
+      flex-direction: row;
+      margin-top: -30px;
+    }
+    .container {
+      /* margin-top: -20px; */
+      overflow: hidden;
+      margin-left: 0px;
+     
+      
+    }
+    .container h1 {
+      font-size: medium;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 30%;
+     
+    }
+    .mat-mdc-form-field{
+      margin-left:10px;
+      width:20%; 
+        min-width: 100%;
+    }
+    
+    mat-divider {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    mat-card-content {
+      min-width: 900px;
+      margin-bottom: 70px;
+      margin-left: -30px;
+    }
+    
+    .margin {
+      display: flex;
+      margin-bottom: -10px;
+  
+    }
+   
+    .section {
+      padding-left: 10px;
+      font-size: small;
+    }
+    .mat-icon {
+      font-size: 20px;
+      color: dimgrey;
+    }
+  
+    .paginator {
+      padding-bottom: 30px;
+    }
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      height: 50px !important;
+      margin-bottom: -20px !important;
+    }
+  
+    .mat-mdc-table .mat-mdc-header-cell {
+      padding-bottom: -30px !important;
+      margin-right: 80px;
+    }
+  
+    ::ng-deep
+      .mat-mdc-text-field-wrapper
+      .mat-mdc-form-field-flex
+      .mat-mdc-floating-label
+      .matStepLabel {
+      top: 20px !important;
+    }
+    ::ng-deep .mat-mdc-input-element {
+      top: -5px !important;
+      position: relative !important;
+    }
+  
+  }
+  
