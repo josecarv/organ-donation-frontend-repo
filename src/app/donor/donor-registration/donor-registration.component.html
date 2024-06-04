@@ -28,11 +28,10 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Title</mat-label>
-                  <mat-select [(value)]="titleOption">
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">MR</mat-option>
-                    <mat-option value="option2">MRS</mat-option>
-                    <mat-option value="option3">MS</mat-option>
+                  <mat-select formControlName="titleTypeCtrl">
+                    <mat-option value="1">MR</mat-option>
+                    <mat-option value="2">MRS</mat-option>
+                    <mat-option value="3">MS</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
@@ -144,12 +143,12 @@
   
                 <mat-form-field>
                   <mat-label>Locality</mat-label>
-                  <mat-select>
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">Option 1</mat-option>
-                    <mat-option value="option2">Option 2</mat-option>
-                    <mat-option value="option3">Option 3</mat-option>
-                  </mat-select>
+                  <mat-label>Locality</mat-label>
+                  <mat-select formControlName="localityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
+                  <mat-option *ngFor="let locality of localities" [value]="locality.id">
+                  {{ locality.description }}
+                </mat-option>
+              </mat-select>
                 </mat-form-field>
               </div>
               <mat-divider></mat-divider>

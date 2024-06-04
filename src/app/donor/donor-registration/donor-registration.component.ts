@@ -1,6 +1,8 @@
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ILocalityDto } from 'src/app/models/LocalityDto.model';
+import { LocalityService } from 'src/app/services/locality.service';
 
 @Component({
   selector: 'app-donor-registration',
@@ -18,6 +20,7 @@ export class DonorRegistrationComponent implements OnInit{
   titleOption = 'option1';
   genderOption= 'option1';
   bloodGroupOption ='option1';
+  localities:ILocalityDto[]=[];
   firstFormGroup !: FormGroup;
   secondFormGroup !:FormGroup;
   thirdFormGroup! :FormGroup;
@@ -26,23 +29,25 @@ export class DonorRegistrationComponent implements OnInit{
   disableDateField: boolean = false;
   isVisible = true;
   checked=false;
+  selectedLocalityDescription!: string;
+  selectedGenderDescription!: string;
   
   constructor (
+    private localityService:LocalityService,
     private _formBuilder:FormBuilder){}
 
     ngOnInit(){
-    this.firstFormGroup = this._formBuilder.group({
+    this.getAllLocalities();
 
-   
+    this.firstFormGroup = this._formBuilder.group({
     cardNumberCtrl: ['', Validators.required],
     nameCtrl: ['', Validators.required],
     surnameCtrl: ['', Validators.required],
-   
+    titleTypeCtrl: ['', Validators.required],
     nationalityCtrl: ['', Validators.required],
    
   });
   this.secondFormGroup = this._formBuilder.group({
-    
     emailCtrl: ['', Validators.required],
     telephoneCtrl: ['', Validators.required],
     mobileCtrl: ['', Validators.required],
@@ -61,7 +66,22 @@ export class DonorRegistrationComponent implements OnInit{
   });
  
 }
-
+getAllLocalities(){
+  this.localityService.getAllLocalities().subscribe(
+    (response: ILocalityDto[]) => {
+      this.localities = response;          
+    },
+    (error) => {        
+      console.error('Error adding localities: ', error);        
+    }
+    );
+}
+onLocalitySelectionChange(event: any) {
+  const selectedLocalityId = event.value;
+  const selectedLocality = this.localities.find(loc => loc.id === selectedLocalityId);    
+  this.selectedLocalityDescription = selectedLocality ? selectedLocality.description : '';
+  // this.donorObject.locality = selectedLocality ? selectedLocality.description : '';
+}
 showOrHide(){
    this.isVisible = !this.isVisible;
 }

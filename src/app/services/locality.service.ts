@@ -1,7 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
-import { ILocalityDto } from '../models/localityDto.model';
+import { ILocalityDto } from '../models/LocalityDto.model';
+
 
 @Injectable({
   providedIn: 'root'
