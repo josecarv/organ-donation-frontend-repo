@@ -64,7 +64,8 @@
               "browserTarget": "organ-donation-frontend-repo:build:production"
             },
             "development": {
-              "browserTarget": "organ-donation-frontend-repo:build:development"
+              "browserTarget": "organ-donation-frontend-repo:build:development",
+              "proxyConfig": "src/proxy.config.json"
             }
           },
           "defaultConfiguration": "development"

@@ -11,6 +11,7 @@ import {  MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { CommonModule } from '@angular/common'; 
 import { FooterRoutingModule } from './footer/footer-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterRoutingModule } from './footer/footer-routing.module';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
