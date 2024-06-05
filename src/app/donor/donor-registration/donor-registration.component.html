@@ -28,7 +28,7 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Title</mat-label>
-                  <mat-select formControlName="titleTypeCtrl">
+                  <mat-select [(value)]="titleOption">
                     <mat-option value="1">MR</mat-option>
                     <mat-option value="2">MRS</mat-option>
                     <mat-option value="3">MS</mat-option>
@@ -146,7 +146,7 @@
                   <mat-label>Locality</mat-label>
                   <mat-select formControlName="localityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
                   <mat-option *ngFor="let locality of localities" [value]="locality.id">
-                  {{ locality.description }}
+                  {{ locality.name }}
                 </mat-option>
               </mat-select>
                 </mat-form-field>

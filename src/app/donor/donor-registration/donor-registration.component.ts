@@ -43,7 +43,7 @@ export class DonorRegistrationComponent implements OnInit{
     cardNumberCtrl: ['', Validators.required],
     nameCtrl: ['', Validators.required],
     surnameCtrl: ['', Validators.required],
-    titleTypeCtrl: ['', Validators.required],
+    // titleTypeCtrl: ['', Validators.required],
     nationalityCtrl: ['', Validators.required],
    
   });
@@ -79,7 +79,7 @@ getAllLocalities(){
 onLocalitySelectionChange(event: any) {
   const selectedLocalityId = event.value;
   const selectedLocality = this.localities.find(loc => loc.id === selectedLocalityId);    
-  this.selectedLocalityDescription = selectedLocality ? selectedLocality.description : '';
+  this.selectedLocalityDescription = selectedLocality ? selectedLocality.name: '';
   // this.donorObject.locality = selectedLocality ? selectedLocality.description : '';
 }
 showOrHide(){
