@@ -143,8 +143,8 @@
   
                 <mat-form-field>
                   <mat-label>Locality</mat-label>
-                  <mat-label>Locality</mat-label>
-                  <mat-select formControlName="localityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
+                  <!-- <mat-select formControlName="localityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" > -->
+                    <mat-select>
                   <mat-option *ngFor="let locality of localities" [value]="locality.id">
                   {{ locality.name }}
                 </mat-option>

@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { ILocalityDto } from '../models/LocalityDto.model';
@@ -8,7 +8,7 @@ import { ILocalityDto } from '../models/LocalityDto.model';
   providedIn: 'root'
 })
 export class LocalityService {
-  private baseUrl = 'http://localhost:7185/api/locality/';
+  private baseUrl = 'http://localhost:30267/api/locality/';
   constructor(private http: HttpClient) { }
 
   getAllLocalities(): Observable<ILocalityDto[]> {   

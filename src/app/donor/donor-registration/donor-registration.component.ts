@@ -35,11 +35,18 @@ export class DonorRegistrationComponent implements OnInit{
   checked=false;
   selectedLocalityDescription!: string;
   selectedGenderDescription!: string;
+  stepperOrientation: Observable<StepperOrientation>;
   
   constructor (
     private localityService:LocalityService,
-    private _formBuilder:FormBuilder){}
-
+    private _formBuilder:FormBuilder,
+    private breakpointObserver: BreakpointObserver,){
+      this.stepperOrientation = breakpointObserver
+    .observe('(min-width: 800px)')
+    .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));   
+  
+  }
+  
     ngOnInit(){
     this.getAllLocalities();
 
