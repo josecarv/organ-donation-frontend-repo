@@ -7,6 +7,7 @@ import { ImpNoticeComponent } from './imp-notice/imp-notice.component';
 import { usermanualroutingmodule } from './usermanual-routing.module';
 import { ContactinfoComponent } from './contactinfo/contactinfo.component';
 import { ImplinksComponent } from './implinks/implinks.component';
+import { FAQComponent } from './faq/faq.component';
 
 
 
@@ -14,7 +15,8 @@ import { ImplinksComponent } from './implinks/implinks.component';
   declarations: [
    ImpNoticeComponent,
    ContactinfoComponent,
-   ImplinksComponent
+   ImplinksComponent,
+   FAQComponent
   ], 
   imports: [
     usermanualroutingmodule,
