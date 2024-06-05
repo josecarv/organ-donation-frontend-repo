@@ -1,7 +1,7 @@
 <div class="main-container">
     <div class="container">
       <div class="form">
-        <mat-stepper [linear]="isLinear" #stepper>
+        <mat-stepper [orientation]="(stepperOrientation | async)!" labelPosition="bottom" #stepper>
           <ng-template matStepperIcon let-index="index">
             {{ index + 1 }}
           </ng-template>
@@ -107,10 +107,10 @@
                 </mat-form-field>
               </div>
               <div class="box">
-                <mat-card>
+                <mat-card >
                   <mat-card-content>
                     <section class="section">
-                      <label class="margin">Preferred Contact Mode</label>
+                      <label class="margini">Preferred Contact Mode</label>
                       <mat-radio-group formControlName="contactModeCtrl">
                         <mat-radio-button class="margin" value="sms">SMS</mat-radio-button>
                         <mat-radio-button class="margin" value="email">Email</mat-radio-button>

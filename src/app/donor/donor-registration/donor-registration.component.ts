@@ -1,8 +1,12 @@
-import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { STEPPER_GLOBAL_OPTIONS, StepperOrientation } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ILocalityDto } from 'src/app/models/LocalityDto.model';
 import { LocalityService } from 'src/app/services/locality.service';
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-donor-registration',
@@ -11,7 +15,7 @@ import { LocalityService } from 'src/app/services/locality.service';
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {displayDefaultIndicatorType: false},
+     useValue: {displayDefaultIndicatorType: false},
     },
   ],
 })
@@ -26,7 +30,7 @@ export class DonorRegistrationComponent implements OnInit{
   thirdFormGroup! :FormGroup;
   StatusForm!: FormGroup;
   MailingForm!: FormGroup;
-  disableDateField: boolean = false;
+  disableDateField: boolean = true;
   isVisible = true;
   checked=false;
   selectedLocalityDescription!: string;

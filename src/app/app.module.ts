@@ -11,6 +11,7 @@ import {  MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { CommonModule } from '@angular/common'; 
 import { FooterRoutingModule } from './footer/footer-routing.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FooterRoutingModule } from './footer/footer-routing.module';
     CommonModule,
     MatDatepickerModule,
     FormsModule,
+    LayoutModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
