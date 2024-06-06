@@ -8,10 +8,11 @@ import { ILocalityDto } from '../models/LocalityDto.model';
   providedIn: 'root'
 })
 export class LocalityService {
-  private baseUrl = 'http://localhost:30267/api/locality/';
+  private baseUrl = 'http://localhost:5049/api/locality/';
   constructor(private http: HttpClient) { }
 
   getAllLocalities(): Observable<ILocalityDto[]> {   
+    console.log("display");
     return this.http.get<ILocalityDto[]>(this.baseUrl + 'GetLocalities', )
         .pipe(
             catchError(error => {
