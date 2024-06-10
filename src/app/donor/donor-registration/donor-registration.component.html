@@ -24,7 +24,7 @@
               <div class="box">
                 <mat-form-field>
                   <mat-label>Id Card Number</mat-label>
-                  <input matInput placeholder="Card Number" formControlName="cardNumberCtrl" required />
+                  <input matInput placeholder="Card Number" formControlName="idcardCtrl" required />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Title</mat-label>
@@ -54,30 +54,33 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Gender</mat-label>
-                  <mat-select formControlName="genderCtrl"  (selectionChange)="onGenderSelectionChange()">                
+                  <mat-select formControlName="genderCtrl"></mat-select>
+                  <!-- <mat-select formControlName="genderCtrl"  (selectionChange)="onGenderSelectionChange()">                
                     <mat-option *ngFor="let gender of genders" [value]="gender.id">
                       {{ gender.description }}
                     </mat-option>
-                  </mat-select>
+                  </mat-select> -->
                 </mat-form-field>
               </div>
   
               <div class="box">
                 <mat-form-field>
                   <mat-label>Blood Group</mat-label>
-                  <mat-select formControlName="bloodGroupCtrl"  (selectionChange)="onBloodSelectionChange()">
+                  <mat-select formControlName="bloodGroupCtrl" ></mat-select>
+                  <!-- <mat-select formControlName="bloodGroupCtrl"  (selectionChange)="onBloodSelectionChange()">
                     <mat-option *ngFor="let blood of bloodGroups" [value]="blood.id">
                       {{ blood.description }}
                     </mat-option>
-                  </mat-select>
+                  </mat-select> -->
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Nationality</mat-label>
-                  <mat-select formControlName="nationalityCtrl"  (selectionChange)="onNationalitySelectionChange()">
+                  <mat-select formControlName="nationalityCtrl" ></mat-select>
+                  <!-- <mat-select formControlName="nationalityCtrl"  (selectionChange)="onNationalitySelectionChange()">
                     <mat-option *ngFor="let nationality of nationalities" [value]="nationality.id">
                       {{ nationality.description }}
                     </mat-option>
-                  </mat-select>
+                  </mat-select> -->
                 </mat-form-field>
               </div>
               <div class="stepperbuttons">
@@ -153,7 +156,7 @@
               <mat-divider></mat-divider>
   
               <div class="box">
-                <mat-checkbox formControlName="disableDateField" (click)="showOrHide()">
+                <mat-checkbox formControlName="disableAddressField" (click)="showOrHide()">
                   Use another address for Mailing
                 </mat-checkbox>
               </div>

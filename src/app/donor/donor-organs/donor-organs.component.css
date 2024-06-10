@@ -26,6 +26,8 @@
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+    height:100%;
+    overflow-y: scroll;
   }
   .form {
     /* display: block; */

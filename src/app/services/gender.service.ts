@@ -7,7 +7,7 @@ import { Observable, catchError } from 'rxjs';
   providedIn: 'root'
 })
 export class GenderService {
-  private baseUrl = 'http://localhost:54213/api/gender/';
+  private baseUrl = 'http://localhost:5049/api/gender/';
   constructor(private http: HttpClient) { }
   getAllGender(): Observable<IGenderDto[]> {   
     return this.http.get<IGenderDto[]>(this.baseUrl + 'GetAllGender', )

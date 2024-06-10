@@ -7,7 +7,7 @@ import { IBloodGroupDto } from '../models/BloodGroup.model';
   providedIn: 'root'
 })
 export class BloodgroupService {
-  private baseUrl = 'http://localhost:54213/api/bloodgroup/';
+  private baseUrl = 'http://localhost:5049/api/bloodgroup/';
   constructor(private http: HttpClient) { }
   getAllBloodGroup(): Observable<IBloodGroupDto[]> {   
     return this.http.get<IBloodGroupDto[]>(this.baseUrl + 'GetAllBloodGroup', )

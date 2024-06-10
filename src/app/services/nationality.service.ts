@@ -7,16 +7,11 @@ import { Observable, catchError } from 'rxjs';
   providedIn: 'root'
 })
 export class NationalityService {
-  private baseUrl = 'http://localhost:54213/api/locality/';
+  private baseUrl = 'http://localhost:5049/api/locality/';
   constructor(private http: HttpClient) { }
 
-  getAllNationalities(pageNumber: number = 1, pageSize: number = 100): Observable<INationalityDto[]> {    
-    let params = new HttpParams();
-    
-    params = params.append('pageNumber', pageNumber.toString());
-    params = params.append('pageSize', pageSize.toString());
-
-    return this.http.get<INationalityDto[]>(this.baseUrl + 'GetAllNationalities', { params })
+  getAllNationalities(): Observable<INationalityDto[]> {    
+    return this.http.get<INationalityDto[]>(this.baseUrl + 'GetAllNationalities')
         .pipe(
             catchError(error => {
                 console.error('Error:', error);

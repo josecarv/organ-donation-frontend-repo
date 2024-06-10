@@ -12,7 +12,6 @@ export class LocalityService {
   constructor(private http: HttpClient) { }
 
   getAllLocalities(): Observable<ILocalityDto[]> {   
-    console.log("display");
     return this.http.get<ILocalityDto[]>(this.baseUrl + 'GetLocalities', )
         .pipe(
             catchError(error => {

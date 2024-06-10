@@ -12,6 +12,7 @@ import { IBloodGroupDto } from 'src/app/models/BloodGroup.model';
 import { BloodgroupService } from 'src/app/services/bloodgroup.service';
 import { INationalityDto } from 'src/app/models/Nationality.model';
 import { NationalityService } from 'src/app/services/nationality.service';
+import { IDonorDto } from 'src/app/models/DonorDto.model';
 
 
 @Component({
@@ -27,8 +28,8 @@ import { NationalityService } from 'src/app/services/nationality.service';
 })
 export class DonorRegistrationComponent implements OnInit{
 
-  genderOption= 'option1';
-  bloodGroupOption ='option1';
+  // genderOption= 'option1';
+  // bloodGroupOption ='option1';
   localities:ILocalityDto[]=[];
   genders:IGenderDto[]=[]; 
   nationalities:INationalityDto[]=[];
@@ -47,6 +48,33 @@ export class DonorRegistrationComponent implements OnInit{
   selectedNationalityDescription!: string;
   stepperOrientation: Observable<StepperOrientation>;
   
+donorObject :IDonorDto ={
+  
+    idCardNumber :'',
+    titleType:'',
+    firstName :'',
+    lastName :'',
+    bloodGroupId :0,
+    dateOfBirth :new Date(), 
+    address: '',
+    street:'',
+    postcode:'',
+    localityId:0,
+    mailAddress: '',
+    mailStreet:'',
+    mailPostcode:'',
+    mailLocalityId:0,
+    email:'',
+    telephone:0,
+    mobile:0,
+    nationalityId :0,
+    genderId: 0,
+    checkboxAddress:'',
+    preferredContact:0,
+    organs:[],
+
+}
+
   constructor (
     private localityService:LocalityService,
     private _formBuilder:FormBuilder,
@@ -67,13 +95,13 @@ export class DonorRegistrationComponent implements OnInit{
     this.getAllNationalities();
 
     this.firstFormGroup = this._formBuilder.group({
-    cardNumberCtrl: ['', Validators.required],
-    titleTypeCtrl: ['', Validators.required],
-    nameCtrl: ['', Validators.required],
-    surnameCtrl: ['', Validators.required],
-    dateOfBirthCtrl: ['', Validators.required],
-    genderCtrl: ['', Validators.required],
-    bloodGroupCtrl: ['', Validators.required],
+    idcardCtrl: [this.donorObject.idCardNumber, Validators.required],
+    titleTypeCtrl: [this.donorObject.titleType, Validators.required],
+    nameCtrl: [this.donorObject.firstName, Validators.required],
+    surnameCtrl: [this.donorObject.lastName, Validators.required],
+    dateOfBirthCtrl: [this.donorObject.dateOfBirth, Validators.required],
+    genderCtrl: [this.donorObject.genderId, Validators.required],
+    bloodGroupCtrl: [this.donorObject.bloodGroupId, Validators.required],
     nationalityCtrl: ['', Validators.required],
    
   });
@@ -89,14 +117,85 @@ export class DonorRegistrationComponent implements OnInit{
     streetCtrl: ['', Validators.required],
     postcodeCtrl: ['', Validators.required],
     localityCtrl: ['', Validators.required],
-    disableDateField : [false],
+    disableAddressField : [''],
     mailaddressCtrl: ['', Validators.required],
     mailstreetCtrl : ['', Validators.required],
     mailpostcodeCtrl: ['', Validators.required],
     maillocalityCtrl: ['', Validators.required],
     
   });
- 
+  this.subscribeChanges();
+}
+subscribeChanges() {
+
+  //FirstFormGroup
+  this.firstFormGroup.get('idcardCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.idCardNumber = value;
+  });
+  this.firstFormGroup.get('titleTypeCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.titleType = value;
+  });
+  this.firstFormGroup.get('nameCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.firstName = value;
+  });
+  this.firstFormGroup.get('surnameCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.lastName = value;
+  });
+  this.firstFormGroup.get('dateOfBirthCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.dateOfBirth = value;
+  });
+  this.firstFormGroup.get('genderCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.genderId = value;
+  });
+  this.firstFormGroup.get('bloodGroupCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.bloodGroupId = value;
+  });
+  this.firstFormGroup.get('nationalityCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.nationalityId = value;
+  });
+
+    //SecondFormGroup
+  this.secondFormGroup.get('emailCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.email = value;      
+  });
+  this.secondFormGroup.get('telephoneCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.telephone = value;      
+  });
+  this.secondFormGroup.get('mobileCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mobile = value;      
+  });
+  this.secondFormGroup.get('contactModeCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.preferredContact = value;      
+  });
+
+   //ThirdFormGroup
+  this.thirdFormGroup.get('addressCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.address = value;      
+  });
+  this.thirdFormGroup.get('streetCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.street = value;      
+  });
+  this.thirdFormGroup.get('postcodeCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.postcode = value;      
+  });
+  this.thirdFormGroup.get('localityCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.localityId = value;      
+  });
+  this.thirdFormGroup.get('disableAddressField')?.valueChanges.subscribe((value) => {     
+    this.donorObject.checkboxAddress = value;      
+  });
+  this.thirdFormGroup.get('mailaddressCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailAddress = value;      
+  });
+  this.thirdFormGroup.get('mailstreetCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailStreet = value;      
+  });
+  this.thirdFormGroup.get('mailpostcodeCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailPostcode = value;      
+  });
+  this.thirdFormGroup.get('maillocalityCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailLocalityId = value;      
+  });
 }
 dateFilter = (d: Date | null): boolean => {
   if (!d) {
