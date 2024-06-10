@@ -9,6 +9,7 @@ import {MatSidenavModule} from "@angular/material/sidenav"
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {FlexLayoutModule } from '@angular/flex-layout';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -26,6 +27,7 @@ import {FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatSelectModule,
     FlexLayoutModule,
+    MatMenuModule,
   ]
 })
 export class MaterialModule { }
