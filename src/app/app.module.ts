@@ -11,23 +11,40 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { CommonModule } from '@angular/common'; 
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatExpansionModule } from '@angular/material/expansion';
+
+import { ImpnoticeComponent } from './usermanual/impnotice/impnotice.component';
+import { HomeComponent } from './home/home.component';
+import { usermanualroutingmodule } from './usermanual/usermanual-routing.module';
+import { ContactinfoComponent } from './usermanual/contactinfo/contactinfo.component';
+import { KnowOrgandonationComponent } from './know-organdonation/know-organdonation.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SideheaderComponent,
+    HomeComponent,
+    KnowOrgandonationComponent,
+    
+
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     DonorRoutingModule,
+    usermanualroutingmodule,
     MaterialModule,
     CommonModule,
     MatDatepickerModule,
     FormsModule,
     LayoutModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
