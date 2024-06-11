@@ -1,3 +1,6 @@
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,14 +20,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     width: 100%;
-    margin-left:250px;
-
-
-    
+    margin-left: 250px;
 }
-
-
-
 
 h1 {
     font-size: 32px;
@@ -70,4 +67,37 @@ a:hover {
 .logo {
     max-width: 200px;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        margin-left: -5px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .info-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .logo {
+        max-width: 150px;
+        margin-top: 10px;
+    }
 }
