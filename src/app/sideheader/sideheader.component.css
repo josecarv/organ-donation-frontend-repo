@@ -70,14 +70,10 @@
    display: flex;
    overflow:hidden;
   }
-
   .side-icon {
    width:40px;
-   /* height: 80px; */
-    /* font-size:25px !important; */
-    /* background-color: #4caf50; */
+   background-color: transparent;
   }
-  
   .spacealign{
     padding-right: 30px;
   }
@@ -93,6 +89,8 @@
     padding: -10px;
     height:20px;
   }
+  
+
   @media screen and (max-width: 800px) {
   
   .logo{
