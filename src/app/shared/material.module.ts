@@ -9,11 +9,12 @@ import {MatSidenavModule} from "@angular/material/sidenav"
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {FlexLayoutModule } from '@angular/flex-layout';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card'
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import {MatNativeDateModule } from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 
@@ -31,15 +32,16 @@ import {MatDividerModule} from '@angular/material/divider';
     MatFormFieldModule,
     MatSidenavModule,
     MatInputModule,
-    MatSelectModule,
-    FlexLayoutModule,
-    MatStepperModule,
     MatDividerModule,
     MatRadioModule,
     MatCardModule,
+    MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    FlexLayoutModule,
+    MatStepperModule,
+    MatExpansionModule
   ]
 })
 export class MaterialModule { }
