@@ -12,13 +12,17 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
+import { usermanualroutingmodule } from './usermanual/usermanual.routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SideheaderComponent,
     KnowOrgandonationComponent,
-    HomeComponent
+    HomeComponent,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     LayoutModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    usermanualroutingmodule 
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 const routes : Routes = [
   {path: 'donor', loadChildren: () => import('./donor/donor.module').then(m => m.DonorModule)}, 
   {path: 'know-organdonation', component: KnowOrgandonationComponent, title: "know-organdonation" },  
+  {path: 'usermanual', loadChildren: () => import('./usermanual/usermanual.module').then(m => m. usermanualModule )},  
   {path: 'home', component: HomeComponent, title: "know-organdonation" }, 
   {path: '', redirectTo: '/home', pathMatch:'full' }
 
