@@ -9,9 +9,9 @@
       <span class="menu-spacer"></span>
       <div class="sample" fxShow="true" fxHide.lt-md>
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-        <button routerLink="" mat-button><h5>Dashboard</h5></button>
-        <button routerLink="" mat-button><h5>Become a Donor</h5></button>
-        <button routerLink="" mat-button><h5>Know Organ Donation</h5></button>
+        <button routerLink="/home" mat-button><h5>Dashboard</h5></button>
+        <button routerLink="donor/register" mat-button><h5>Become a Donor</h5></button>
+        <button routerLink="/know-organdonation" mat-button><h5>Know Organ Donation</h5></button>
         <button mat-button [matMenuTriggerFor]="menu"  #menuTrigger="matMenuTrigger" (mouseenter)="openMyMenu()" >
           <img class="side-icon" src="/assets/menu.png"> 
         </button>
@@ -33,7 +33,7 @@
 
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav-content>     
-      <!-- <router-outlet></router-outlet> -->
+      <router-outlet></router-outlet> 
     </mat-sidenav-content>
     <mat-sidenav  #sidenav >
         <mat-nav-list>
@@ -41,13 +41,13 @@
           <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
             <span class="nav-caption">Dashboard</span>
           </a>
-          <a mat-list-item routerLink="" (click)="onSidenavClose()">
-            <span class="nav-caption">Become a Donor</span>
+          <a mat-list-item routerLink="donor/register" (click)="onSidenavClose()">
+            <span class="nav-caption">Donor Registration</span>
           </a>
-          <a mat-list-item routerLink="s" (click)="onSidenavClose()">
+          <a mat-list-item routerLink="" (click)="onSidenavClose()">
             <span class="nav-caption">User Manual</span>
           </a>
-          <a mat-list-item routerLink="" (click)="onSidenavClose()">
+          <a mat-list-item routerLink="/know-organdonation" (click)="onSidenavClose()">
             <span class="nav-caption">Know Organ Donation</span>
           </a><br>
           <button style=" margin-left: 10px"
