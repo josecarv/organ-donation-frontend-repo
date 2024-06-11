@@ -4,18 +4,21 @@ import { AppComponent } from './app.component';
 import { SideheaderComponent } from './sideheader/sideheader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
-import { AppRoutingModule } from './app-routing.module';
+import { KnowOrgandonationComponent } from './know-organdonation/know-organdonation.component';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DatePipe } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DonorRoutingModule } from './donor/donor-routing.module';
-import { CommonModule } from '@angular/common'; 
+import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideheaderComponent,
+    KnowOrgandonationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     FormsModule,
     LayoutModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
