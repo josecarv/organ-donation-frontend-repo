@@ -24,15 +24,14 @@
               <div class="box">
                 <mat-form-field>
                   <mat-label>Id Card Number</mat-label>
-                  <input matInput placeholder="Card Number" formControlName="cardNumberCtrl" required />
+                  <input matInput placeholder="Card Number" formControlName="idcardCtrl" required />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Title</mat-label>
-                  <mat-select [(value)]="titleOption">
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">MR</mat-option>
-                    <mat-option value="option2">MRS</mat-option>
-                    <mat-option value="option3">MS</mat-option>
+                  <mat-select formControlName="titleTypeCtrl">
+                    <mat-option value="1">MR</mat-option>
+                    <mat-option value="2">MRS</mat-option>
+                    <mat-option value="3">MS</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
@@ -49,43 +48,44 @@
               <div class="box">
                 <mat-form-field>
                   <mat-label>Date of Birth</mat-label>
-                  <input matInput [matDatepicker]="pickerDateOfBirth" />
-                  <mat-hint>MM/DD/YYYY</mat-hint>
-                  <mat-datepicker-toggle matIconSuffix [for]="pickerDateOfBirth" ></mat-datepicker-toggle>
+                  <input matInput readonly [matDatepickerFilter]="dateFilter" [matDatepicker]="pickerDateOfBirth" formControlName="dateOfBirthCtrl"  maxlength="10"/>
+                  <mat-datepicker-toggle matIconSuffix [for]="pickerDateOfBirth"> </mat-datepicker-toggle>
                   <mat-datepicker #pickerDateOfBirth></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Gender</mat-label>
-                  <mat-select [(value)]="genderOption">
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">Other</mat-option>
-                    <mat-option value="option2">Male</mat-option>
-                    <mat-option value="option3">Female</mat-option>
-                  </mat-select>
+                  <mat-select formControlName="genderCtrl"></mat-select>
+                  <!-- <mat-select formControlName="genderCtrl"  (selectionChange)="onGenderSelectionChange()">                
+                    <mat-option *ngFor="let gender of genders" [value]="gender.id">
+                      {{ gender.description }}
+                    </mat-option>
+                  </mat-select> -->
                 </mat-form-field>
               </div>
   
               <div class="box">
                 <mat-form-field>
                   <mat-label>Blood Group</mat-label>
-                  <mat-select [(value)]="bloodGroupOption">
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">O+</mat-option>
-                    <mat-option value="option2">O-</mat-option>
-                    <mat-option value="option3">A+</mat-option>
-                    <mat-option value="option4">A-</mat-option>
-                    <mat-option value="option5">B+</mat-option>
-                    <mat-option value="option6">B-</mat-option>
-                    <mat-option value="option7">AB+</mat-option>
-                    <mat-option value="option8">AB-</mat-option>
-                  </mat-select>
+                  <mat-select formControlName="bloodGroupCtrl" ></mat-select>
+                  <!-- <mat-select formControlName="bloodGroupCtrl"  (selectionChange)="onBloodSelectionChange()">
+                    <mat-option *ngFor="let blood of bloodGroups" [value]="blood.id">
+                      {{ blood.description }}
+                    </mat-option>
+                  </mat-select> -->
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Nationality</mat-label>
-                  <input matInput  placeholder="Nationality"  formControlName="nationalityCtrl" required/>
+                  <mat-select formControlName="nationalityCtrl" ></mat-select>
+                  <!-- <mat-select formControlName="nationalityCtrl"  (selectionChange)="onNationalitySelectionChange()">
+                    <mat-option *ngFor="let nationality of nationalities" [value]="nationality.id">
+                      {{ nationality.description }}
+                    </mat-option>
+                  </mat-select> -->
                 </mat-form-field>
               </div>
+              <div class="stepperbuttons">
               <button id="matstepforward" mat-button matStepperNext>Next</button>
+            </div>
             </form>
           </mat-step>
           <mat-step [stepControl]="secondFormGroup" label="Contact Information"  state="step2">
@@ -120,8 +120,10 @@
                   </mat-card-content>
                 </mat-card>
               </div>
+              <div class="stepperbuttons">
               <button id="matstepback" mat-button matStepperPrevious>Back</button>
               <button id="matstepforward" mat-button matStepperNext>Next</button>
+              </div>
             </form>
           </mat-step>
           <mat-step [stepControl]="thirdFormGroup" label="Residence Information" state="step3">
@@ -144,18 +146,17 @@
   
                 <mat-form-field>
                   <mat-label>Locality</mat-label>
-                  <mat-select>
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">Option 1</mat-option>
-                    <mat-option value="option2">Option 2</mat-option>
-                    <mat-option value="option3">Option 3</mat-option>
-                  </mat-select>
+                  <mat-select formControlName="localityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
+                  <mat-option *ngFor="let locality of localities" [value]="locality.id">
+                  {{ locality.name }}
+                </mat-option>
+              </mat-select>
                 </mat-form-field>
               </div>
               <mat-divider></mat-divider>
   
               <div class="box">
-                <mat-checkbox formControlName="disableDateField" (click)="showOrHide()">
+                <mat-checkbox formControlName="disableAddressField" (click)="showOrHide()">
                   Use another address for Mailing
                 </mat-checkbox>
               </div>
@@ -178,17 +179,17 @@
   
                 <mat-form-field>
                   <mat-label>Locality</mat-label>
-                  <mat-select>
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">Option 1</mat-option>
-                    <mat-option value="option2">Option 2</mat-option>
-                    <mat-option value="option3">Option 3</mat-option>
-                  </mat-select>
+                  <mat-select formControlName="maillocalityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
+                  <mat-option *ngFor="let locality of localities" [value]="locality.id">
+                  {{ locality.name }}
+                </mat-option>
+              </mat-select>
                 </mat-form-field>
               </div>
-  
+            <div class="stepperbuttons">
               <button id="matstepback" mat-button matStepperPrevious>Back</button>
               <button id="matstepforward" mat-button matStepperNext>Next</button>
+            </div>
             </form>
           </mat-step>
           <mat-step label="Done" state="step4">

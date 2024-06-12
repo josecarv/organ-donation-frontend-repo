@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes : Routes = [
+  
   {path: 'donor', loadChildren: () => import('./donor/donor.module').then(m => m.DonorModule)}, 
   {path: 'know-organdonation', component: KnowOrgandonationComponent, title: "know-organdonation" },  
   {path: 'footer', loadChildren: () => import('./footer/footer.module').then(m => m.FooterModule)},  
