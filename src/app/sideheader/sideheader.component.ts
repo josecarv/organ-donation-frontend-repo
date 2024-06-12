@@ -1,5 +1,5 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -8,17 +8,21 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./sideheader.component.css'],
  
 })
-export class SideheaderComponent implements OnInit {
+export class SideheaderComponent  {
   @ViewChild('sidenav') sidenav: MatSidenav | undefined ;
+  @ViewChild(MatMenuTrigger)trigger!: MatMenuTrigger;
   @Output() sidenavClose = new EventEmitter();
- 
-  constructor() { }
- 
-  ngOnInit() {
-  }
+  
+  constructor( ) { }
  
   public onSidenavClose = () => {
     this.sidenavClose.emit();
   } 
-
+  openMyMenu() {
+    this.trigger.toggleMenu();
+  } 
+  closeMyMenu() {
+    this.trigger.closeMenu();
+  
+  }  
 }
