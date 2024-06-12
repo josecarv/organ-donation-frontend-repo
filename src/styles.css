@@ -26,6 +26,10 @@ h5{
     bottom: 0;
    
  }
+ h6{
+  font-weight: 200;
+font-size:12px;
+ }
   @media screen and (max-width: 800px) {
 
 
