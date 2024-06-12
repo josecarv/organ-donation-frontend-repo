@@ -13,13 +13,19 @@ import { FooterRoutingModule } from './footer/footer-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule, DatePipe } from '@angular/common';
+import { usermanualroutingmodule } from './usermanual/usermanual.routing.module';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SideheaderComponent,
     KnowOrgandonationComponent,
-    HomeComponent
+    HomeComponent,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -33,6 +39,8 @@ import { CommonModule, DatePipe } from '@angular/common';
     LayoutModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    usermanualroutingmodule 
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
