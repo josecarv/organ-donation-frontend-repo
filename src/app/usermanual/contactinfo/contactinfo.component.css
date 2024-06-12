@@ -69,10 +69,10 @@ a:hover {
     margin-top: 20px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
     .container {
-        margin-left: -5px;
-        padding: 30px;
+        margin-left: -10px;
+        padding: 20px;
     }
 
     h1 {
