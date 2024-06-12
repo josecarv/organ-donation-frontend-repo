@@ -16,6 +16,7 @@ import {MatCardModule} from '@angular/material/card'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 
@@ -30,16 +31,17 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatIconModule,
     MatFormFieldModule,
     MatSidenavModule,
-    MatInputModule,
+    MatExpansionModule,
+    MatStepperModule,
     MatRadioModule,
     MatCardModule,
-    MatSelectModule,
     MatDatepickerModule,
+    MatInputModule,
     MatNativeDateModule,
-    MatCheckboxModule,
+    MatSelectModule,
     FlexLayoutModule,
-    MatStepperModule,
-    MatExpansionModule
+    MatCheckboxModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule { }
