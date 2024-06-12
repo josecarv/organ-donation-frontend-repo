@@ -12,6 +12,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DonorRoutingModule } from './donor/donor-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
+import { usermanualroutingmodule } from './usermanual/usermanual.routing.module';
+
 
 
 
@@ -20,7 +22,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     AppComponent,
     SideheaderComponent,
     KnowOrgandonationComponent,
-    HomeComponent
+    HomeComponent,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     LayoutModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    usermanualroutingmodule 
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
