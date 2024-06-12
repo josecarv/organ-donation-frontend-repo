@@ -80,7 +80,27 @@
    display: flex;
    overflow:hidden;
   }
+  .side-icon {
+   width:40px;
+   background-color: transparent;
+  }
+  .spacealign{
+    padding-right: 30px;
+  }
+  .iconspacer{
+    color:#3f51b5;
+    padding-right: 20px;
+    margin-top: 0px;
+  }
+  .sideheader-row {
+    display: block;
+  }
+  .sideheader-row .mat-icon .menu-button .menu-button.rotated{
+    padding: -10px;
+    height:20px;
+  }
   
+
   @media screen and (max-width: 800px) {
   
   .logo{
@@ -92,3 +112,6 @@
   }
   }
   
+
+
+
