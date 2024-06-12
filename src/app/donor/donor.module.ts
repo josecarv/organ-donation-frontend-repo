@@ -4,13 +4,15 @@ import { MaterialModule } from '../shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DonorRegistrationComponent } from './donor-registration/donor-registration.component';
 import { DonorRoutingModule } from './donor-routing.module';
+import { DonorOrgansComponent } from './donor-organs/donor-organs.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
 
 
 @NgModule({ 
   declarations: [
-   DonorRegistrationComponent
+   DonorRegistrationComponent,
+   DonorOrgansComponent
   ], 
   imports: [
     DonorRoutingModule,
@@ -18,7 +20,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    LayoutModule
     
   ],
   providers: [

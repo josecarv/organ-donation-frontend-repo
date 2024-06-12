@@ -8,7 +8,7 @@
   }
   .main-container{
     height:100%;
-    background-image: url("https://www.gvhealthnews.com/wp-content/uploads/2023/03/FEAT-Organ-donation-GettyImages-1394005377-3-715x400.jpg");
+    background-image: url("/assets/background.png");
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;

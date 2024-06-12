@@ -70,31 +70,9 @@
    display: flex;
    overflow:hidden;
   }
-  .menu-button {
-    transition:0ms ease-in-out;
-    transform: rotate(0deg);
-    font-size: 25px;
-    padding-left: 20px;
-    margin-top: 20px;
-  }
-  .menu-button.rotated {
-    transform: rotate(180deg);
-    font-size: 25px;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-  .submenu {
-    overflow-y: hidden;
-    transition: transform 300ms ease;
-    transform: scaleY(0);
-    transform-origin: top;
-    padding-top: 20px;
-    padding-left: 50px;
-    display: none;
-  }
-  .submenu.expanded {
-    transform: scaleY(1);
-    display: block;
+  .side-icon {
+   width:40px;
+   background-color: transparent;
   }
   .spacealign{
     padding-right: 30px;
@@ -111,6 +89,8 @@
     padding: -10px;
     height:20px;
   }
+  
+
   @media screen and (max-width: 800px) {
   
   .logo{
