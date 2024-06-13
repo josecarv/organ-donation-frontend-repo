@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./editdonorinfo.component.css']
 })
 export class EditdonorinfoComponent {
+showOrHide() {
+throw new Error('Method not implemented.');
+}
 accordion: any;
 
 }
