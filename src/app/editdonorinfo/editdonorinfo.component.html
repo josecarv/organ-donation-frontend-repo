@@ -1,152 +1,180 @@
-
-
-             
-                 <div class="container">
-                     <h1>Edit Profile</h1>
-             
-                     <details open>
-                         <summary> Personal Information
-                          <mat-icon>account_circle</mat-icon>
-                        </summary>
-                         
-                         <div class="panel">
-                             <div class="form-group">
-                                 <label for="id-card">ID Card</label>
-                                 <input type="text" id="id-card" value="" readonly>
-                             </div>
-                             <div class="form-group">
-                                 <label for="name">Name</label>
-                                 <input type="text" id="name" value="" readonly>
-                             </div>
-                             <div class="form-group">
-                                 <label for="surname">Surname</label>
-                                 <input type="text" id="surname" value="" readonly>
-                             </div>
-                             <div class="form-group">
-                                 <label for="gender">Gender</label>
-                                 <select id="gender">
-                                     <option value="female" selected>Female</option>
-                                     <option value="female" selected>Male</option>
-                                     <option value="female" selected>Other</option>
-                                     
-                                 </select>
-                             </div>
-                             <div class="form-group">
-                                 <label for="nationality">Nationality</label>
-                                 <input type="text" id="nationality" value="" placeholder="Enter nationality">
-                             </div>
-                         </div>
-                     </details>
-             
-                     <details>
-                         <summary>Contact Information</summary>
-                         <div class="panel">
-                             <div class="form-group">
-                                 <label for="phone-number">Phone Number</label>
-                                 <input type="text" id="phone-number" value="">
-                             </div>
-                             <div class="form-group">
-                                 <label for="mobile-number">Mobile Number</label>
-                                 <input type="text" id="mobile-number">
-                             </div>
-                             <div class="form-group">
-                                 <label for="email">Email</label>
-                                 <input type="email" id="email">
-                             </div>
-                             <div class="form-group">
-                                 <label for="contact-mode">Preferred Contact Mode</label>
-                                 <div>
-                                     <input type="checkbox" id="sms" name="contact-mode" value="sms">
-                                     <label for="sms">SMS</label>
-                                     <input type="checkbox" id="email-contact" name="contact-mode" value="email">
-                                     <label for="email-contact">Email</label>
-                                 </div>
-                             </div>
-                         </div>
-                     </details>
-                                  
-            <details>
-                         <summary>Residence Address/Mailing Address</summary>
-                         <div class="panel">
-                             <div class="form-group">
-                                 <h3>Residence Address</h3>
-                                 <label for="res-property">Property</label>
-                                 <input type="text" id="res-property" value="" readonly>
-                                 <label for="res-street">Street</label>
-                                 <input type="text" id="res-street" value="" readonly>
-                                 <label for="res-locality">Locality</label>
-                                 <input type="text" id="res-locality" value="" readonly>
-                                 <label for="res-country">Country</label>
-                                 <input type="text" id="res-country" value="" readonly>
-                                 <label for="res-postcode">Post Code</label>
-                                 <input type="text" id="res-postcode" value="-" readonly>
-                             </div>
-                             <div class="form-group">
-                                 <h3>Mailing Address</h3>
-                                 <label for="mail-property">Property</label>
-                                 <input type="text" id="mail-property" value="" readonly>
-                                 <label for="mail-street">Street</label>
-                                 <input type="text" id="mail-street" value="" readonly>
-                                 <label for="mail-locality">Locality</label>
-                                 <input type="text" id="mail-locality" value="" readonly>
-                                 <label for="mail-country">Country</label>
-                                 <input type="text" id="mail-country" value="" readonly>
-                                 <label for="mail-postcode">Post Code</label>
-                                 <input type="text" id="mail-postcode" value="-" readonly>
-
-        <details>
-            <summary>NEW Mailing Address</summary>
-            <div class="panel">
-                <div class="form-group">
-                    <label for="use-residence-address">
-                        <input type="checkbox" id="use-residence-address">
-                        Use Residence Address?
-                    </label>  
-            </div>
-                <div class="form-group">
-                    <label for="property">Property</label>
-                    <input type="text" id="property" placeholder="Property...">
-                </div>
-                <div class="form-group">
-                    <label for="locality">Locality</label>
-                    <select id="locality">
-                        <option value=""></option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="street">Street</label>
-                    <select id="street">
-                        <option value=""></option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="post-code">Post Code</label>
-                    <input type="text" id="post-code" value="-">
-                </div>
-                <div class="form-group">
-                    <label for="country">Country</label>
-                    <select id="country">
-                        <option value=""></option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-            </div>
-        </details>
-
-        <div class="button-group">
-            <button id="submit">Submit</button>
-            <button id="cancel">Cancel</button>
+<div class="container">
+    <h1>Edit Profile</h1>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Personal Information
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="form-group">
+              <mat-form-field>
+                  <mat-label>Id Card Number</mat-label>
+                  <input matInput placeholder="Card Number" formControlName="idcardCtrl" required />
+                </mat-form-field> 
         </div>
-          </div>
-                         </div>
-                     </details>
-             
-                     <div class="button-group">
-                         <button id="save-profile">Save Profile</button>
-                         <button id="cancel">Cancel</button>
-                     </div>
-                 </div>
+
+        <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Title</mat-label>
+                    <mat-select formControlName="titleTypeCtrl">
+                      <mat-option value="1">MR</mat-option>
+                      <mat-option value="2">MRS</mat-option>
+                      <mat-option value="3">MS</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field >
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name"  formControlName="nameCtrl" required />
            
-             
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field >
+            <mat-label>Surname</mat-label>
+            <input matInput placeholder="Surname"  formControlName="surnameCtrl" required />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field >
+            <mat-label>Gender</mat-label>
+            <mat-select>
+              <mat-option value="female" selected>Female</mat-option>
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field >
+            <mat-label>Nationality</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Contact Information
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input matInput value="">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-label>Preferred Contact Mode</mat-label>
+          <mat-checkbox>SMS</mat-checkbox>
+          <mat-checkbox>Email</mat-checkbox>
+        </div>
+      </mat-expansion-panel>
+
+
+<div class="form-group1">
+        <button mat-raised-button color="primary" id="ChangeMailingAddress">ChangeMailingAddress</button>
+        
+      </div>
+
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Address Information
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-tab-group>
+          <mat-tab label="Residence Address">
+            <div class="address-content">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Property</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Street</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Locality</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Country</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Post Code</mat-label>
+                  <input matInput value="-" readonly>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Mailing Address">
+            <div class="address-content">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Property</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Street</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Locality</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Country</mat-label>
+                  <input matInput value="" readonly>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Post Code</mat-label>
+                  <input matInput value="-" readonly>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-expansion-panel>
+    </mat-accordion>
+  
+    <div class="buttons">
+      <button mat-raised-button color="primary" id="save-profile">Save Profile</button>
+      <button mat-raised-button color="warn" id="cancel">Cancel</button>
+    </div>
+  </div>
+  

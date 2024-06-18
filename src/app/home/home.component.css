@@ -1,27 +1,45 @@
 
-
-body {
-  font-family: Arial, sans-serif;
+.main-container{
+  height:100%;
+  
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  background-image: url("/assets/background.png");
+  text-align: center; /* Center align text inside .form */
 }
 
+/* Container holding the image and link */
 .container {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
   margin-bottom: 20px;
 }
 
-.slider {
-  width: 50%;
+
+.form {
+
+  display: block;
+  padding: 30px 20px 20px 20px;
+
+  border: 1px solid white;
+  border-radius: 15px;
+  width:50%;
+  margin-bottom: 20px; /* Optional: Add some space between .form and .image */
 }
 
+
+/* Image section */
 .image {
-  width: 30%;
-}
-
-.slider img {
-  width: 100%;
-  height: auto;
+  position: absolute;
+  left:76%;
+  text-decoration: none;
+  width: 400px; /* Adjust this value to increase the size of the image */
 }
 
 .image img {
@@ -29,46 +47,68 @@ body {
   height: auto;
 }
 
-.image a {
-  display: block;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 16px;
+/* Link text under the image */
+.linkText {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+  text-decoration: none;
 }
 
+.linkText aText:hover {
+  text-decoration: underline;
+}
+
+/* Logos container */
 .logos {
+  position: absolute;
+  margin-top: 
+  right: 50px;
   display: flex;
-  justify-content: center;
-  gap: 400px;
+  gap: 50px;
+}
+
+.logo, .logo1 {
+  flex: 5 5 100px;
+width: 300px;
+  text-align: center;
 }
 
 .logo img, .logo1 img {
-  width: 200px;
+  width: 100%;
   height: auto;
 }
-
-@media screen and (max-width: 1200px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .slider, .image {
-    width: 80%;
-    margin-bottom: 20px;
-  }
-
-  .logos {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .logo img, .logo1 img {
-    width: 150px;
-  }
-
-  .image a {
-    font-size: 15px;
-  }
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align videos horizontally */
+  gap: 40px; /* Optional: Add space between videos */
+  position: absolute;
+  margin-top: 600px;
+  text-decoration: none;
+  
 }
+.videos iframe {
+  margin-top: 20px; /* Optional: Add space above videos */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
