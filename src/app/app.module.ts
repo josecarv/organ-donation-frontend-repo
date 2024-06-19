@@ -30,8 +30,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     AppComponent,
     SideheaderComponent,
     KnowOrgandonationComponent,
-
-    
     HomeComponent,
     EditdonorinfoComponent,
 

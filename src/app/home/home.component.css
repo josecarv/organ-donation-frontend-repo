@@ -1,114 +1,89 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Adjust font as needed */
+  overflow: hidden; /* Prevent body scrolling */
+}
 
-.main-container{
-  height:100%;
-  
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-y: scroll;
+/* Main container styles */
+.main-container {
+  min-height: 100vh; /* Ensure container stretches to at least full viewport height */
+  background: url("/assets/background.png") left/cover no-repeat; /* Shorthand for background properties */
   display: flex;
   flex-direction: column;
   align-items: center; /* Center align items horizontally */
-  background-image: url("/assets/background.png");
   text-align: center; /* Center align text inside .form */
+  overflow-y: auto; /* Allow vertical scrolling if content exceeds container height */
+  padding: 1.25rem; /* Use rem units for padding */
+  box-sizing: border-box;
 }
 
-/* Container holding the image and link */
+/* Form styles */
 .container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-}
-
-
-.form {
-
-  display: block;
-  padding: 30px 20px 20px 20px;
-
+  padding: 5rem; /* Use rem units for padding */
   border: 1px solid white;
   border-radius: 15px;
-  width:50%;
-  margin-bottom: 20px; /* Optional: Add some space between .form and .image */
-}
-
-
-/* Image section */
-.image {
-  position: absolute;
-  left:76%;
-  text-decoration: none;
-  width: 400px; /* Adjust this value to increase the size of the image */
-}
-
-.image img {
-  width: 100%;
-  height: auto;
-}
-
-/* Link text under the image */
-.linkText {
-  position: absolute;
-  bottom: -30px;
-  left: 40%;
-  transform: translateX(-50%);
-  color: #000;
-  text-decoration: none;
-}
-
-.linkText aText:hover {
-  text-decoration: underline;
+  width: 70%; /* Use percentage for flexible width */
+  width: 1200px; /* Optional: Set a maximum width */
+  margin-left: 500px;
+ 
+  margin-bottom: 1.25rem; /* Use rem units for margin */
+  background-color: rgba(255, 255, 255, 0.8); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 /* Logos container */
 .logos {
-  position: absolute;
-  margin-top:400px;
-  margin-left:50px;
   display: flex;
-  gap: 50px;
+  justify-content: center;
+  gap: 3.125rem; /* Use rem units for gap */
+  margin: 1.25rem 0; /* Use rem units for margin */
 }
 
 .logo, .logo1 {
-  flex: 5 5 100px;
-width: 300px;
-  text-align: center;
+  width: 180px;
 }
 
 .logo img, .logo1 img {
   width: 100%;
   height: auto;
 }
+
+/* Videos container */
 .videos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center align videos horizontally */
-  gap: 40px; /* Optional: Add space between videos */
-  position: absolute;
-  margin-top: 600px;
-  text-decoration: none;
-  
+  justify-content: center;
+  gap: 1.25rem; /* Add space between videos */
+  margin-top: 1.25rem; /* Use rem units for margin */
 }
+
 .videos iframe {
-  margin-top: 20px; /* Optional: Add space above videos */
+  width: 300px; /* Set a fixed width for the videos */
+  height: 200px; /* Set a fixed height for the videos */
+  border: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Flexible width for smaller screens */
+    padding: 2.5rem; /* Adjust padding */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .logo, .logo1 {
+    width: 100px; /* Adjust logo size */
+  }
+  
+  .videos iframe {
+    width: 100%; /* Full width for videos */
+    height: auto;
+  }
+}
