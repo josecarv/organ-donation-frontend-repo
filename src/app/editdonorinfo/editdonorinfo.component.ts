@@ -27,6 +27,9 @@ import { IDonorDto } from 'src/app/models/DonorDto.model';
   ],
 })
 export class EditdonorinfoComponent implements OnInit{
+onChangeMailingAddress() {
+throw new Error('Method not implemented.');
+}
 
   // genderOption= 'option1';
   // bloodGroupOption ='option1';
@@ -48,7 +51,7 @@ export class EditdonorinfoComponent implements OnInit{
   selectedNationalityDescription!: string;
   stepperOrientation: Observable<StepperOrientation>;
   
-editdonorObject :IDonorDto ={
+editdonorinfoObject :IDonorDto ={
   
     idCardNumber :'',
     titleType:'',
@@ -95,13 +98,13 @@ editdonorObject :IDonorDto ={
     this.getAllNationalities();
 
     this.firstFormGroup = this._formBuilder.group({
-    idcardCtrl: [this.editdonorObject.idCardNumber, Validators.required],
-    titleTypeCtrl: [this.editdonorObject.titleType, Validators.required],
-    nameCtrl: [this.editdonorObject.firstName, Validators.required],
-    surnameCtrl: [this.editdonorObject.lastName, Validators.required],
-    dateOfBirthCtrl: [this.editdonorObject.dateOfBirth, Validators.required],
-    genderCtrl: [this.editdonorObject.genderId, Validators.required],
-    bloodGroupCtrl: [this.editdonorObject.bloodGroupId, Validators.required],
+    idcardCtrl: [this.editdonorinfoObject.idCardNumber, Validators.required],
+    titleTypeCtrl: [this.editdonorinfoObject.titleType, Validators.required],
+    nameCtrl: [this.editdonorinfoObject.firstName, Validators.required],
+    surnameCtrl: [this.editdonorinfoObject.lastName, Validators.required],
+    dateOfBirthCtrl: [this.editdonorinfoObject.dateOfBirth, Validators.required],
+    genderCtrl: [this.editdonorinfoObject.genderId, Validators.required],
+    bloodGroupCtrl: [this.editdonorinfoObject.bloodGroupId, Validators.required],
     nationalityCtrl: ['', Validators.required],
    
   });
@@ -130,71 +133,71 @@ subscribeChanges() {
 
   //FirstFormGroup
   this.firstFormGroup.get('idcardCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.idCardNumber = value;
+    this.editdonorinfoObject.idCardNumber = value;
   });
   this.firstFormGroup.get('titleTypeCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.titleType = value;
+    this.editdonorinfoObject.titleType = value;
   });
   this.firstFormGroup.get('nameCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.firstName = value;
+    this.editdonorinfoObject.firstName = value;
   });
   this.firstFormGroup.get('surnameCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.lastName = value;
+    this.editdonorinfoObject.lastName = value;
   });
   this.firstFormGroup.get('dateOfBirthCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.dateOfBirth = value;
+    this.editdonorinfoObject.dateOfBirth = value;
   });
   this.firstFormGroup.get('genderCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.genderId = value;
+    this.editdonorinfoObject.genderId = value;
   });
   this.firstFormGroup.get('bloodGroupCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.bloodGroupId = value;
+    this.editdonorinfoObject.bloodGroupId = value;
   });
   this.firstFormGroup.get('nationalityCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.nationalityId = value;
+    this.editdonorinfoObject.nationalityId = value;
   });
 
     //SecondFormGroup
   this.secondFormGroup.get('emailCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.email = value;      
+    this.editdonorinfoObject.email = value;      
   });
   this.secondFormGroup.get('telephoneCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.telephone = value;      
+    this.editdonorinfoObject.telephone = value;      
   });
   this.secondFormGroup.get('mobileCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.mobile = value;      
+    this.editdonorinfoObject.mobile = value;      
   });
   this.secondFormGroup.get('contactModeCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.preferredContact = value;      
+    this.editdonorinfoObject.preferredContact = value;      
   });
 
    //ThirdFormGroup
   this.thirdFormGroup.get('addressCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.address = value;      
+    this.editdonorinfoObject.address = value;      
   });
   this.thirdFormGroup.get('streetCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.street = value;      
+    this.editdonorinfoObject.street = value;      
   });
   this.thirdFormGroup.get('postcodeCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.postcode = value;      
+    this.editdonorinfoObject.postcode = value;      
   });
   this.thirdFormGroup.get('localityCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.localityId = value;      
+    this.editdonorinfoObject.localityId = value;      
   });
   this.thirdFormGroup.get('disableAddressField')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.checkboxAddress = value;      
+    this.editdonorinfoObject.checkboxAddress = value;      
   });
   this.thirdFormGroup.get('mailaddressCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.mailAddress = value;      
+    this.editdonorinfoObject.mailAddress = value;      
   });
   this.thirdFormGroup.get('mailstreetCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.mailStreet = value;      
+    this.editdonorinfoObject.mailStreet = value;      
   });
   this.thirdFormGroup.get('mailpostcodeCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.mailPostcode = value;      
+    this.editdonorinfoObject.mailPostcode = value;      
   });
   this.thirdFormGroup.get('maillocalityCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorObject.mailLocalityId = value;      
+    this.editdonorinfoObject.mailLocalityId = value;      
   });
 }
 dateFilter = (d: Date | null): boolean => {

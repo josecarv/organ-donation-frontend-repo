@@ -1,123 +1,220 @@
-
-
 <div class="main-container">
 
-<div class="container">
-    <h1>Edit Profile</h1>
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Personal Information
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <div class="box">
-        <mat-form-field>
-          <mat-label>Id Card Number</mat-label>
-          <input matInput placeholder="Card Number" formControlName="idcardCtrl" required />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Title</mat-label>
-          <mat-select formControlName="titleTypeCtrl">
-            <mat-option value="1">MR</mat-option>
-            <mat-option value="2">MRS</mat-option>
-            <mat-option value="3">MS</mat-option>
-          </mat-select>
-        </mat-form-field></div>
-      <div class="box">
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Name"  formControlName="nameCtrl" required />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Surname</mat-label>
-          <input matInput placeholder="Surname" formControlName="surnameCtrl" required />
-        </mat-form-field>
-      </div>
-      <div class="box">
-        <mat-form-field>
-          <mat-label>Date of Birth</mat-label>
-          <input matInput readonly [matDatepickerFilter]="dateFilter" [matDatepicker]="pickerDateOfBirth" formControlName="dateOfBirthCtrl"  maxlength="10"/>
-          <mat-datepicker-toggle matIconSuffix [for]="pickerDateOfBirth"> </mat-datepicker-toggle>
-          <mat-datepicker #pickerDateOfBirth></mat-datepicker>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Gender</mat-label>
-          <mat-select formControlName="genderCtrl"></mat-select>
-          <!-- <mat-select formControlName="genderCtrl"  (selectionChange)="onGenderSelectionChange()">                
-            <mat-option *ngFor="let gender of genders" [value]="gender.id">
-              {{ gender.description }}
-            </mat-option>
-          </mat-select> -->
-        </mat-form-field>
-      </div>
-
-      <div class="box">
-        <mat-form-field>
-          <mat-label>Blood Group</mat-label>
-          <mat-select formControlName="bloodGroupCtrl" ></mat-select>
-          <!-- <mat-select formControlName="bloodGroupCtrl"  (selectionChange)="onBloodSelectionChange()">
-            <mat-option *ngFor="let blood of bloodGroups" [value]="blood.id">
-              {{ blood.description }}
-            </mat-option>
-          </mat-select> -->
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Nationality</mat-label>
-          <mat-select formControlName="nationalityCtrl" ></mat-select>
-          <!-- <mat-select formControlName="nationalityCtrl"  (selectionChange)="onNationalitySelectionChange()">
-            <mat-option *ngFor="let nationality of nationalities" [value]="nationality.id">
-              {{ nationality.description }}
-            </mat-option>
-          </mat-select> -->
-        </mat-form-field>
-      </div>  
-      </mat-expansion-panel>
-    </mat-accordion>
+  <div class="container">
+      <h1>Edit Profile</h1>
       <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Contact Information
-          </mat-panel-title>
-        </mat-expansion-panel-header>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Personal Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="box">
+          <mat-form-field>
+            <mat-label>Id Card Number</mat-label>
+            <input matInput placeholder="Card Number" formControlName="idcardCtrl" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+            <mat-select formControlName="titleTypeCtrl">
+              <mat-option value="1">MR</mat-option>
+              <mat-option value="2">MRS</mat-option>
+              <mat-option value="3">MS</mat-option>
+            </mat-select>
+          </mat-form-field></div>
         <div class="box">
           <mat-form-field>
-            <mat-label>Mobile</mat-label>
-            <input matInput placeholder="Mobile" formControlName="mobileCtrl" required/>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name"  formControlName="nameCtrl" required />
           </mat-form-field>
-
           <mat-form-field>
-            <mat-label>Telephone</mat-label>
-            <input matInput placeholder="Telephone" formControlName="telephoneCtrl" required />
+            <mat-label>Surname</mat-label>
+            <input matInput placeholder="Surname" formControlName="surnameCtrl" required />
           </mat-form-field>
         </div>
         <div class="box">
           <mat-form-field>
-            <mat-label>E-Mail</mat-label>
-            <input matInput placeholder="email" formControlName="emailCtrl"  required/>
+            <mat-label>Date of Birth</mat-label>
+            <input matInput readonly [matDatepickerFilter]="dateFilter" [matDatepicker]="pickerDateOfBirth" formControlName="dateOfBirthCtrl"  maxlength="10"/>
+            <mat-datepicker-toggle matIconSuffix [for]="pickerDateOfBirth"> </mat-datepicker-toggle>
+            <mat-datepicker #pickerDateOfBirth></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="genderCtrl"></mat-select>
+            <!-- <mat-select formControlName="genderCtrl"  (selectionChange)="onGenderSelectionChange()">                
+              <mat-option *ngFor="let gender of genders" [value]="gender.id">
+                {{ gender.description }}
+              </mat-option>
+            </mat-select> -->
           </mat-form-field>
         </div>
+  
         <div class="box">
-          <mat-card >
-            <mat-card-content>
-              <section class="section">
-                <label class="margini">Preferred Contact Mode</label>
-                <mat-radio-group formControlName="contactModeCtrl">
-                  <mat-radio-button class="margin" value="sms">SMS</mat-radio-button>
-                  <mat-radio-button class="margin" value="email">Email</mat-radio-button>
-                </mat-radio-group>
-              </section>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </mat-expansion-panel>
+          <mat-form-field>
+            <mat-label>Blood Group</mat-label>
+            <mat-select formControlName="bloodGroupCtrl" ></mat-select>
+            <!-- <mat-select formControlName="bloodGroupCtrl"  (selectionChange)="onBloodSelectionChange()">
+              <mat-option *ngFor="let blood of bloodGroups" [value]="blood.id">
+                {{ blood.description }}
+              </mat-option>
+            </mat-select> -->
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Nationality</mat-label>
+            <mat-select formControlName="nationalityCtrl" ></mat-select>
+            <!-- <mat-select formControlName="nationalityCtrl"  (selectionChange)="onNationalitySelectionChange()">
+              <mat-option *ngFor="let nationality of nationalities" [value]="nationality.id">
+                {{ nationality.description }}
+              </mat-option>
+            </mat-select> -->
+          </mat-form-field>
+        </div>  
+        </mat-expansion-panel>
       </mat-accordion>
-</div>
-</div>
-    
-      
-    
+        <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Contact Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="box">
+            <mat-form-field>
+              <mat-label>Mobile</mat-label>
+              <input matInput placeholder="Mobile" formControlName="mobileCtrl" required/>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Telephone</mat-label>
+              <input matInput placeholder="Telephone" formControlName="telephoneCtrl" required />
+            </mat-form-field>
+          </div>
+          <div class="box">
+            <mat-form-field>
+              <mat-label>E-Mail</mat-label>
+              <input matInput placeholder="email" formControlName="emailCtrl"  required/>
+            </mat-form-field>
+          </div>
+          <div class="box">
+            <mat-card >
+              <mat-card-content>
+                <section class="section">
+                  <label class="margini">Preferred Contact Mode</label>
+                  <mat-radio-group formControlName="contactModeCtrl">
+                    <mat-radio-button class="margin" value="sms">SMS</mat-radio-button>
+                    <mat-radio-button class="margin" value="email">Email</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Residence Address
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="box">
+              
+  
+              <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="address" formControlName="addressCtrl" required/>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Street</mat-label>
+                <input matInput placeholder="Street" formControlName="streetCtrl" required/>
+              </mat-form-field>
+            </div>
+            <div class="box">
+              <mat-form-field>
+                <mat-label>PostCode</mat-label>
+                <input matInput placeholder="postcode" formControlName="postcodeCtrl" required/>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label>Locality</mat-label>
+                <mat-select formControlName="localityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
+                <mat-option *ngFor="let locality of localities" [value]="locality.id">
+                {{ locality.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>  
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mailing Address
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="box">
+              <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="address" formControlName="addressCtrl" required/>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Street</mat-label>
+                <input matInput placeholder="Street" formControlName="streetCtrl" required/>
+              </mat-form-field>
+            </div>
+            <div class="box">
+              <mat-form-field>
+                <mat-label>PostCode</mat-label>
+                <input matInput placeholder="postcode" formControlName="postcodeCtrl" required/>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label>Locality</mat-label>
+                <mat-select formControlName="localityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
+                <mat-option *ngFor="let locality of localities" [value]="locality.id">
+                {{ locality.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="box">
+            <button mat-raised-button color="primary">Change Mailing Address</button>
+          </div> 
+        </div>  
+
+        
+        <div class="box">
+          <mat-checkbox formControlName="disableAddressField" (click)="showOrHide()">
+            Use another address for Mailing
+          </mat-checkbox>
+        </div>
+
+        <div class="box" [class.hide]="isVisible">
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput  placeholder="address" formControlName="mailaddressCtrl" required/>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Street</mat-label>
+            <input matInput placeholder="Street " formControlName="mailstreetCtrl" required/>
+          </mat-form-field>
+        </div>
+        <div class="box" [class.hide]="isVisible">
+          <mat-form-field>
+            <mat-label>PostCode</mat-label>
+            <input matInput  placeholder="postcode" formControlName="mailpostcodeCtrl" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Locality</mat-label>
+            <mat-select formControlName="maillocalityCtrl"  (selectionChange)="onLocalitySelectionChange($event)" >
+            <mat-option *ngFor="let locality of localities" [value]="locality.id">
+            {{ locality.name }}
+          </mat-option>
+        </mat-select>
+          </mat-form-field>
+        </div>
 
 
 
@@ -129,6 +226,17 @@
 
 
 
+          </mat-expansion-panel> 
+        </mat-accordion>
+        <div class="button-group">
+          <button id="save-profile">Save Profile</button>
+          <button id="cancel">Cancel</button>
+      </div>
+
+
+  </div>
+  </div>
+  
 
 
 
@@ -136,26 +244,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+  

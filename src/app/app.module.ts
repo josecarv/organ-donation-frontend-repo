@@ -16,18 +16,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { usermanualroutingmodule } from './usermanual/usermanual.routing.module';
 import { EditdonorinfoComponent} from './editdonorinfo/editdonorinfo.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarRow } from '@angular/material/toolbar';
 
 import { MatTableModule } from '@angular/material/table';
-
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs'; 
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+  
     SideheaderComponent,
     KnowOrgandonationComponent,
     HomeComponent,
@@ -51,7 +53,12 @@ import { MatTabsModule } from '@angular/material/tabs';
     HttpClientModule,
     MatTableModule ,
     MatFormFieldModule,
-    MatTabsModule 
+    MatTabsModule ,
+    MatExpansionModule,
+    MatToolbarModule,
+    
+  
+    
     
   ],
   providers: [DatePipe],
