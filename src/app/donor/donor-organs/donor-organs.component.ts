@@ -9,9 +9,9 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 })
 export class DonorOrgansComponent {
   DonorOrgansGroup!: FormGroup;
-  donateAllOrgans : boolean = false;
-  donateSpecificOrgans : boolean =  false;
-  donateNoOrgans : boolean =  false;
+  donateAllOrgans :boolean= false;
+  donateSpecificOrgans :boolean= false;
+  donateNoOrgans:boolean = false;
 
   constructor( private _formBuilder: FormBuilder,) {
     this.DonorOrgansGroup = this._formBuilder.group({
@@ -66,9 +66,15 @@ export class DonorOrgansComponent {
 
   onCheckboxChange(type: string, event: any) {
     if (type === 'all' && event.checked) {
+      this.donateSpecificOrgans = false;
+      this.donateNoOrgans = false;
+    } else if (type === 'specific' && event.checked) {
+      this.donateAllOrgans = false;
       this.donateNoOrgans = false;
     } else if (type === 'none' && event.checked) {
       this.donateAllOrgans = false;
+      this.donateSpecificOrgans = false;
     }
+  }
 }
-}
+

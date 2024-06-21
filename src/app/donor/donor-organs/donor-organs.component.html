@@ -12,12 +12,12 @@
           <mat-card class="donor-header">
             <mat-card-content>
               <section class="donor-section">
-                <mat-checkbox class="donor-title" [(ngModel)]="donateAllOrgans" (change)="onCheckboxChange('all', $event)">I WANT TO BE AN ORGAN DONOR</mat-checkbox>
+                <mat-checkbox class="donor-title" [(ngModel)]="donateAllOrgans" (change)="onCheckboxChange('all', $event)" [disabled]="donateNoOrgans">I WANT TO BE AN ORGAN DONOR</mat-checkbox>
               </section>
             </mat-card-content>
           </mat-card>
         </div>
-        <!-- <div class="box">
+        <div class="box">
           <mat-card class="donor-header">
             <mat-card-content>
               <section class="donor-section">
@@ -25,12 +25,12 @@
               </section>
             </mat-card-content>
           </mat-card>
-          </div> -->
+          </div>
           <div class="box">
           <mat-card class="donor-header">
             <mat-card-content>
               <section class="donor-section">
-                <mat-checkbox class="donor-title" [(ngModel)]="donateNoOrgans" (change)="onCheckboxChange('none', $event)">I DON'T WANT TO BE AN ORGAN DONOR</mat-checkbox>
+                <mat-checkbox class="donor-title" [(ngModel)]="donateNoOrgans" (change)="onCheckboxChange('none', $event)" [disabled]="donateAllOrgans">I DON'T WANT TO BE AN ORGAN DONOR</mat-checkbox>
               </section>
             </mat-card-content>
           </mat-card>
@@ -38,36 +38,79 @@
       </div>
         <mat-divider></mat-divider>
         <div class="middletitle"><p>ORGANS</p></div>
-        <div class="box">
+        <div class="mat-card-container">
           <mat-card class="organ-card">
-            <mat-card-header class ="organ-header">
-                <mat-card-title-group>
-              <mat-card-title class = "organ-title">KIDNEY</mat-card-title>
-              <img  mat-card-sm-image src="/assets/kidney.png" class="organ-avatar">
-              </mat-card-title-group>
-              <mat-checkbox class="organ-margin" formControlName="kidneyStatusCtrl"></mat-checkbox>
-            </mat-card-header>
+            <div class="row">
+              <div class="column left">
+                <div class="icon">
+                  <img mat-card-sm-image src="/assets/kidney.png" class="organ-avatar" alt="Kidney Icon">
+                </div>
+              </div>
+              <div class="column right">
+                <div class="label">KIDNEY</div>
+                <mat-checkbox class="checkbox" formControlName="kidneyStatusCtrl"></mat-checkbox>
+              </div>
+            </div>
+          </mat-card>
+        
+        <!-- <div class="mat-card-container">
+          <mat-card class="organ-card">
+            <div class="row">
+              <div class="column left" style="background-color:#aaa;">
+                <div class="icon ">
+                  <img  mat-card-sm-image src="/assets/kidney.png" class="organ-avatar"></div>
+              </div>
+              <div class="column right" style="background-color:#bbb;">
+                <div class="label">KIDNEY</div>
+                <mat-checkbox class="checkbox" formControlName="kidneyStatusCtrl"></mat-checkbox>
+
+              </div>
+            </div>
+          </mat-card> -->
+              <!-- <mat-card-content > -->
+               
+                  <!-- <div class="icon ">
+                    <img  mat-card-sm-image src="/assets/kidney.png" class="organ-avatar"></div> -->
+                    <!-- <div class="vertical"></div> -->
+                  
+                <!-- <mat-card-title-group  > -->
+                  <!-- <div class="label">KIDNEY</div>
+                <mat-checkbox class="checkbox" formControlName="kidneyStatusCtrl"></mat-checkbox> -->
+              <!-- <mat-card-title class = "organ-title">KIDNEY</mat-card-title> -->
+              
+              <!-- </mat-card-title-group> -->
+              <!-- <mat-checkbox class="organ-margin" ></mat-checkbox> -->
+              <!-- </mat-card-content> -->
+            <!-- </mat-card-header> -->
+          
+         <mat-card class="organ-card">
+            <div class="row">
+              <div class="column left">
+                <div class="icon">
+                  <img mat-card-sm-image src="/assets/intestine.png" class="organ-avatar" alt="Bowel Icon">
+                </div>
+              </div>
+              <div class="column right">
+                <div class="label">SMALL BOWEL</div>
+                <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl"></mat-checkbox>
+              </div>
+            </div>
           </mat-card>
           <mat-card class="organ-card">
-            <mat-card-header class ="organ-header">
-                <mat-card-title-group>
-              <mat-card-title class = "organ-title">SMALL BOWEL</mat-card-title>
-              <img  mat-card-sm-image src="/assets/intestine.png" class="organ-avatar">
-              </mat-card-title-group>
-              <mat-checkbox class="organ-margin" formControlName="bowelStatusCtrl"></mat-checkbox>
-            </mat-card-header>
-          </mat-card>
-          <mat-card class="organ-card">
-            <mat-card-header class ="organ-header">
-                <mat-card-title-group>
-              <mat-card-title class = "organ-title">PANCREAS</mat-card-title>
-              <img  mat-card-sm-image src="/assets/pancreas.png" class="organ-avatar">
-              </mat-card-title-group>
-              <mat-checkbox class="organ-margin" formControlName="pancreasStatusCtrl"></mat-checkbox>
-            </mat-card-header>
+            <div class="row">
+              <div class="column left">
+                <div class="icon">
+                  <img mat-card-sm-image src="/assets/pancreas.png" class="organ-avatar" alt="Pancreas Icon">
+                </div>
+              </div>
+              <div class="column right">
+                <div class="label">PANCREAS</div>
+                <mat-checkbox class="checkbox" formControlName="pancreasStatusCtrl"></mat-checkbox>
+              </div>
+            </div>
           </mat-card>
         </div>
-        <div class="box">
+        <!-- <div class="box">
             <mat-card class="organ-card">
               <mat-card-header class ="organ-header">
                   <mat-card-title-group>
@@ -95,10 +138,10 @@
                 <mat-checkbox class="organ-margin" formControlName="heartStatusCtrl"></mat-checkbox>
               </mat-card-header>
             </mat-card>
-          </div>
+          </div> -->
           <mat-divider></mat-divider>
           <div class="middletitle"><p>TISSUES</p></div>
-          <div class="box">
+          <!-- <div class="box">
             <mat-card class="organ-card">
               <mat-card-header class ="organ-header">
                   <mat-card-title-group>
@@ -126,8 +169,8 @@
                 <mat-checkbox class="organ-margin" formControlName="corneaStatusCtrl"></mat-checkbox>
               </mat-card-header>
             </mat-card>
-          </div>
-          <div class="box">
+          </div> -->
+          <!-- <div class="box">
               <mat-card class="organ-card">
                 <mat-card-header class ="organ-header">
                     <mat-card-title-group>
@@ -155,7 +198,7 @@
                   <mat-checkbox class="organ-margin" formControlName="tendonStatusCtrl"></mat-checkbox>
                 </mat-card-header>
               </mat-card>
-            </div>
+            </div> -->
         <div class="buttonnew">
           <button mat-raised-button  id="matstepforward">Save</button>
           <button mat-raised-button  id="matstepback">Cancel</button>
