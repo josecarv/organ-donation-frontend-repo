@@ -9,6 +9,9 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 })
 export class DonorOrgansComponent {
   DonorOrgansGroup!: FormGroup;
+  donateAllOrgans : boolean = false;
+  donateSpecificOrgans : boolean =  false;
+  donateNoOrgans : boolean =  false;
 
   constructor( private _formBuilder: FormBuilder,) {
     this.DonorOrgansGroup = this._formBuilder.group({
@@ -26,37 +29,46 @@ export class DonorOrgansComponent {
       tendonStatusCtrl: [''],
     });
   }
-  onCheckboxChange(event: MatCheckboxChange) {
-    if (event.checked) {
-      this.DonorOrgansGroup.patchValue({
-        kidneyStatusCtrl: true,
-        bowelStatusCtrl: true,
-        pancreasStatusCtrl: true,
-        liverStatusCtrl: true,
-        lungsStatusCtrl: true,
-        heartStatusCtrl: true,
-        cartilageStatusCtrl: true,
-        valvesStatusCtrl: true,
-        corneaStatusCtrl: true,
-        tissueStatusCtrl: true,
-        ligamentStatusCtrl: true,
-        tendonStatusCtrl: true
-      });
-    } else {
-      this.DonorOrgansGroup.patchValue({
-        kidneyStatusCtrl: false,
-        bowelStatusCtrl: false,
-        pancreasStatusCtrl: false,
-        liverStatusCtrl: false,
-        lungsStatusCtrl: false,
-        heartStatusCtrl: false,
-        cartilageStatusCtrl: false,
-        valvesStatusCtrl: false,
-        corneaStatusCtrl: false,
-        tissueStatusCtrl: false,
-        ligamentStatusCtrl: false,
-        tendonStatusCtrl: false
-      });
+  // onCheckboxChange(event: MatCheckboxChange) {
+  //   if (event.checked) {
+  //     this.DonorOrgansGroup.patchValue({
+  //       kidneyStatusCtrl: true,
+  //       bowelStatusCtrl: true,
+  //       pancreasStatusCtrl: true,
+  //       liverStatusCtrl: true,
+  //       lungsStatusCtrl: true,
+  //       heartStatusCtrl: true,
+  //       cartilageStatusCtrl: true,
+  //       valvesStatusCtrl: true,
+  //       corneaStatusCtrl: true,
+  //       tissueStatusCtrl: true,
+  //       ligamentStatusCtrl: true,
+  //       tendonStatusCtrl: true
+  //     });
+  //   } else {
+  //     this.DonorOrgansGroup.patchValue({
+  //       kidneyStatusCtrl: false,
+  //       bowelStatusCtrl: false,
+  //       pancreasStatusCtrl: false,
+  //       liverStatusCtrl: false,
+  //       lungsStatusCtrl: false,
+  //       heartStatusCtrl: false,
+  //       cartilageStatusCtrl: false,
+  //       valvesStatusCtrl: false,
+  //       corneaStatusCtrl: false,
+  //       tissueStatusCtrl: false,
+  //       ligamentStatusCtrl: false,
+  //       tendonStatusCtrl: false
+  //     });
+  //   }
+  // }
+ 
+
+  onCheckboxChange(type: string, event: any) {
+    if (type === 'all' && event.checked) {
+      this.donateNoOrgans = false;
+    } else if (type === 'none' && event.checked) {
+      this.donateAllOrgans = false;
     }
-  }
+}
 }

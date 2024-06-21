@@ -4,31 +4,38 @@
       <form fxLayout="column" [formGroup]="DonorOrgansGroup">
         <div class="headerclass">
           <mat-icon>info</mat-icon>
-          <p> Use this form to record a decision to donate some or all of your organs and tissue.</p>
+          <p class="paragraph"> The following is a list of organs which can be donated. Tick the ones that you wish to donate. <br>If you change your mind, you can always untick those you have selected.<br>
+         <b><u>Tip:</u></b> To view more information regarding an Organ, click anywhere within its respective box.</p>
         </div>
-        <div class="box">
+        <div class="mat-card-align">
+          <div class="box">
           <mat-card class="donor-header">
             <mat-card-content>
               <section class="donor-section">
-                <mat-checkbox class="donor-title" (change)="onCheckboxChange($event)">I WANT TO DONATE ALL ORGANS</mat-checkbox>
-              </section>
-            </mat-card-content>
-          </mat-card>
-          <mat-card class="donor-header">
-            <mat-card-content>
-              <section class="donor-section">
-                <mat-checkbox class="donor-title">I WANT TO DONATE SPECIFIC ORGANS</mat-checkbox>
-              </section>
-            </mat-card-content>
-          </mat-card>
-          <mat-card class="donor-header">
-            <mat-card-content>
-              <section class="donor-section">
-                <mat-checkbox class="donor-title">I DON'T WANT TO DONATE ORGANS</mat-checkbox>
+                <mat-checkbox class="donor-title" [(ngModel)]="donateAllOrgans" (change)="onCheckboxChange('all', $event)">I WANT TO BE AN ORGAN DONOR</mat-checkbox>
               </section>
             </mat-card-content>
           </mat-card>
         </div>
+        <!-- <div class="box">
+          <mat-card class="donor-header">
+            <mat-card-content>
+              <section class="donor-section">
+                <mat-checkbox class="donor-title" [(ngModel)]="donateSpecificOrgans" (change)="onCheckboxChange('specific', $event)">DONATE ALL ORGANS</mat-checkbox>
+              </section>
+            </mat-card-content>
+          </mat-card>
+          </div> -->
+          <div class="box">
+          <mat-card class="donor-header">
+            <mat-card-content>
+              <section class="donor-section">
+                <mat-checkbox class="donor-title" [(ngModel)]="donateNoOrgans" (change)="onCheckboxChange('none', $event)">I DON'T WANT TO BE AN ORGAN DONOR</mat-checkbox>
+              </section>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
         <mat-divider></mat-divider>
         <div class="middletitle"><p>ORGANS</p></div>
         <div class="box">

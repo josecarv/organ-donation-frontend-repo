@@ -15,11 +15,14 @@
   .headerclass .mat-icon{
     margin-top:15px;
     padding-right:10px;
-    font-size:25px;
     color:#4caf50; 
   }
-  p{
+  /* p{
     font-weight: 400;
+    padding-bottom: 10px;
+  } */
+  .paragraph{
+    padding-bottom: 10px;
   }
   .main-container{
     background-image: url("/assets/background.png");
@@ -35,6 +38,11 @@
     margin-top: 50px;
     border: 1px solid white;
     border-radius: 15px;
+  }
+  .mat-card-align{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .donor-header{
     display: flex;
