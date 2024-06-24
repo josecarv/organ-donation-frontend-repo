@@ -9,211 +9,313 @@
         </div>
         <div class="mat-card-align">
           <div class="box">
-          <mat-card class="donor-header">
-            <mat-card-content>
-              <section class="donor-section">
-                <mat-checkbox class="donor-title" [(ngModel)]="donateAllOrgans" (change)="onCheckboxChange('all', $event)" [disabled]="donateNoOrgans">I WANT TO BE AN ORGAN DONOR</mat-checkbox>
-              </section>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div class="box">
-          <mat-card class="donor-header">
-            <mat-card-content>
-              <section class="donor-section">
-                <mat-checkbox class="donor-title" [(ngModel)]="donateSpecificOrgans" (change)="onCheckboxChange('specific', $event)">DONATE ALL ORGANS</mat-checkbox>
-              </section>
-            </mat-card-content>
-          </mat-card>
+            <mat-card class="donor-header">
+              <mat-card-content>
+                <section class="donor-section">
+                  <mat-checkbox class="donor-title"  formControlName="wantToBeDonor" (change)="onWantToBeDonorChange($event)"  >I WANT TO BE AN ORGAN DONOR</mat-checkbox>
+                </section>
+              </mat-card-content>
+            </mat-card>
           </div>
-          <div class="box">
-          <mat-card class="donor-header">
-            <mat-card-content>
-              <section class="donor-section">
-                <mat-checkbox class="donor-title" [(ngModel)]="donateNoOrgans" (change)="onCheckboxChange('none', $event)" [disabled]="donateAllOrgans">I DON'T WANT TO BE AN ORGAN DONOR</mat-checkbox>
-              </section>
-            </mat-card-content>
-          </mat-card>
-        </div>
+    
+            <ng-container *ngIf="DonorOrgansGroup.get('wantToBeDonor')?.value">
+              <div class="box">
+              <mat-card class="donor-header">
+                <mat-card-content>
+                  <section class="donor-section">
+              <mat-checkbox
+                formControlName="donateAllOrgans"
+                (change)="onDonateAllOrgans($event)">
+               DONATE ALL ORGANS
+              </mat-checkbox>
+            </section>
+          </mat-card-content>
+        </mat-card>
       </div>
+            </ng-container>
+         
+          <div class="box">
+            <mat-card class="donor-header">
+              <mat-card-content>
+                <section class="donor-section">
+                  <mat-checkbox class="donor-title" formControlName="donateNoOrgans" (change)="onDonateNoOrgans( $event)" >I DON'T WANT TO BE AN ORGAN DONOR</mat-checkbox>
+                </section>
+              </mat-card-content>
+            </mat-card>
+          </div>
+       
+        </div>
+      </form>
         <mat-divider></mat-divider>
+        <form fxLayout="column" [formGroup]="OrgansGroup">
         <div class="middletitle"><p>ORGANS</p></div>
+        
         <div class="mat-card-container">
           <mat-card class="organ-card">
-            <div class="row">
-              <div class="column left">
-                <div class="icon">
-                  <img mat-card-sm-image src="/assets/kidney.png" class="organ-avatar" alt="Kidney Icon">
+            <div class="row tp-box" (click)="toggleFlip('kidney')" [@flipState]="flipStates.kidney">
+              <div class="tp-box__side tp-box__front">
+                <div class="column left">
+                  <div class="icon">
+                    <img mat-card-sm-image src="/assets/kidney.png" class="organ-avatar" alt="Kidney Icon">
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="label">KIDNEY</div>
+                  <mat-checkbox class="checkbox" formControlName="kidneyStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                 </div>
               </div>
-              <div class="column right">
-                <div class="label">KIDNEY</div>
-                <mat-checkbox class="checkbox" formControlName="kidneyStatusCtrl"></mat-checkbox>
+              <div class="tp-box__side tp-box__back">
+                <div class="back-content">
+                  <p class="explanation">The kidneys are two bean-shaped organs which extract waste from blood, balance body fluids, form urine, and aid in other important functions of the body</p>
+                </div>
               </div>
             </div>
           </mat-card>
 
-         <mat-card class="organ-card">
-            <div class="row">
-              <div class="column left">
-                <div class="icon">
-                  <img mat-card-sm-image src="/assets/intestine.png" class="organ-avatar" alt="Bowel Icon">
-                </div>
-              </div>
-              <div class="column right">
-                <div class="label">SMALL BOWEL</div>
-                <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl"></mat-checkbox>
-              </div>
-            </div>
-          </mat-card>
           <mat-card class="organ-card">
-            <div class="row">
-              <div class="column left">
-                <div class="icon">
-                  <img mat-card-sm-image src="/assets/pancreas.png" class="organ-avatar" alt="Pancreas Icon">
+            <div class="row tp-box" (click)="toggleFlip('bowel')" [@flipState]="flipStates.bowel">
+              <div class="tp-box__side tp-box__front">
+                <div class="column left">
+                  <div class="icon">
+                    <img mat-card-sm-image src="/assets/intestine.png" class="organ-avatar" alt="Intestine Icon">
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="label">SMALL BOWEL</div>
+                  <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                 </div>
               </div>
-              <div class="column right">
-                <div class="label">PANCREAS</div>
-                <mat-checkbox class="checkbox" formControlName="pancreasStatusCtrl"></mat-checkbox>
-              </div>
-            </div>
-          </mat-card>
-          
-        </div>
-        <div class="mat-card-container">
-          <mat-card class="organ-card">
-            <div class="row">
-              <div class="column left">
-                <div class="icon">
-                  <img mat-card-sm-image src="/assets/liver.png" class="organ-avatar" alt="Liver Icon">
+              <div class="tp-box__side tp-box__back">
+                <div class="back-content">
+                  <p class="explanation">The Small Bowel is where the digested food is turned into small molecules which will be then absorbed into the body.</p>
                 </div>
-              </div>
-              <div class="column right">
-                <div class="label">LIVER</div>
-                <mat-checkbox class="checkbox" formControlName="liverStatusCtrl"></mat-checkbox>
               </div>
             </div>
           </mat-card>
 
-         <mat-card class="organ-card">
-            <div class="row">
-              <div class="column left">
-                <div class="icon">
-                  <img mat-card-sm-image src="/assets/lungs.png" class="organ-avatar" alt="Lungs Icon">
-                </div>
-              </div>
-              <div class="column right">
-                <div class="label">LUNGS</div>
-                <mat-checkbox class="checkbox" formControlName="lungsStatusCtrl"></mat-checkbox>
-              </div>
-            </div>
-          </mat-card>
           <mat-card class="organ-card">
-            <div class="row">
-              <div class="column left">
-                <div class="icon">
-                  <img mat-card-sm-image src="/assets/heart.png" class="organ-avatar" alt="Heart Icon">
+            <div class="row tp-box" (click)="toggleFlip('pancreas')" [@flipState]="flipStates.pancreas">
+              <div class="tp-box__side tp-box__front">
+                <div class="column left">
+                  <div class="icon">
+                    <img mat-card-sm-image src="/assets/pancreas.png" class="organ-avatar" alt="Pancreas Icon">
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="label">PANCREAS</div>
+                  <mat-checkbox class="checkbox" formControlName="pancreasStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                 </div>
               </div>
-              <div class="column right">
-                <div class="label">HEART</div>
-                <mat-checkbox class="checkbox" formControlName="heartStatusCtrl"></mat-checkbox>
+              <div class="tp-box__side tp-box__back">
+                <div class="back-content">
+                  <p class="explanation" >The Pancreas produces pancreatic juices which help to digest the food found in the small intestine.</p>
+                </div>
               </div>
             </div>
           </mat-card>
         </div>
+
+        <div class="mat-card-container">
+          <mat-card class="organ-card">
+            <div class="row tp-box" (click)="toggleFlip('liver')" [@flipState]="flipStates.liver">
+              <div class="tp-box__side tp-box__front">
+                <div class="column left">
+                  <div class="icon">
+                    <img mat-card-sm-image src="/assets/liver.png" class="organ-avatar" alt="Liver Icon">
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="label">LIVER</div>
+                  <mat-checkbox class="checkbox" formControlName="liverStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                </div>
+              </div>
+              <div class="tp-box__side tp-box__back">
+                <div class="back-content">
+                  <p class="explanation">The liver is a metabolically active organ responsible for many vital life functions.</p>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+
+          <mat-card class="organ-card">
+            <div class="row tp-box" (click)="toggleFlip('lungs')" [@flipState]="flipStates.lungs">
+              <div class="tp-box__side tp-box__front">
+                <div class="column left">
+                  <div class="icon">
+                    <img mat-card-sm-image src="/assets/lungs.png" class="organ-avatar" alt="Lungs Icon">
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="label">LUNGS</div>
+                  <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                </div>
+              </div>
+              <div class="tp-box__side tp-box__back">
+                <div class="back-content">
+                  <p class="explanation" >The lungs' primary role is to bring in air from the atmosphere and pass life-giving oxygen into the bloodstream; from here, it can be circulated to the rest of the body.</p>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+
+          <mat-card class="organ-card">
+            <div class="row tp-box" (click)="toggleFlip('heart')" [@flipState]="flipStates.heart">
+              <div class="tp-box__side tp-box__front">
+                <div class="column left">
+                  <div class="icon">
+                    <img mat-card-sm-image src="/assets/heart.png" class="organ-avatar" alt="Heart Icon">
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="label">HEART</div>
+                  <mat-checkbox class="checkbox" formControlName="heartStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                </div>
+              </div>
+              <div class="tp-box__side tp-box__back">
+                <div class="back-content">
+                  <p class="explanation">The heart is  the muscle that  pumps blood around the body. This blood sends oxygen and nutrients to all parts of the body, and carries away unwanted carbon dioxide and waste products.</p>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+     
           <mat-divider></mat-divider>
           <div class="middletitle"><p>TISSUES</p></div>
           <div class="mat-card-container">
             <mat-card class="organ-card">
-              <div class="row">
-                <div class="column left">
-                  <div class="icon">
-                    <img mat-card-sm-image src="/assets/cartilage.png" class="organ-avatar" alt="Cartilage Icon">
+              <div class="row tp-box" (click)="toggleFlip('cartilage')" [@flipState]="flipStates.cartilage">
+                <div class="tp-box__side tp-box__front">
+                  <div class="column left">
+                    <div class="icon">
+                      <img mat-card-sm-image src="/assets/cartilage.png" class="organ-avatar" alt="Cartilage Icon">
+                    </div>
+                  </div>
+                  <div class="column right">
+                    <div class="label">CARTILAGE</div>
+                    <mat-checkbox class="checkbox" formControlName="cartilageStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                   </div>
                 </div>
-                <div class="column right">
-                  <div class="label">CARTILAGE</div>
-                  <mat-checkbox class="checkbox" formControlName="cartilageStatusCtrl"></mat-checkbox>
+                <div class="tp-box__side tp-box__back">
+                  <div class="back-content">
+                    <p class="explanation">The Cartilage is made of a firm, rubber tissue that cushions the bones at joints and allows for some flexibility of movement.</p>
+                  </div>
                 </div>
               </div>
             </mat-card>
   
-           <mat-card class="organ-card">
-              <div class="row">
-                <div class="column left">
-                  <div class="icon">
-                    <img mat-card-sm-image src="/assets/valves.png" class="organ-avatar" alt="Valves Icon">
+            <mat-card class="organ-card">
+              <div class="row tp-box" (click)="toggleFlip('valves')" [@flipState]="flipStates.valves">
+                <div class="tp-box__side tp-box__front">
+                  <div class="column left">
+                    <div class="icon">
+                      <img mat-card-sm-image src="/assets/valves.png" class="organ-avatar" alt="Valve Icon">
+                    </div>
+                  </div>
+                  <div class="column right">
+                    <div class="label">HEART VALVES</div>
+                    <mat-checkbox class="checkbox" formControlName="valveStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                   </div>
                 </div>
-                <div class="column right">
-                  <div class="label">HEART VALVES</div>
-                  <mat-checkbox class="checkbox" formControlName="valvesStatusCtrl"></mat-checkbox>
+                <div class="tp-box__side tp-box__back">
+                  <div class="back-content">
+                    <p class="explanation">The heart has four valves which are one-way valves where blood passes through, pumping it through all the body..</p>
+                  </div>
                 </div>
               </div>
             </mat-card>
+  
             <mat-card class="organ-card">
-              <div class="row">
-                <div class="column left">
-                  <div class="icon">
-                    <img mat-card-sm-image src="/assets/eye.png" class="organ-avatar" alt="Eye Icon">
+              <div class="row tp-box" (click)="toggleFlip('cornea')" [@flipState]="flipStates.cornea">
+                <div class="tp-box__side tp-box__front">
+                  <div class="column left">
+                    <div class="icon">
+                      <img mat-card-sm-image src="/assets/eye.png" class="organ-avatar" alt="Cornea Icon">
+                    </div>
+                  </div>
+                  <div class="column right">
+                    <div class="label">CORNEA</div>
+                    <mat-checkbox class="checkbox" formControlName="corneaStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                   </div>
                 </div>
-                <div class="column right">
-                  <div class="label">CORNEA</div>
-                  <mat-checkbox class="checkbox" formControlName="corneaStatusCtrl"></mat-checkbox>
+                <div class="tp-box__side tp-box__back">
+                  <div class="back-content">
+                    <p class="explanation">The Cornea is the front part of the eye protecting the pupil, iris and anterior chamber. It also transmits light into the eye enabling us to see.</p>
+                  </div>
                 </div>
               </div>
             </mat-card>
           </div>
           <div class="mat-card-container">
             <mat-card class="organ-card">
-              <div class="row">
-                <div class="column left">
-                  <div class="icon">
-                    <img mat-card-sm-image src="/assets/tissue.png" class="organ-avatar" alt="tissue Icon">
+              <div class="row tp-box" (click)="toggleFlip('tissue')" [@flipState]="flipStates.tissue">
+                <div class="tp-box__side tp-box__front">
+                  <div class="column left">
+                    <div class="icon">
+                      <img mat-card-sm-image src="/assets/tissue.png" class="organ-avatar" alt="Tissue Icon">
+                    </div>
+                  </div>
+                  <div class="column right">
+                    <div class="label">BONE TISSUE</div>
+                    <mat-checkbox class="checkbox" formControlName="tissueStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                   </div>
                 </div>
-                <div class="column right">
-                  <div class="label">BONE TISSUES</div>
-                  <mat-checkbox class="checkbox" formControlName="tissueStatusCtrl"></mat-checkbox>
+                <div class="tp-box__side tp-box__back">
+                  <div class="back-content">
+                    <p class="explanation">The Bone tissue is a form of connective tissue which provides support  and protection to the skeleton's body.</p>
+                  </div>
                 </div>
               </div>
             </mat-card>
   
-           <mat-card class="organ-card">
-              <div class="row">
-                <div class="column left">
-                  <div class="icon">
-                    <img mat-card-sm-image src="/assets/ligament.png" class="organ-avatar" alt="ligaments Icon">
+            <mat-card class="organ-card">
+              <div class="row tp-box" (click)="toggleFlip('ligament')" [@flipState]="flipStates.ligament">
+                <div class="tp-box__side tp-box__front">
+                  <div class="column left">
+                    <div class="icon">
+                      <img mat-card-sm-image src="/assets/ligament.png" class="organ-avatar" alt="Ligament Icon">
+                    </div>
+                  </div>
+                  <div class="column right">
+                    <div class="label">LIGAMENT</div>
+                    <mat-checkbox class="checkbox" formControlName="ligamentStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                   </div>
                 </div>
-                <div class="column right">
-                  <div class="label">LIGAMENTS</div>
-                  <mat-checkbox class="checkbox" formControlName="ligamentStatusCtrl"></mat-checkbox>
+                <div class="tp-box__side tp-box__back">
+                  <div class="back-content">
+                    <p class="explanation">The Ligaments are strong elastic bands of tissue which connects bone to bone, to provide stability and strength to the joint.</p>
+                  </div>
                 </div>
               </div>
             </mat-card>
+  
             <mat-card class="organ-card">
-              <div class="row">
-                <div class="column left">
-                  <div class="icon">
-                    <img mat-card-sm-image src="/assets/tendon.png" class="organ-avatar" alt="Tendon Icon">
+              <div class="row tp-box" (click)="toggleFlip('tendon')" [@flipState]="flipStates.tendon">
+                <div class="tp-box__side tp-box__front">
+                  <div class="column left">
+                    <div class="icon">
+                      <img mat-card-sm-image src="/assets/tendon.png" class="organ-avatar" alt="Tendon Icon">
+                    </div>
+                  </div>
+                  <div class="column right">
+                    <div class="label">TENDON</div>
+                    <mat-checkbox class="checkbox" formControlName="tendonStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
                   </div>
                 </div>
-                <div class="column right">
-                  <div class="label">TENDONS</div>
-                  <mat-checkbox class="checkbox" formControlName="tendonStatusCtrl"></mat-checkbox>
+                <div class="tp-box__side tp-box__back">
+                  <div class="back-content">
+                    <p class="explanation">Tendons are similar to Ligaments where they are a tough band of tissue which connects the muscle to the bone.</p>
+                  </div>
                 </div>
               </div>
             </mat-card>
           </div>
+        </form>
         <div class="buttonnew">
-          <button mat-raised-button  id="matstepforward">Save</button>
+          <button mat-raised-button  id="matstepforward">Register my wish</button>
           <button mat-raised-button  id="matstepback">Cancel</button>
         </div>
-      </form>
+      
     </div>
   </div>
 </div>
