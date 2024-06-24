@@ -1,7 +1,12 @@
 <div class="main-container">
   <div class="container">
     <div class="form">
+      
       <form fxLayout="column" [formGroup]="DonorOrgansGroup">
+        <div class=" align-right"><button class="editbutton" mat-raised-button mat-icon>
+          <mat-icon>account_circle</mat-icon>
+          Edit Profile
+        </button></div>
         <div class="headerclass">
           <mat-icon>info</mat-icon>
           <p class="paragraph"> The following is a list of organs which can be donated. Tick the ones that you wish to donate. <br>If you change your mind, you can always untick those you have selected.<br>

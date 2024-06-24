@@ -259,6 +259,7 @@
 
 .checkbox {
   margin-top: 10px;
+  color:#4caf50;
 }
 
 .back-content {
@@ -268,7 +269,23 @@
 .explanation{
   color: #fff;
   font-weight: 700;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.align-right{
+  display: flex;
+  justify-content: right;
+  padding-bottom: 10px;
+}
+.editbutton{
+  background-color: #4caf50;
+  color:white;
+}
+.editbutton .mat-icon{
+  font-size:20px;
+}
+::ng-deep .mdc-checkbox {
+  --mdc-checkbox-selected-checkmark-color: #fff;
+  
 }
 @media screen and (max-width: 800px) {
    
