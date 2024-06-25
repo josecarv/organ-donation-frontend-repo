@@ -24,7 +24,7 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 export class DonorOrgansComponent {
   DonorOrgansGroup!: FormGroup;
   OrgansGroup!: FormGroup;
-  disabled = false;
+  isDonorActive = true;
 
 
   flipStates :any= {
@@ -115,14 +115,20 @@ export class DonorOrgansComponent {
           wantToBeDonor: false,
           donateAllOrgans: false
         });
-      
+        this.isDonorActive = false;
       this.DonorOrgansGroup.get('wantToBeDonor')?.setValue(false);
       Object.keys(this.OrgansGroup.controls).forEach(control => {
         this.OrgansGroup.get(control)?.setValue(false);
+        this.OrgansGroup.get(control)?.disable(); 
       });
       
     }
     else{
+      this.DonorOrgansGroup.patchValue({
+        wantToBeDonor: true,
+        donateAllOrgans: true
+      });
+      this.isDonorActive = true;
       this.DonorOrgansGroup.get('wantToBeDonor')?.setValue(true);
       this.DonorOrgansGroup.get('donateAllOrgans')?.setValue(true);
       this.selectAll(event);

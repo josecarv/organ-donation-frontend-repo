@@ -58,7 +58,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">KIDNEY</div>
-                  <mat-checkbox class="checkbox" formControlName="kidneyStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="kidneyStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -79,7 +79,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">SMALL BOWEL</div>
-                  <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -100,7 +100,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">PANCREAS</div>
-                  <mat-checkbox class="checkbox" formControlName="pancreasStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="pancreasStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -124,7 +124,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">LIVER</div>
-                  <mat-checkbox class="checkbox" formControlName="liverStatusCtrl"  (click)="$event.stopPropagation()" ></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="liverStatusCtrl"  (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -145,7 +145,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">LUNGS</div>
-                  <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="bowelStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -166,7 +166,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">HEART</div>
-                  <mat-checkbox class="checkbox"  formControlName="heartStatusCtrl" (click)="$event.stopPropagation()" ></mat-checkbox>
+                  <mat-checkbox class="checkbox"  formControlName="heartStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -192,7 +192,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">CARTILAGE</div>
-                  <mat-checkbox class="checkbox" formControlName="cartilageStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="cartilageStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -213,7 +213,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">HEART VALVES</div>
-                  <mat-checkbox class="checkbox" formControlName="valveStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="valveStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -234,7 +234,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">CORNEA</div>
-                  <mat-checkbox class="checkbox" formControlName="corneaStatusCtrl" (click)="$event.stopPropagation()" ></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="corneaStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -256,7 +256,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">BONE TISSUE</div>
-                  <mat-checkbox class="checkbox" formControlName="tissueStatusCtrl" (click)="$event.stopPropagation()" ></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="tissueStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -277,7 +277,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">LIGAMENT</div>
-                  <mat-checkbox class="checkbox" formControlName="ligamentStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox" formControlName="ligamentStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
@@ -298,7 +298,7 @@
                 </div>
                 <div class="column right">
                   <div class="label">TENDON</div>
-                  <mat-checkbox class="checkbox"  formControlName="tendonStatusCtrl" (click)="$event.stopPropagation()"></mat-checkbox>
+                  <mat-checkbox class="checkbox"  formControlName="tendonStatusCtrl" (click)="$event.stopPropagation()" [disabled]="!isDonorActive"></mat-checkbox>
                 </div>
               </div>
               <div class="tp-box__side tp-box__back">
