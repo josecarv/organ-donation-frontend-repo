@@ -24,6 +24,7 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 export class DonorOrgansComponent {
   DonorOrgansGroup!: FormGroup;
   OrgansGroup!: FormGroup;
+  disabled = false;
 
 
   flipStates :any= {
@@ -49,18 +50,18 @@ export class DonorOrgansComponent {
     });
     this.OrgansGroup = this._formBuilder.group({
       
-      kidneyStatusCtrl: [{value: false, disabled: false}],
-      bowelStatusCtrl: [{value: false, disabled: false}],
-      liverStatusCtrl:[{value: false, disabled: false}],
-      lungsStatusCtrl: [{value: false, disabled: false}],
-      pancreasStatusCtrl: [{value: false, disabled: false}],
-      heartStatusCtrl:[{value: false, disabled: false}],
-      cartilageStatusCtrl:[{value: false, disabled: false}],
-      valveStatusCtrl: [{value: false, disabled: false}],
-      corneaStatusCtrl: [{value: false, disabled: false}],
-      tissueStatusCtrl:[{value: false, disabled: false}],
-      ligamentStatusCtrl:[{value: false, disabled: false}],
-      tendonStatusCtrl:[{value: false, disabled: false}],
+      kidneyStatusCtrl: ['',{value: false, disabled: false}],
+      bowelStatusCtrl: ['',{value: false, disabled: false}],
+      liverStatusCtrl:['',{value: false, disabled: false}],
+      lungsStatusCtrl: ['',{value: false, disabled: false}],
+      pancreasStatusCtrl: ['',{value: false, disabled: false}],
+      heartStatusCtrl:['',{value: false, disabled: false}],
+      cartilageStatusCtrl:['',{value: false, disabled: false}],
+      valveStatusCtrl: ['',{value: false, disabled: false}],
+      corneaStatusCtrl: ['',{value: false, disabled: false}],
+      tissueStatusCtrl:['',{value: false, disabled: false}],
+      ligamentStatusCtrl:['',{value: false, disabled: false}],
+      tendonStatusCtrl:['',{value: false, disabled: false}],
     });
   }
   
