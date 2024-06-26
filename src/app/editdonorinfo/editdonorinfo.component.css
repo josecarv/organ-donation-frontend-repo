@@ -175,115 +175,27 @@ section {
   color: #fff;
 }
 
-.example-button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
-}
-
 .button-container {
-  display: center;
-  justify-content: center;
-  justify-content: space-between;
-  
+  display: flex;
+  justify-content: center; /* Centering the buttons horizontally */
+  gap: 10px; /* Space between the buttons */
+  margin-top: 20px; /* Margin from the top */
 }
 
-.save-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  
+.save-button, .cancel-button {
+  background-color: #4CAF50; /* Green background for both buttons */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding for size */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
 }
-
-
 
 .cancel-button {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
- 
+  background-color: #f44336; /* Red background for cancel button */
 }
 
-
-@media screen and (max-width: 800px) {
-  
-
-  .container {
-    overflow: hidden;
-    margin-left: 0px;
-  }
-
-  .container h1 {
-    font-size: medium;
-  }
-
-  .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .mat-mdc-form-field {
-    margin-left: 10px;
-    width: 90%;
-    min-width: 100%;
-  }
-
-  mat-divider {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  mat-card-content {
-    min-width: 100%;
-    margin-bottom: 70px;
-    margin-left: -30px;
-  }
-
-  .margin {
-    display: flex;
-    margin-bottom: -10px;
-  }
-
-  .section {
-    padding-left: 10px;
-    font-size: small;
-  }
-
-  .mat-icon {
-    font-size: 20px;
-    color: dimgrey;
-  }
-
-  .paginator {
-    padding-bottom: 30px;
-  }
-
-  ::ng-deep .mat-mdc-text-field-wrapper {
-    height: 50px !important;
-    margin-bottom: -20px !important;
-  }
-
-  .mat-mdc-table .mat-mdc-header-cell {
-    padding-bottom: -30px !important;
-    margin-right: 80px;
-  }
-
-  ::ng-deep
-    .mat-mdc-text-field-wrapper
-    .mat-mdc-form-field-flex
-    .mat-mdc-floating-label
-    .matStepLabel {
-    top: 20px !important;
-  }
-
-  ::ng-deep .mat-mdc-input-element {
-    top: -5px !important;
-    position: relative !important;
-  }
+.save-button:hover, .cancel-button:hover {
+  opacity: 0.8; 
 }
