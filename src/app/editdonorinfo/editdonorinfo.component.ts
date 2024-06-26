@@ -79,12 +79,8 @@ editdonorinfoObject :IDonorDto ={
   checkboxAddress: '',
   preferredContact: 0,
   organs: [],
-  newaddress: '',
-  newstreet: '',
-  newpostcode: '',
-  newlocalityId: 0
+  
 }
-
 
   constructor (
     private localityService:LocalityService,
@@ -208,21 +204,7 @@ subscribeChanges() {
     this.editdonorinfoObject.mailLocalityId = value;      
   });
 
-  this.thirdFormGroup.get('disablemailAddressField')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.checkboxAddress = value;      
-  });
-  this.thirdFormGroup.get('newmailaddressCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailAddress = value;      
-  });
-  this.thirdFormGroup.get('newmailstreetCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailStreet = value;      
-  });
-  this.thirdFormGroup.get('newmailpostcodeCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailPostcode = value;      
-  });
-  this.thirdFormGroup.get('newmaillocalityCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailLocalityId = value;      
-  });
+ 
 
   
 

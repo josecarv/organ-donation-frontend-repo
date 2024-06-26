@@ -15,10 +15,7 @@ export interface IDonorDto{
         mailPostcode:string;
         mailLocalityId:0;
 
-        newaddress: string;
-        newstreet:string;
-        newpostcode:string;
-        newlocalityId:0;
+        
         email:string;
         telephone:number;
         mobile:number

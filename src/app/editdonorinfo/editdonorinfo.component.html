@@ -6,10 +6,10 @@
   <div class="container">
     <h1>Edit Profile</h1>
 
-      <!-- <div class="form"> -->
+      
         <mat-accordion>
   
-          <!-- Panel 1: Personal Information -->
+         
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -67,7 +67,7 @@
             </form>
           </mat-expansion-panel>
   
-          <!-- Panel 2: Contact Information -->
+         
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -108,7 +108,7 @@
             </form>
           </mat-expansion-panel>
   
-          <!-- Panel 3: Residence Address -->
+         
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -144,7 +144,6 @@
             </form>
           </mat-expansion-panel>
   
-          <!-- Panel 4: Mailing Address -->
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -186,32 +185,46 @@
               <div class="box" [class.hide]="isVisible">
                 <mat-form-field>
                   <mat-label>Address</mat-label>
-                  <input matInput placeholder="address" formControlName="newmailaddressCtrl" required/>
+                  <input matInput placeholder="address" formControlName="mailaddressCtrl" required/>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Street</mat-label>
-                  <input matInput placeholder="Street" formControlName="newmailstreetCtrl" required/>
+                  <input matInput placeholder="Street" formControlName="mailstreetCtrl" required/>
                 </mat-form-field>
               </div>
               <div class="box" [class.hide]="isVisible">
                 <mat-form-field>
                   <mat-label>PostCode</mat-label>
-                  <input matInput placeholder="postcode" formControlName="newmailpostcodeCtrl" required/>
+                  <input matInput placeholder="postcode" formControlName="mailpostcodeCtrl" required/>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Locality</mat-label>
-                  <mat-select formControlName="newmaillocalityCtrl" (selectionChange)="onLocalitySelectionChange($event)">
+                  <mat-select formControlName="maillocalityCtrl" (selectionChange)="onLocalitySelectionChange($event)">
                     <mat-option *ngFor="let locality of localities" [value]="locality.id">
                       {{ locality.name }}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
+
               </div>
             </form>
           </mat-expansion-panel>
           
         </mat-accordion>
+
+
+
+        <div class="button-container">
+          <button class="save-button">Save</button>
+          <button class="cancel-button">Cancel</button>
+        </div>
+
       </div>
     </div>
  
   
+
+
+
+
+

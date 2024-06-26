@@ -72,10 +72,7 @@ donorObject :IDonorDto ={
   checkboxAddress: '',
   preferredContact: 0,
   organs: [],
-  newaddress: '',
-  newstreet: '',
-  newpostcode: '',
-  newlocalityId: 0
+ 
 }
 
   constructor (

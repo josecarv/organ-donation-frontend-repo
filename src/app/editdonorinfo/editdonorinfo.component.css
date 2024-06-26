@@ -43,13 +43,6 @@ h1 {
   border-bottom: 2px solid #ddd;
   padding-bottom: 10px;
 }
-/* .form {
-  display: block;
-  padding: 30px 20px 20px 20px;
-  margin-top: 50px;
-  border: 1px solid white;
-  border-radius: 15px;
-} */
 
 
 .mat-mdc-form-field {
@@ -169,7 +162,7 @@ section {
 
 ::ng-deep .mat-mdc-fab.mat-accent,
 ::ng-deep .mat-mdc-mini-fab.mat-accent {
-  background-color: #4caf50 !important;
+  background-color: #4caf50 ;
   color: #fff;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -182,13 +175,42 @@ section {
   color: #fff;
 }
 
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.button-container {
+  display: center;
+  justify-content: center;
+  justify-content: space-between;
+  
+}
+
+.save-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+
+
+.cancel-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+
+
 @media screen and (max-width: 800px) {
-  .form {
-    margin-left: -40px !important;
-    display: flex;
-    flex-direction: column;
-    margin-top: -30px;
-  }
+  
 
   .container {
     overflow: hidden;
