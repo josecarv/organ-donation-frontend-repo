@@ -1,4 +1,5 @@
 export interface IDonorDto{
+
         idCardNumber :string;
         titleType:string;
         firstName :string;
@@ -13,6 +14,11 @@ export interface IDonorDto{
         mailStreet:string;
         mailPostcode:string;
         mailLocalityId:0;
+
+        newaddress: string;
+        newstreet:string;
+        newpostcode:string;
+        newlocalityId:0;
         email:string;
         telephone:number;
         mobile:number
@@ -21,4 +27,5 @@ export interface IDonorDto{
         checkboxAddress:string;
         preferredContact:number;
         organs:[];
+       
 }

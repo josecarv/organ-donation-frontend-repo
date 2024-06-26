@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditdonorinfoComponent } from './editdonorinfo.component';
+import { editdonorinfoComponent } from './editdonorinfo.component';
 
 describe('EditdonorinfoComponent', () => {
-  let component: EditdonorinfoComponent;
-  let fixture: ComponentFixture<EditdonorinfoComponent>;
+  let component: editdonorinfoComponent;
+  let fixture: ComponentFixture<editdonorinfoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EditdonorinfoComponent]
+      declarations: [editdonorinfoComponent]
     });
-    fixture = TestBed.createComponent(EditdonorinfoComponent);
+    fixture = TestBed.createComponent(editdonorinfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

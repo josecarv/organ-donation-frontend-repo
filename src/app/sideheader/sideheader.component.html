@@ -11,8 +11,10 @@
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
         <button routerLink="home" mat-button><h5>Dashboard</h5></button>
         <button routerLink="donor/register" mat-button><h5>Donor Registration</h5></button>
+
+        <button routerLink="/editdonorinfo" mat-button><h5>EditProfile</h5></button>
         <button routerLink="/know-organdonation" mat-button><h5>Know Organ Donation</h5></button>
-        <button routerLink="/editdonorinfo" mat-button><h5>Edit profile</h5></button>
+        
         <button mat-button [matMenuTriggerFor]="menu"  #menuTrigger="matMenuTrigger" (mouseenter)="openMyMenu()" >
           <img class="side-icon" src="/assets/menu.png"> 
         </button>
@@ -44,13 +46,15 @@
           <a mat-list-item routerLink="donor/register" (click)="onSidenavClose()">
             <span class="nav-caption">Donor Registration</span>
           </a>
+
+          <a mat-list-item routerLink="editdonorinfo" (click)="onSidenavClose()">
+            <span class="nav-caption">EditProfile</span>
+          </a>
           
           <a mat-list-item routerLink="/know-organdonation" (click)="onSidenavClose()">
             <span class="nav-caption">Know Organ Donation</span>
           </a>
-          <a mat-list-item routerLink="/editdonorinfo" (click)="onSidenavClose()">
-            <span class="nav-caption">Edit profile</span>
-          </a>
+         
           <br>
           <button style=" margin-left: 10px"
             mat-raised-button

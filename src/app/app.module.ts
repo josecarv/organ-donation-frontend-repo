@@ -15,9 +15,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { usermanualroutingmodule } from './usermanual/usermanual.routing.module';
-import { EditdonorinfoComponent} from './editdonorinfo/editdonorinfo.component';
+import { editdonorinfoComponent} from './editdonorinfo/editdonorinfo.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatToolbarRow } from '@angular/material/toolbar';
+
 
 import { MatTableModule } from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -33,7 +33,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     SideheaderComponent,
     KnowOrgandonationComponent,
     HomeComponent,
-    EditdonorinfoComponent,
+    editdonorinfoComponent,
 
     
   ],

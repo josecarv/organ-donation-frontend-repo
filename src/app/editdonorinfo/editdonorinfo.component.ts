@@ -26,10 +26,12 @@ import { IDonorDto } from 'src/app/models/DonorDto.model';
     },
   ],
 })
-export class EditdonorinfoComponent implements OnInit{
-onChangeMailingAddress() {
+export class editdonorinfoComponent implements OnInit{
+submitForm() {
 throw new Error('Method not implemented.');
 }
+
+  
 
   // genderOption= 'option1';
   // bloodGroupOption ='option1';
@@ -40,43 +42,49 @@ throw new Error('Method not implemented.');
   firstFormGroup !: FormGroup;
   secondFormGroup !:FormGroup;
   thirdFormGroup! :FormGroup;
+ 
   StatusForm!: FormGroup;
   MailingForm!: FormGroup;
   disableDateField: boolean = true;
-  isVisible = true;
+  isVisible = false;
   checked=false;
   selectedLocalityDescription!: string;
   selectedGenderDescription!: string;
   selectedBloodGroupDescription!: string;
   selectedNationalityDescription!: string;
   stepperOrientation: Observable<StepperOrientation>;
+
+
   
 editdonorinfoObject :IDonorDto ={
-  
-    idCardNumber :'',
-    titleType:'',
-    firstName :'',
-    lastName :'',
-    bloodGroupId :0,
-    dateOfBirth :new Date(), 
-    address: '',
-    street:'',
-    postcode:'',
-    localityId:0,
-    mailAddress: '',
-    mailStreet:'',
-    mailPostcode:'',
-    mailLocalityId:0,
-    email:'',
-    telephone:0,
-    mobile:0,
-    nationalityId :0,
-    genderId: 0,
-    checkboxAddress:'',
-    preferredContact:0,
-    organs:[],
-
+  idCardNumber: '',
+  titleType: '',
+  firstName: '',
+  lastName: '',
+  bloodGroupId: 0,
+  dateOfBirth: new Date(),
+  address: '',
+  street: '',
+  postcode: '',
+  localityId: 0,
+  mailAddress: '',
+  mailStreet: '',
+  mailPostcode: '',
+  mailLocalityId: 0,
+  email: '',
+  telephone: 0,
+  mobile: 0,
+  nationalityId: 0,
+  genderId: 0,
+  checkboxAddress: '',
+  preferredContact: 0,
+  organs: [],
+  newaddress: '',
+  newstreet: '',
+  newpostcode: '',
+  newlocalityId: 0
 }
+
 
   constructor (
     private localityService:LocalityService,
@@ -121,12 +129,12 @@ editdonorinfoObject :IDonorDto ={
     postcodeCtrl: ['', Validators.required],
     localityCtrl: ['', Validators.required],
     disableAddressField : [''],
-    mailaddressCtrl: ['', Validators.required],
-    mailstreetCtrl : ['', Validators.required],
-    mailpostcodeCtrl: ['', Validators.required],
-    maillocalityCtrl: ['', Validators.required],
+
     
   });
+
+  
+
   this.subscribeChanges();
 }
 subscribeChanges() {
@@ -199,6 +207,27 @@ subscribeChanges() {
   this.thirdFormGroup.get('maillocalityCtrl')?.valueChanges.subscribe((value) => {     
     this.editdonorinfoObject.mailLocalityId = value;      
   });
+
+  this.thirdFormGroup.get('disablemailAddressField')?.valueChanges.subscribe((value) => {     
+    this.editdonorinfoObject.checkboxAddress = value;      
+  });
+  this.thirdFormGroup.get('newmailaddressCtrl')?.valueChanges.subscribe((value) => {     
+    this.editdonorinfoObject.mailAddress = value;      
+  });
+  this.thirdFormGroup.get('newmailstreetCtrl')?.valueChanges.subscribe((value) => {     
+    this.editdonorinfoObject.mailStreet = value;      
+  });
+  this.thirdFormGroup.get('newmailpostcodeCtrl')?.valueChanges.subscribe((value) => {     
+    this.editdonorinfoObject.mailPostcode = value;      
+  });
+  this.thirdFormGroup.get('newmaillocalityCtrl')?.valueChanges.subscribe((value) => {     
+    this.editdonorinfoObject.mailLocalityId = value;      
+  });
+
+  
+
+
+  
 }
 dateFilter = (d: Date | null): boolean => {
   if (!d) {
@@ -277,6 +306,3 @@ showOrHide(){
    this.isVisible = !this.isVisible;
 }
 }
- 
-
-

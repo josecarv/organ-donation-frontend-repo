@@ -49,30 +49,33 @@ export class DonorRegistrationComponent implements OnInit{
   stepperOrientation: Observable<StepperOrientation>;
   
 donorObject :IDonorDto ={
-  
-    idCardNumber :'',
-    titleType:'',
-    firstName :'',
-    lastName :'',
-    bloodGroupId :0,
-    dateOfBirth :new Date(), 
-    address: '',
-    street:'',
-    postcode:'',
-    localityId:0,
-    mailAddress: '',
-    mailStreet:'',
-    mailPostcode:'',
-    mailLocalityId:0,
-    email:'',
-    telephone:0,
-    mobile:0,
-    nationalityId :0,
-    genderId: 0,
-    checkboxAddress:'',
-    preferredContact:0,
-    organs:[],
+  idCardNumber: '',
+  titleType: '',
+  firstName: '',
+  lastName: '',
+  bloodGroupId: 0,
+  dateOfBirth: new Date(),
+  address: '',
+  street: '',
+  postcode: '',
+  localityId: 0,
+  mailAddress: '',
+  mailStreet: '',
+  mailPostcode: '',
+  mailLocalityId: 0,
 
+  email: '',
+  telephone: 0,
+  mobile: 0,
+  nationalityId: 0,
+  genderId: 0,
+  checkboxAddress: '',
+  preferredContact: 0,
+  organs: [],
+  newaddress: '',
+  newstreet: '',
+  newpostcode: '',
+  newlocalityId: 0
 }
 
   constructor (
@@ -118,11 +121,11 @@ donorObject :IDonorDto ={
     postcodeCtrl: ['', Validators.required],
     localityCtrl: ['', Validators.required],
     disableAddressField : [''],
-    mailaddressCtrl: ['', Validators.required],
-    mailstreetCtrl : ['', Validators.required],
-    mailpostcodeCtrl: ['', Validators.required],
-    maillocalityCtrl: ['', Validators.required],
-    
+    mailaddressCtrl: [],
+    mailstreetCtrl : [],
+    mailpostcodeCtrl: [],
+    maillocalityCtrl: [],
+   
   });
   this.subscribeChanges();
 }
@@ -196,6 +199,41 @@ subscribeChanges() {
   this.thirdFormGroup.get('maillocalityCtrl')?.valueChanges.subscribe((value) => {     
     this.donorObject.mailLocalityId = value;      
   });
+  this.thirdFormGroup.get('mailingaddressCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailAddress = value;      
+  });
+  this.thirdFormGroup.get('mailingstreetCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailStreet = value;      
+  });
+  this.thirdFormGroup.get('mailingpostcodeCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailPostcode = value;      
+  });
+  this.thirdFormGroup.get('mailinglocalityCtrl')?.valueChanges.subscribe((value) => {     
+    this.donorObject.mailLocalityId = value;      
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 dateFilter = (d: Date | null): boolean => {
   if (!d) {
