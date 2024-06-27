@@ -17,8 +17,8 @@ import { IDonorDto } from 'src/app/models/DonorDto.model';
 
 @Component({
   selector: 'app-donor-registration',
-  templateUrl: './donor-registration.component.html',
-  styleUrls: ['./donor-registration.component.css'],
+  templateUrl: './editdonorinfo.component.html',
+  styleUrls: ['./editdonorinfo.component.css'],
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
@@ -26,7 +26,12 @@ import { IDonorDto } from 'src/app/models/DonorDto.model';
     },
   ],
 })
-export class DonorRegistrationComponent implements OnInit{
+export class editdonorinfoComponent implements OnInit{
+submitForm() {
+throw new Error('Method not implemented.');
+}
+
+  
 
   // genderOption= 'option1';
   // bloodGroupOption ='option1';
@@ -37,18 +42,21 @@ export class DonorRegistrationComponent implements OnInit{
   firstFormGroup !: FormGroup;
   secondFormGroup !:FormGroup;
   thirdFormGroup! :FormGroup;
+ 
   StatusForm!: FormGroup;
   MailingForm!: FormGroup;
   disableDateField: boolean = true;
-  isVisible = true;
+  isVisible = false;
   checked=false;
   selectedLocalityDescription!: string;
   selectedGenderDescription!: string;
   selectedBloodGroupDescription!: string;
   selectedNationalityDescription!: string;
   stepperOrientation: Observable<StepperOrientation>;
+
+
   
-donorObject :IDonorDto ={
+editdonorinfoObject :IDonorDto ={
   idCardNumber: '',
   titleType: '',
   firstName: '',
@@ -63,7 +71,6 @@ donorObject :IDonorDto ={
   mailStreet: '',
   mailPostcode: '',
   mailLocalityId: 0,
-
   email: '',
   telephone: 0,
   mobile: 0,
@@ -72,7 +79,7 @@ donorObject :IDonorDto ={
   checkboxAddress: '',
   preferredContact: 0,
   organs: [],
- 
+  
 }
 
   constructor (
@@ -95,13 +102,13 @@ donorObject :IDonorDto ={
     this.getAllNationalities();
 
     this.firstFormGroup = this._formBuilder.group({
-    idcardCtrl: [this.donorObject.idCardNumber, Validators.required],
-    titleTypeCtrl: [this.donorObject.titleType, Validators.required],
-    nameCtrl: [this.donorObject.firstName, Validators.required],
-    surnameCtrl: [this.donorObject.lastName, Validators.required],
-    dateOfBirthCtrl: [this.donorObject.dateOfBirth, Validators.required],
-    genderCtrl: [this.donorObject.genderId, Validators.required],
-    bloodGroupCtrl: [this.donorObject.bloodGroupId, Validators.required],
+    idcardCtrl: [this.editdonorinfoObject.idCardNumber, Validators.required],
+    titleTypeCtrl: [this.editdonorinfoObject.titleType, Validators.required],
+    nameCtrl: [this.editdonorinfoObject.firstName, Validators.required],
+    surnameCtrl: [this.editdonorinfoObject.lastName, Validators.required],
+    dateOfBirthCtrl: [this.editdonorinfoObject.dateOfBirth, Validators.required],
+    genderCtrl: [this.editdonorinfoObject.genderId, Validators.required],
+    bloodGroupCtrl: [this.editdonorinfoObject.bloodGroupId, Validators.required],
     nationalityCtrl: ['', Validators.required],
    
   });
@@ -118,119 +125,91 @@ donorObject :IDonorDto ={
     postcodeCtrl: ['', Validators.required],
     localityCtrl: ['', Validators.required],
     disableAddressField : [''],
-    mailaddressCtrl: [],
-    mailstreetCtrl : [],
-    mailpostcodeCtrl: [],
-    maillocalityCtrl: [],
-   
+
+    
   });
+
+  
+
   this.subscribeChanges();
 }
 subscribeChanges() {
 
   //FirstFormGroup
   this.firstFormGroup.get('idcardCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.idCardNumber = value;
+    this.editdonorinfoObject.idCardNumber = value;
   });
   this.firstFormGroup.get('titleTypeCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.titleType = value;
+    this.editdonorinfoObject.titleType = value;
   });
   this.firstFormGroup.get('nameCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.firstName = value;
+    this.editdonorinfoObject.firstName = value;
   });
   this.firstFormGroup.get('surnameCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.lastName = value;
+    this.editdonorinfoObject.lastName = value;
   });
   this.firstFormGroup.get('dateOfBirthCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.dateOfBirth = value;
+    this.editdonorinfoObject.dateOfBirth = value;
   });
   this.firstFormGroup.get('genderCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.genderId = value;
+    this.editdonorinfoObject.genderId = value;
   });
   this.firstFormGroup.get('bloodGroupCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.bloodGroupId = value;
+    this.editdonorinfoObject.bloodGroupId = value;
   });
   this.firstFormGroup.get('nationalityCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.nationalityId = value;
+    this.editdonorinfoObject.nationalityId = value;
   });
 
     //SecondFormGroup
   this.secondFormGroup.get('emailCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.email = value;      
+    this.editdonorinfoObject.email = value;      
   });
   this.secondFormGroup.get('telephoneCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.telephone = value;      
+    this.editdonorinfoObject.telephone = value;      
   });
   this.secondFormGroup.get('mobileCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mobile = value;      
+    this.editdonorinfoObject.mobile = value;      
   });
   this.secondFormGroup.get('contactModeCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.preferredContact = value;      
+    this.editdonorinfoObject.preferredContact = value;      
   });
 
    //ThirdFormGroup
   this.thirdFormGroup.get('addressCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.address = value;      
+    this.editdonorinfoObject.address = value;      
   });
   this.thirdFormGroup.get('streetCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.street = value;      
+    this.editdonorinfoObject.street = value;      
   });
   this.thirdFormGroup.get('postcodeCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.postcode = value;      
+    this.editdonorinfoObject.postcode = value;      
   });
   this.thirdFormGroup.get('localityCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.localityId = value;      
+    this.editdonorinfoObject.localityId = value;      
   });
   this.thirdFormGroup.get('disableAddressField')?.valueChanges.subscribe((value) => {     
-    this.donorObject.checkboxAddress = value;      
+    this.editdonorinfoObject.checkboxAddress = value;      
   });
   this.thirdFormGroup.get('mailaddressCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailAddress = value;      
+    this.editdonorinfoObject.mailAddress = value;      
   });
   this.thirdFormGroup.get('mailstreetCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailStreet = value;      
+    this.editdonorinfoObject.mailStreet = value;      
   });
   this.thirdFormGroup.get('mailpostcodeCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailPostcode = value;      
+    this.editdonorinfoObject.mailPostcode = value;      
   });
   this.thirdFormGroup.get('maillocalityCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailLocalityId = value;      
-  });
-  this.thirdFormGroup.get('mailingaddressCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailAddress = value;      
-  });
-  this.thirdFormGroup.get('mailingstreetCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailStreet = value;      
-  });
-  this.thirdFormGroup.get('mailingpostcodeCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailPostcode = value;      
-  });
-  this.thirdFormGroup.get('mailinglocalityCtrl')?.valueChanges.subscribe((value) => {     
-    this.donorObject.mailLocalityId = value;      
+    this.editdonorinfoObject.mailLocalityId = value;      
   });
 
+ 
+
+  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 }
 dateFilter = (d: Date | null): boolean => {
   if (!d) {
@@ -309,6 +288,3 @@ showOrHide(){
    this.isVisible = !this.isVisible;
 }
 }
- 
-
-

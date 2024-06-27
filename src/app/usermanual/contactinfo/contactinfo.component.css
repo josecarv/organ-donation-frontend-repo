@@ -10,6 +10,17 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f9f9f9;
+
+}
+
+    .main-container{
+        height:100%;
+        background-image: url("/assets/background.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-y: scroll;
+      
 }
 
 .container {
@@ -20,7 +31,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     width: 100%;
-    margin-left: 250px;
+    margin-left: 600px;
 }
 
 h1 {

@@ -1,0 +1,201 @@
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+
+}
+
+  .main-container{
+      height:100%;
+      background-image: url("/assets/background.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow-y: scroll;
+    
+}
+
+.container {
+  background-color: white;
+  border: 3px solid #ddd;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+  margin-left: 600px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+  margin: 20px 60px 20px 60px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.box > .mat-mdc-form-field {
+  display: flex;
+  justify-content: left;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  height: 20px;
+  padding-bottom: 10px;
+}
+
+.margin {
+  margin: 0 10px;
+}
+
+.box > mat-card {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+mat-card > mat-card-content > section > mat-radio-group {
+  width: 350px;
+}
+
+mat-card {
+  margin: 16px;
+  margin-top: 22px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: row;
+  min-width: 250px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+mat-divider {
+  margin: 30px 30px 30px 30px;
+}
+
+section {
+  display: table;
+}
+
+.hide {
+  display: none;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.stepperbuttons {
+  display: flex;
+}
+
+#matstepforward {
+  margin-top: 10px;
+  background-color: #4caf50 !important;
+  color: #ddd;
+}
+
+#matstepback {
+  margin-top: 10px;
+  margin-right: 20px;
+  background-color: dimgray;
+  color: #ddd;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+::ng-deep .mat-mdc-fab.mat-accent,
+::ng-deep .mat-mdc-mini-fab.mat-accent {
+  background-color: #4caf50 ;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected,
+::ng-deep .mat-step-header .mat-step-icon-state-done,
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  background-color: #4caf50 !important;
+  color: #fff;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centering the buttons horizontally */
+  gap: 10px; /* Space between the buttons */
+  margin-top: 20px; /* Margin from the top */
+}
+
+.save-button, .cancel-button {
+  background-color: #4CAF50; /* Green background for both buttons */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding for size */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+}
+
+.cancel-button {
+  background-color: #f44336; /* Red background for cancel button */
+}
+
+.save-button:hover, .cancel-button:hover {
+  opacity: 0.8; 
+}

@@ -1,17 +1,32 @@
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+.main-container{
+    height:100%;
+    background-image: url("/assets/background.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+  
 }
 
+.container {
+    background-color: white;
+    border: 3px solid #ddd;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    margin-left: 600px;
+}
 
-.container h1 {
-    text-align: center;
-    font-size: 2em;
+h1 {
+    font-size: 32px;
     margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
 }
 
 .container hr {
