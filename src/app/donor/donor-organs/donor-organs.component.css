@@ -15,11 +15,11 @@
   .headerclass .mat-icon{
     margin-top:15px;
     padding-right:10px;
-    font-size:25px;
     color:#4caf50; 
   }
-  p{
-    font-weight: 400;
+ 
+  .paragraph{
+    padding-bottom: 10px;
   }
   .main-container{
     background-image: url("/assets/background.png");
@@ -30,11 +30,16 @@
     overflow-y: scroll;
   }
   .form {
-    /* display: block; */
+   width:60%;
     padding: 30px 20px 20px 20px;
     margin-top: 50px;
     border: 1px solid white;
     border-radius: 15px;
+  }
+  .mat-card-align{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .donor-header{
     display: flex;
@@ -53,24 +58,7 @@
     font-weight: 600;
   }
   .organ-avatar{
-    max-width: 50px;
-    height: 50px;
     margin-bottom: 10px; 
-  }
-  .organ-margin{
-    margin-top: 10px;
-    margin-left: 20px;
-  }
-  .organ-card {  
-    margin: 10px 30px 20px 30px;   
-    width:320px;    
-  }
-  .organ-title{
-
-    text-align: center;
-    margin-top:10px;
-    font-family: Verdana, sans-serif;
-    font-weight: 900;
   }
  
   .middletitle{
@@ -82,6 +70,7 @@
   .box{
     display: flex;
     justify-content: left;
+    padding-bottom: 20px;
   }
 
   #matstepforward {  
@@ -105,23 +94,22 @@
     padding-bottom: 10px;
   }
   mat-divider{
-   margin :30px  30px 00px 30px;
+   margin :30px  30px 0px 30px;
   } 
-
-
 
   #matstepforward {  
     margin-top: 10px;
     background-color:#4caf50 !important;
     color: #ddd;
+    font-size: 15px;
   }
   #matstepback {
     margin-top: 10px;
     margin-right: 20px;
     background-color: dimgray;
     color: #ddd;
+    font-size: 15px;
   }
-  
   ::ng-deep  .mat-icon .mat-checkbox-icon-selected
   {
     color: #fff ;
@@ -129,57 +117,149 @@
   ::ng-deep .mdc-checkbox {
     --mdc-checkbox-selected-checkmark-color: #fff;
 }
- 
+.mat-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.organ-card {
+  position: relative;
+  perspective: 1000px;
+  background-color:white;
+  flex: 1 1 calc(33.333% - 40px); 
+  box-sizing: border-box;
+  min-height: 150px;
+  max-height: 200px;
+  cursor: pointer;
+}
+
+.tp-box {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative;
+}
+
+.tp-box__side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-box__front {
+  transform: rotateY(0);
+}
+
+.tp-box__back {
+  transform: rotateY(180deg);
+  background-color:#9bc99c; 
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.column.left {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  flex: 1;
+  background-color:#9bc99c;
+  padding:30px 10px 30px 10px;
+  
+}
+
+.column.right {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 4;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.checkbox {
+  margin-top: 10px;
+  color:#4caf50;
+}
+
+.back-content {
+  padding: 20px;
+  text-align: center;
+}
+.explanation{
+  color: #fff;
+  font-weight: 700;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.align-right{
+  display: flex;
+  justify-content: right;
+  padding-bottom: 10px;
+}
+.editbutton{
+  background-color: #4caf50;
+  color:white;
+}
+.editbutton .mat-icon{
+  font-size:20px;
+}
+::ng-deep .mdc-checkbox {
+  --mdc-checkbox-selected-checkmark-color: #fff;
+  
+}
 @media screen and (max-width: 800px) {
-   
+  .container {
+    display: flex;
+    margin-left:0px;
+    overflow: hidden;
+    width:100%;
+  }
   .form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: -30px;
+    width:80%;
   }
-  form{
-    margin-left:30px;
-  }
-  .container {
-    overflow: hidden;
-    margin-left: -20px;
-    width:100%;
-
-  }
+ 
   .headerclass{
-    background-color:white;
-    margin-left: -20px;
+   width:100%;
   }
-  .donor-header{
-    margin:0px;
+  .mat-card-align{
+    display: flex;
+    flex-direction: column
   }
-  
-  .box {
+  .mat-card-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
+    gap: 10px;
+  
   }
-
-  mat-divider {
-    margin-top: 20px;
-    margin-left:-20px;
+  .explanation{
+    color: #fff;
+    font-weight: 700;
+    font-size:12px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  mat-card{
-    margin:10px;
-    display: flex;
-  }
-  .middletitle{
-display:block;
-  }
- 
-  .section {
-    padding-left: 10px;
-    font-size: small;
-  }
-  .organ-card{
-    margin-left:0px;
-  }
- 
-
-}
+  mat-divider{
+    margin :10px  10px 0px 10px;
+   } 
+} 
