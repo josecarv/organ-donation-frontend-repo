@@ -2,7 +2,6 @@
     padding:20px;
 }
 
-
 .success-msg{
 
   margin: 10px 0;
@@ -20,8 +19,6 @@
 .share-content{
     box-sizing: content-box;
     border: 2px solid #4caf50 ;
- 
-    /* box-shadow: 5px 5px rgb(216, 213, 213); */
 }
 .share-title{
     text-align: left;

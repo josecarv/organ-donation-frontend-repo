@@ -1,23 +1,7 @@
 .alert-container {
-   
   pointer-events: auto; 
-
   }
   
-.span{
-    font-family:"Lucida Console", "Courier New", monospace;
-    font-size: medium;
-    font-weight: 500;
-}
-/* .form {
-    display: block; 
-    
-    
-  } */
-  /* mat-divider {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  } */
   #matstepforward {  
     margin-top: 10px;
     background-color:#4caf50 !important;
