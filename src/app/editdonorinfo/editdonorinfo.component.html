@@ -120,21 +120,21 @@
               <div class="box">
                 <mat-form-field>
                   <mat-label>Address</mat-label>
-                  <input matInput placeholder="address" formControlName="mailaddressCtrl" required/>
+                  <input matInput placeholder="address" formControlName="addressCtrl" required/>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Street</mat-label>
-                  <input matInput placeholder="Street" formControlName="mailstreetCtrl" required/>
+                  <input matInput placeholder="Street" formControlName="streetCtrl" required/>
                 </mat-form-field>
               </div>
               <div class="box">
                 <mat-form-field>
                   <mat-label>PostCode</mat-label>
-                  <input matInput placeholder="postcode" formControlName="mailpostcodeCtrl" required/>
+                  <input matInput placeholder="postcode" formControlName="postcodeCtrl" required/>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Locality</mat-label>
-                  <mat-select formControlName="maillocalityCtrl" (selectionChange)="onLocalitySelectionChange($event)">
+                  <mat-select formControlName="localityCtrl" (selectionChange)="onLocalitySelectionChange($event)">
                     <mat-option *ngFor="let locality of localities" [value]="locality.id">
                       {{ locality.name }}
                     </mat-option>
@@ -151,7 +151,7 @@
                 Mailing Address
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <form [formGroup]="thirdFormGroup">
+            <form [formGroup]="fourthFormGroup">
               <div class="box">
                 <mat-form-field>
                   <mat-label>Address</mat-label>

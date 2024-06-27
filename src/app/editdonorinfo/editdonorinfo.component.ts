@@ -27,6 +27,7 @@ import { IDonorDto } from 'src/app/models/DonorDto.model';
   ],
 })
 export class editdonorinfoComponent implements OnInit{
+  fourthFormGroup: any;
 submitForm() {
 throw new Error('Method not implemented.');
 }
@@ -42,6 +43,7 @@ throw new Error('Method not implemented.');
   firstFormGroup !: FormGroup;
   secondFormGroup !:FormGroup;
   thirdFormGroup! :FormGroup;
+  
  
   StatusForm!: FormGroup;
   MailingForm!: FormGroup;
@@ -129,6 +131,17 @@ editdonorinfoObject :IDonorDto ={
     
   });
 
+  this.fourthFormGroup = this._formBuilder.group({
+    mailaddressCtrl: ['', Validators.required],
+    mailstreetCtrl: ['', Validators.required],
+    mailpostcodeCtrl: ['', Validators.required],
+    maillocalityCtrl: ['', Validators.required],
+    
+
+    
+  });
+
+
   
 
   this.subscribeChanges();
@@ -191,18 +204,7 @@ subscribeChanges() {
   this.thirdFormGroup.get('disableAddressField')?.valueChanges.subscribe((value) => {     
     this.editdonorinfoObject.checkboxAddress = value;      
   });
-  this.thirdFormGroup.get('mailaddressCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailAddress = value;      
-  });
-  this.thirdFormGroup.get('mailstreetCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailStreet = value;      
-  });
-  this.thirdFormGroup.get('mailpostcodeCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailPostcode = value;      
-  });
-  this.thirdFormGroup.get('maillocalityCtrl')?.valueChanges.subscribe((value) => {     
-    this.editdonorinfoObject.mailLocalityId = value;      
-  });
+
 
  
 
