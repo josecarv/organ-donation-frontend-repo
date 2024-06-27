@@ -14,6 +14,7 @@ export interface IDonorDto{
         mailStreet:string;
         mailPostcode:string;
         mailLocalityId:0;
+        
 
         
         email:string;
