@@ -1,6 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -41,7 +43,9 @@ export class DonorOrgansComponent {
     tendon: 'inactive'
   };
   
-  constructor(private _formBuilder: FormBuilder,){
+  constructor(private _formBuilder: FormBuilder,
+    public dialog: MatDialog,
+  ){
     this.DonorOrgansGroup = this._formBuilder.group({
       wantToBeDonor: [false],
       donateAllOrgans: [false],
@@ -130,9 +134,29 @@ export class DonorOrgansComponent {
       this.isDonorActive = true;
       this.DonorOrgansGroup.get('wantToBeDonor')?.setValue(true);
       this.DonorOrgansGroup.get('donateAllOrgans')?.setValue(true);
-      this.selectAll(event);
+      Object.keys(this.OrgansGroup.controls).forEach(control => {
+        this.OrgansGroup.get(control)?.setValue(true);
+      });
     }
+  }
+  onNoDonorClick() {
+    if (this.DonorOrgansGroup.get('donateNoOrgans')?.value) {
+      const dialogRef = this.dialog.open(ConfirmDialogComponent);
 
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          // Proceed with the registration logic
+          console.log('User confirmed to continue without selecting organs.');
+        } else {
+          // User canceled the action
+          console.log('User canceled the action.');
+        }
+      });
+    } else {
+      // Proceed with the registration logic
+      console.log('Proceeding with registration.');
+    }
   }
 }
+
 

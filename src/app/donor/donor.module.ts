@@ -6,13 +6,15 @@ import { DonorRegistrationComponent } from './donor-registration/donor-registrat
 import { DonorRoutingModule } from './donor-routing.module';
 import { DonorOrgansComponent } from './donor-organs/donor-organs.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 
 @NgModule({ 
   declarations: [
    DonorRegistrationComponent,
-   DonorOrgansComponent
+   DonorOrgansComponent,
+   ConfirmDialogComponent
   ], 
   imports: [
     DonorRoutingModule,
