@@ -1,6 +1,7 @@
-.container {
-    display: block;
-    justify-content: center;
+.alert-container {
+   
+  pointer-events: auto; 
+
   }
   
 .span{
@@ -8,14 +9,15 @@
     font-size: medium;
     font-weight: 500;
 }
-.form {
+/* .form {
     display: block; 
     
-  }
-  mat-divider {
+    
+  } */
+  /* mat-divider {
     margin-top: 20px;
     margin-bottom: 10px;
-  }
+  } */
   #matstepforward {  
     margin-top: 10px;
     background-color:#4caf50 !important;
@@ -29,4 +31,5 @@
     color: #ddd;
     font-size: 15px;
   }
+ 
  

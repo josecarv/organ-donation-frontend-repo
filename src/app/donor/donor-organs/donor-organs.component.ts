@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { ShareDialogComponent } from '../share-dialog/share-dialog.component';
 
 
 @Component({
@@ -141,21 +142,27 @@ export class DonorOrgansComponent {
   }
   onNoDonorClick() {
     if (this.DonorOrgansGroup.get('donateNoOrgans')?.value) {
-      const dialogRef = this.dialog.open(ConfirmDialogComponent);
-
+      const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+        position: { top: '0' }}
+      );
+      
       dialogRef.afterClosed().subscribe(result => {
-        if (result) {
-          // Proceed with the registration logic
-          console.log('User confirmed to continue without selecting organs.');
-        } else {
-          // User canceled the action
-          console.log('User canceled the action.');
+        if (result === 'ok') {
+          this.dialog.open(ShareDialogComponent);
+        }
+        else{
+          console.log('cancel.');
         }
       });
     } else {
-      // Proceed with the registration logic
-      console.log('Proceeding with registration.');
+      if (this.DonorOrgansGroup.get('wantToBeDonor')?.value) {
+        const dialogRef = this.dialog.open(ShareDialogComponent)
+          
     }
+    else{
+      console.log('cancel.');
+    }
+  }
   }
 }
 

@@ -7,6 +7,7 @@ import { DonorRoutingModule } from './donor-routing.module';
 import { DonorOrgansComponent } from './donor-organs/donor-organs.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ShareDialogComponent } from './share-dialog/share-dialog.component';
 
 
 
@@ -14,7 +15,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
   declarations: [
    DonorRegistrationComponent,
    DonorOrgansComponent,
-   ConfirmDialogComponent
+   ConfirmDialogComponent,
+   ShareDialogComponent
   ], 
   imports: [
     DonorRoutingModule,

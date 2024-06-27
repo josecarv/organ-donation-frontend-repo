@@ -1,0 +1,43 @@
+.share-container{
+    padding:20px;
+}
+
+
+.success-msg{
+
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.mat-divider{
+    margin-top:20px;
+}
+.share-content{
+    box-sizing: content-box;
+    border: 2px solid #4caf50 ;
+ 
+    /* box-shadow: 5px 5px rgb(216, 213, 213); */
+}
+.share-title{
+    text-align: left;
+    padding-left: 20px;
+}
+.share-img{
+    width:20px;
+    height:20px;
+    padding-right:5px;
+}
+.share-label{
+    font-size:15px;
+    color:white;
+    padding-bottom: 10px;
+}
+.button-container{
+    display: flex;
+    flex-direction: row;
+}
