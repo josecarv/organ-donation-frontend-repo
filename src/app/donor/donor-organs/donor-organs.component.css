@@ -197,7 +197,7 @@
 
 .checkbox {
   margin-top: 10px;
-  color:#4caf50;
+  color: #4caf50 !important;;
 }
 
 .back-content {
